@@ -1,0 +1,473 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import ServiceCard from '../components/ServiceCard.astro';
+import TrustBadges from '../components/TrustBadges.astro';
+import CTASection from '../components/CTASection.astro';
+
+const description = "GP Electric Inc is Grande Prairie's trusted licensed electrician. Residential, commercial, industrial & farm electrical services. 24/7 emergency response. Call 780-882-3046 for a free quote.";
+---
+
+<BaseLayout title="Home" description={description}>
+
+  <!-- ============================================================ -->
+  <!-- HERO — Full impact. Electric. Bold. -->
+  <!-- ============================================================ -->
+  <section class="relative min-h-[92vh] flex items-center overflow-hidden" style="background: #0a0f1a;">
+    <!-- Background image - faded electrical panel -->
+    <div class="absolute inset-0">
+      <img src="/images/hero-panel.jpg" alt="" class="absolute inset-0 w-full h-full object-cover opacity-30" loading="eager" />
+      <div class="absolute inset-0" style="background: linear-gradient(135deg, rgba(10,15,26,0.75) 0%, rgba(13,21,38,0.70) 40%, rgba(10,22,40,0.80) 100%);"></div>
+    </div>
+    <!-- Animated electric arcs -->
+    <div class="absolute inset-0 overflow-hidden">
+      <div class="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] rounded-full" style="background: radial-gradient(circle, rgba(30,111,191,0.15) 0%, rgba(30,111,191,0.05) 40%, transparent 70%);"></div>
+      <div class="absolute top-0 right-0 w-[500px] h-[500px] rounded-full animate-pulse" style="background: radial-gradient(circle, rgba(77,163,255,0.1) 0%, transparent 60%);"></div>
+      <div class="absolute bottom-0 left-0 w-[400px] h-[400px] rounded-full" style="background: radial-gradient(circle, rgba(30,111,191,0.08) 0%, transparent 60%);"></div>
+      <div class="absolute inset-0 opacity-[0.04]" style="background-image: linear-gradient(rgba(77,163,255,.3) 1px, transparent 1px), linear-gradient(90deg, rgba(77,163,255,.3) 1px, transparent 1px); background-size: 80px 80px;"></div>
+    </div>
+
+    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 w-full">
+      <div class="grid lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+
+        <!-- Left Column: Main Copy -->
+        <div class="lg:col-span-7">
+          <!-- Live badge -->
+          <div class="inline-flex items-center gap-2.5 mb-8 px-4 py-2 rounded-full" style="background: rgba(34,197,94,0.1); border: 1px solid rgba(34,197,94,0.2);">
+            <span class="relative flex h-2.5 w-2.5">
+              <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
+              <span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-green-500"></span>
+            </span>
+            <span class="text-green-400 text-sm font-semibold tracking-wide">AVAILABLE 24/7 — CALL ANYTIME</span>
+          </div>
+
+          <!-- Main headline -->
+          <h1 class="text-5xl sm:text-6xl lg:text-7xl font-black leading-[1.05] tracking-tight mb-8">
+            <span class="text-white">Grande Prairie's</span>
+            <br />
+            <span class="relative inline-block">
+              <span style="background: linear-gradient(135deg, #3b8de0 0%, #4da3ff 50%, #7dc4ff 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">Most Trusted</span>
+            </span>
+            <br />
+            <span class="text-white">Electrician</span>
+          </h1>
+
+          <p class="text-xl text-gray-300 mb-10 max-w-lg leading-relaxed">
+            From emergency calls at 2am to wiring your dream shop — GP Electric Inc delivers work you can count on. <span class="text-white font-semibold">Licensed. Insured. Guaranteed.</span>
+          </p>
+
+          <!-- CTA Buttons -->
+          <div class="flex flex-col sm:flex-row gap-4 mb-12">
+            <a href="/contact" class="group relative inline-flex items-center justify-center gap-3 px-8 py-5 rounded-2xl font-bold text-lg text-white overflow-hidden transition-all duration-300 hover:-translate-y-1" style="background: linear-gradient(135deg, #1e6fbf 0%, #3b8de0 100%); box-shadow: 0 8px 32px rgba(30,111,191,0.4), 0 0 0 1px rgba(59,141,224,0.3);">
+              <span class="relative z-10 flex items-center gap-3">
+                Get a Free Quote
+                <svg class="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+              </span>
+              <div class="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity" style="background: linear-gradient(135deg, #3b8de0 0%, #4da3ff 100%);"></div>
+            </a>
+            <a href="tel:7808823046" class="group inline-flex items-center justify-center gap-3 px-8 py-5 rounded-2xl font-bold text-lg text-white transition-all duration-300 hover:-translate-y-1" style="background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.12); backdrop-filter: blur(12px);">
+              <svg class="w-6 h-6 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+              780-882-3046
+            </a>
+          </div>
+
+          <!-- Trust chips -->
+          <div class="flex flex-wrap gap-3">
+            {[
+              { label: 'Licensed & Insured', color: 'green' },
+              { label: '24/7 Emergency', color: 'blue' },
+              { label: 'Res / Com / Industrial', color: 'blue' },
+              { label: '10+ Communities', color: 'blue' },
+            ].map(({ label, color }) => (
+              <div class="flex items-center gap-2 px-3.5 py-2 rounded-full text-xs font-semibold" style={`background: rgba(${color === 'green' ? '34,197,94' : '59,141,224'},0.08); border: 1px solid rgba(${color === 'green' ? '34,197,94' : '59,141,224'},0.15); color: ${color === 'green' ? '#86efac' : '#93c5fd'};`}>
+                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>
+                {label}
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <!-- Right Column: Visual Impact Card -->
+        <div class="hidden lg:block lg:col-span-5">
+          <div class="relative">
+            <!-- Glow behind card -->
+            <div class="absolute -inset-4 rounded-3xl" style="background: linear-gradient(135deg, rgba(30,111,191,0.2), rgba(77,163,255,0.1)); filter: blur(40px);"></div>
+
+            <!-- Card -->
+            <div class="relative rounded-3xl overflow-hidden" style="background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08); backdrop-filter: blur(20px);">
+              <!-- Top accent bar -->
+              <div class="h-1.5" style="background: linear-gradient(90deg, #1e6fbf, #4da3ff, #1e6fbf);"></div>
+
+              <div class="p-8">
+                <!-- Big phone number -->
+                <div class="text-center mb-8">
+                  <p class="text-gray-500 text-xs font-semibold uppercase tracking-[0.2em] mb-3">Call GP Electric</p>
+                  <a href="tel:7808823046" class="block text-5xl font-black text-white tracking-tight hover:text-blue-400 transition-colors">
+                    780-882
+                    <span style="background: linear-gradient(135deg, #3b8de0, #4da3ff); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">-3046</span>
+                  </a>
+                </div>
+
+                <!-- Stats grid -->
+                <div class="grid grid-cols-2 gap-3 mb-6">
+                  {[
+                    { value: '24/7', label: 'Emergency Response', accent: true },
+                    { value: '10+', label: 'Communities Served' },
+                    { value: '100%', label: 'Licensed & Insured' },
+                    { value: 'ALL', label: 'Res · Com · Industrial', accent: true },
+                  ].map(({ value, label, accent }) => (
+                    <div class="rounded-2xl p-4 text-center" style={`background: ${accent ? 'rgba(30,111,191,0.1)' : 'rgba(255,255,255,0.03)'}; border: 1px solid ${accent ? 'rgba(30,111,191,0.2)' : 'rgba(255,255,255,0.05)'};`}>
+                      <div class="text-2xl font-black mb-0.5" style={accent ? 'color: #4da3ff;' : 'color: #fff;'}>{value}</div>
+                      <div class="text-[10px] font-semibold text-gray-400 uppercase tracking-wider leading-tight">{label}</div>
+                    </div>
+                  ))}
+                </div>
+
+                <!-- Tagline -->
+                <div class="text-center pt-4" style="border-top: 1px solid rgba(255,255,255,0.06);">
+                  <p class="text-gray-400 italic text-sm">"Connections That Last"</p>
+                  <p class="text-gray-600 text-xs mt-1">GP Electric Inc · Grande Prairie, AB</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bottom fade into white -->
+    <div class="absolute bottom-0 left-0 right-0 h-32" style="background: linear-gradient(to top, #ffffff, transparent);"></div>
+  </section>
+
+  <!-- ============================================================ -->
+  <!-- TRUST BAR — Bold, not subtle -->
+  <!-- ============================================================ -->
+  <section class="relative -mt-6 z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="rounded-2xl shadow-xl p-6 sm:p-8 bg-white border border-gray-100" style="box-shadow: 0 20px 60px rgba(0,0,0,0.08), 0 0 0 1px rgba(0,0,0,0.03);">
+      <div class="flex flex-wrap items-center justify-center gap-x-10 gap-y-4">
+        {[
+          { label: 'Licensed', icon: 'M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z' },
+          { label: 'Insured', icon: 'M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z' },
+          { label: '24/7 Available', icon: 'M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z' },
+          { label: 'Free Estimates', icon: 'M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2' },
+          { label: 'Grande Prairie & Area', icon: 'M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0zM15 11a3 3 0 11-6 0 3 3 0 016 0z' },
+        ].map(({ label, icon }) => (
+          <div class="flex items-center gap-2.5">
+            <div class="w-8 h-8 rounded-lg flex items-center justify-center" style="background: linear-gradient(135deg, #1e6fbf, #3b8de0); box-shadow: 0 4px 12px rgba(30,111,191,0.3);">
+              <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d={icon}/></svg>
+            </div>
+            <span class="font-bold text-sm text-gray-700">{label}</span>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================ -->
+  <!-- SERVICES — Bold cards with color-coded categories -->
+  <!-- ============================================================ -->
+  <section class="py-24 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16">
+        <p class="font-bold text-sm uppercase tracking-[0.15em] mb-3" style="color: #1e6fbf;">What We Do</p>
+        <h2 class="text-4xl sm:text-5xl font-black text-gray-900 mb-5">
+          Every Electrical Service.<br />One Trusted Team.
+        </h2>
+        <p class="text-lg text-gray-500 max-w-2xl mx-auto">
+          Residential. Commercial. Industrial. Farm. Emergency. If it involves wires, we handle it.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+        {[
+          { title: 'Residential', desc: 'Panel upgrades, rewiring, lighting, outlets, hot tub wiring, smart home, and complete home electrical.', href: '/services/residential', gradient: 'from-blue-500 to-blue-600', icon: 'M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6' },
+          { title: 'Commercial', desc: 'Tenant improvements, lighting retrofits, power distribution, new construction for businesses.', href: '/services/commercial', gradient: 'from-indigo-500 to-indigo-600', icon: 'M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4' },
+          { title: 'Industrial', desc: 'Oil & gas, instrumentation, motor controls, power distribution, plant maintenance.', href: '/services/industrial', gradient: 'from-gray-700 to-gray-800', icon: 'M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.066 2.573c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.573 1.066c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.066-2.573c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z' },
+          { title: 'Farm & Acreage', desc: 'Shop wiring, barn electrical, grain bins, yard lighting, underground service.', href: '/services/farm-acreage', gradient: 'from-green-600 to-green-700', icon: 'M3 21h18M3 10h18M3 7l9-4 9 4M4 10h16v11H4z' },
+          { title: '24/7 Emergency', desc: 'Power out? Panel sparking? We respond fast — day or night, weekends and holidays.', href: '/services/emergency', gradient: 'from-red-500 to-red-600', icon: 'M13 10V3L4 14h7v7l9-11h-7z' },
+          { title: 'Pumps & Pressure', desc: 'Pressure washers, pump installs, AC electrical, hot tubs, equipment hookups.', href: '/services/pumps-pressure', gradient: 'from-cyan-500 to-cyan-600', icon: 'M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z' },
+        ].map(({ title, desc, href, gradient, icon }) => (
+          <a href={href} class="group relative rounded-2xl overflow-hidden transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl" style="box-shadow: 0 4px 20px rgba(0,0,0,0.06);">
+            <div class={`h-1.5 bg-gradient-to-r ${gradient}`}></div>
+            <div class="p-7 bg-white border border-gray-100 border-t-0 rounded-b-2xl">
+              <div class="flex items-start justify-between mb-5">
+                <div class={`w-12 h-12 rounded-xl bg-gradient-to-br ${gradient} flex items-center justify-center shadow-lg`}>
+                  <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d={icon}/></svg>
+                </div>
+                <svg class="w-5 h-5 text-gray-300 group-hover:text-blue-500 group-hover:translate-x-1 transition-all" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+              </div>
+              <h3 class="text-xl font-extrabold text-gray-900 mb-2 group-hover:text-blue-600 transition-colors">{title}</h3>
+              <p class="text-sm text-gray-500 leading-relaxed">{desc}</p>
+            </div>
+          </a>
+        ))}
+      </div>
+
+      <!-- Specialty strip -->
+      <div class="mt-10 grid grid-cols-1 sm:grid-cols-3 gap-4">
+        {[
+          { title: 'Panel Upgrades', sub: '100A → 200A and beyond', href: '/services/panel-upgrades', color: '#f59e0b' },
+          { title: 'EV Chargers', sub: 'Up to 46% rebate for businesses', href: '/services/ev-charger', color: '#22c55e' },
+          { title: 'Generators', sub: 'Backup power for -40°C winters', href: '/services/generator', color: '#ef4444' },
+        ].map(({ title, sub, href, color }) => (
+          <a href={href} class="group flex items-center gap-4 p-5 rounded-2xl bg-gray-50 border border-gray-200 hover:border-blue-300 hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
+            <div class="w-12 h-12 rounded-xl flex items-center justify-center shrink-0" style={`background: ${color}; box-shadow: 0 4px 16px ${color}44;`}>
+              <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+            </div>
+            <div>
+              <h3 class="font-extrabold text-gray-900 group-hover:text-blue-600 transition-colors">{title}</h3>
+              <p class="text-sm text-gray-500">{sub}</p>
+            </div>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================ -->
+  <!-- GRAND SLAM OFFER — Impossible to miss -->
+  <!-- ============================================================ -->
+  <section class="relative py-24 overflow-hidden" style="background: #0a0f1a;">
+    <!-- Background image - electrician working -->
+    <div class="absolute inset-0">
+      <img src="/images/electrician-work.jpg" alt="" class="absolute inset-0 w-full h-full object-cover opacity-25" loading="lazy" />
+      <div class="absolute inset-0" style="background: linear-gradient(135deg, rgba(10,15,26,0.78) 0%, rgba(13,21,38,0.72) 50%, rgba(15,26,48,0.78) 100%);"></div>
+    </div>
+    <div class="absolute inset-0">
+      <div class="absolute top-0 left-1/3 w-[600px] h-[600px] rounded-full" style="background: radial-gradient(circle, rgba(30,111,191,0.12) 0%, transparent 60%);"></div>
+      <div class="absolute bottom-0 right-1/4 w-[400px] h-[400px] rounded-full" style="background: radial-gradient(circle, rgba(251,191,36,0.06) 0%, transparent 60%);"></div>
+    </div>
+
+    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <!-- Section header -->
+      <div class="text-center mb-16">
+        <div class="inline-flex items-center gap-2 px-5 py-2 rounded-full mb-6" style="background: rgba(251,191,36,0.1); border: 1px solid rgba(251,191,36,0.2);">
+          <span class="text-yellow-400 text-sm font-bold tracking-wide">★ FREE FOR GRANDE PRAIRIE HOMEOWNERS</span>
+        </div>
+        <h2 class="text-4xl sm:text-5xl lg:text-6xl font-black text-white mb-5">
+          Free Electrical<br />
+          <span style="background: linear-gradient(135deg, #fbbf24, #f59e0b); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">Health Check</span>
+        </h2>
+        <p class="text-xl text-gray-300 max-w-2xl mx-auto">
+          Would you rather spend 30 minutes on a free inspection now — or $30,000 on fire damage later?
+        </p>
+      </div>
+
+      <div class="grid lg:grid-cols-5 gap-8 items-start">
+        <!-- What's included (3 cols) -->
+        <div class="lg:col-span-3 rounded-3xl p-8 sm:p-10" style="background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08); backdrop-filter: blur(20px);">
+          <h3 class="text-xl font-bold text-white mb-8">Here's what you get — completely free:</h3>
+          <div class="grid sm:grid-cols-2 gap-4">
+            {[
+              'Complete panel inspection & assessment',
+              'Outlet & switch safety testing',
+              'GFCI protection check',
+              'Smoke & CO alarm verification',
+              'Written safety report with photos',
+              'Honest recommendations — zero pressure',
+            ].map((item) => (
+              <div class="flex items-start gap-3">
+                <div class="w-6 h-6 rounded-full flex items-center justify-center shrink-0 mt-0.5" style="background: rgba(34,197,94,0.15); border: 1px solid rgba(34,197,94,0.3);">
+                  <svg class="w-3.5 h-3.5 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/></svg>
+                </div>
+                <span class="text-gray-200 text-sm leading-relaxed">{item}</span>
+              </div>
+            ))}
+          </div>
+
+          <div class="mt-10 pt-8" style="border-top: 1px solid rgba(255,255,255,0.08);">
+            <div class="flex items-center gap-4 mb-6">
+              <span class="text-gray-500 line-through text-2xl font-bold">$200</span>
+              <span class="text-3xl font-black text-white">FREE</span>
+              <span class="px-3 py-1 rounded-full text-xs font-bold" style="background: rgba(34,197,94,0.15); color: #4ade80; border: 1px solid rgba(34,197,94,0.3);">YOU SAVE $200</span>
+            </div>
+            <a href="/contact" class="group inline-flex items-center justify-center gap-3 px-8 py-5 rounded-2xl font-bold text-lg text-white transition-all duration-300 hover:-translate-y-1 w-full sm:w-auto" style="background: linear-gradient(135deg, #1e6fbf 0%, #3b8de0 100%); box-shadow: 0 8px 32px rgba(30,111,191,0.4);">
+              Book Your Free Health Check
+              <svg class="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Warning signs (2 cols) -->
+        <div class="lg:col-span-2 space-y-4">
+          <h3 class="text-lg font-bold text-white mb-4">⚠️ Warning Signs You Shouldn't Ignore:</h3>
+          {[
+            { sign: 'Breakers tripping regularly', detail: 'Panel overload = fire risk' },
+            { sign: 'Lights flickering', detail: 'Loose or overloaded circuits' },
+            { sign: 'Outlets warm to the touch', detail: 'Active fire hazard' },
+            { sign: 'Burning smell near panel', detail: 'Call immediately — this is an emergency' },
+            { sign: 'Home built before 2000', detail: 'Likely needs panel & wiring assessment' },
+          ].map(({ sign, detail }) => (
+            <div class="flex items-start gap-3 p-4 rounded-xl" style="background: rgba(239,68,68,0.06); border: 1px solid rgba(239,68,68,0.12);">
+              <svg class="w-5 h-5 text-red-400 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"/></svg>
+              <div>
+                <p class="text-white font-semibold text-sm">{sign}</p>
+                <p class="text-gray-400 text-xs mt-0.5">{detail}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================ -->
+  <!-- URGENCY CARDS — Time-sensitive, color-coded -->
+  <!-- ============================================================ -->
+  <section class="py-16 bg-gray-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid md:grid-cols-3 gap-5">
+        <!-- EV Rebate -->
+        <div class="relative rounded-2xl overflow-hidden" style="box-shadow: 0 4px 20px rgba(0,0,0,0.06);">
+          <div class="h-1.5 bg-gradient-to-r from-green-400 to-green-600"></div>
+          <div class="p-6 bg-white">
+            <div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold mb-4" style="background: #fef3c7; color: #92400e;">
+              <svg class="w-3 h-3" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.828a1 1 0 101.415-1.414L11 9.586V6z" clip-rule="evenodd"/></svg>
+              EXPIRES MARCH 2026
+            </div>
+            <h3 class="font-extrabold text-gray-900 text-xl mb-2">EV Charger Rebate: Up to 46% Off</h3>
+            <p class="text-sm text-gray-500 mb-4">Alberta EVCP covers up to 46% for businesses installing EV chargers. Don't miss this before it ends.</p>
+            <a href="/services/ev-charger" class="font-bold text-sm text-blue-600 hover:text-blue-800 inline-flex items-center gap-1">Learn More →</a>
+          </div>
+        </div>
+        <!-- New Code -->
+        <div class="relative rounded-2xl overflow-hidden" style="box-shadow: 0 4px 20px rgba(0,0,0,0.06);">
+          <div class="h-1.5 bg-gradient-to-r from-blue-400 to-blue-600"></div>
+          <div class="p-6 bg-white">
+            <div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold mb-4" style="background: #dbeafe; color: #1e40af;">
+              <svg class="w-3 h-3" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd"/></svg>
+              NOW IN EFFECT
+            </div>
+            <h3 class="font-extrabold text-gray-900 text-xl mb-2">New 2024 Electrical Code</h3>
+            <p class="text-sm text-gray-500 mb-4">New rules for EV chargers, arc fault protection, and more. Is your home compliant?</p>
+            <a href="/contact" class="font-bold text-sm text-blue-600 hover:text-blue-800 inline-flex items-center gap-1">Book a Code Check →</a>
+          </div>
+        </div>
+        <!-- Winter -->
+        <div class="relative rounded-2xl overflow-hidden" style="box-shadow: 0 4px 20px rgba(0,0,0,0.06);">
+          <div class="h-1.5 bg-gradient-to-r from-orange-400 to-red-500"></div>
+          <div class="p-6 bg-white">
+            <div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold mb-4" style="background: #fef2f2; color: #991b1b;">
+              <svg class="w-3 h-3" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M12.395 2.553a1 1 0 00-1.45-.385c-.345.23-.614.558-.822.88-.214.33-.403.713-.57 1.116-.334.804-.614 1.768-.84 2.734a31.365 31.365 0 00-.613 3.58 2.64 2.64 0 01-.945-1.067c-.328-.68-.398-1.534-.398-2.654A1 1 0 005.05 6.05 6.981 6.981 0 003 11a7 7 0 1011.95-4.95c-.592-.591-.98-.985-1.348-1.467-.363-.476-.724-1.063-1.207-2.03zM12.12 15.12A3 3 0 017 13s.879.5 2.5.5c0-1 .5-4 1.25-4.5.5 1 .786 1.293 1.371 1.879A2.99 2.99 0 0113 13a2.99 2.99 0 01-.879 2.121z" clip-rule="evenodd"/></svg>
+              BE PREPARED
+            </div>
+            <h3 class="font-extrabold text-gray-900 text-xl mb-2">Winter-Ready Your Home</h3>
+            <p class="text-sm text-gray-500 mb-4">At -40°C, a dead furnace circuit is life-threatening. Get a generator installed before the cold hits.</p>
+            <a href="/services/generator" class="font-bold text-sm text-blue-600 hover:text-blue-800 inline-flex items-center gap-1">Generator Options →</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================ -->
+  <!-- WHY GP ELECTRIC -->
+  <!-- ============================================================ -->
+  <section class="py-24 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16">
+        <p class="font-bold text-sm uppercase tracking-[0.15em] mb-3" style="color: #1e6fbf;">The GP Electric Difference</p>
+        <h2 class="text-4xl sm:text-5xl font-black text-gray-900 mb-5">
+          Why Grande Prairie Trusts Us
+        </h2>
+      </div>
+
+      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+        {[
+          { icon: 'M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z', title: 'We Show Up On Time', text: 'When we say we\'ll be there, we\'re there. No excuses. No rescheduling. Your time matters.', color: '#1e6fbf' },
+          { icon: 'M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z', title: 'Licensed & Insured', text: 'Fully licensed, bonded, and insured. Every job meets the 2024 Canadian Electrical Code.', color: '#22c55e' },
+          { icon: 'M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z', title: 'Clean Job Sites', text: 'We leave your home or business cleaner than we found it. Every single time.', color: '#f59e0b' },
+          { icon: 'M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0zM15 11a3 3 0 11-6 0 3 3 0 016 0z', title: 'Local & Accountable', text: 'We live here, work here, raise our families here. Our reputation is everything.', color: '#8b5cf6' },
+        ].map(({ icon, title, text, color }) => (
+          <div class="p-7 rounded-2xl border border-gray-100 hover:shadow-xl hover:-translate-y-2 transition-all duration-300 bg-white" style="box-shadow: 0 2px 12px rgba(0,0,0,0.04);">
+            <div class="w-14 h-14 rounded-2xl flex items-center justify-center mb-5" style={`background: ${color}12; border: 1px solid ${color}25;`}>
+              <svg class="w-7 h-7" style={`color: ${color};`} fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d={icon}/></svg>
+            </div>
+            <h3 class="font-extrabold text-gray-900 text-lg mb-2">{title}</h3>
+            <p class="text-sm text-gray-500 leading-relaxed">{text}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================ -->
+  <!-- SERVICE AREAS -->
+  <!-- ============================================================ -->
+  <section class="relative py-24 bg-gray-50 overflow-hidden">
+    <!-- Faded home exterior background -->
+    <div class="absolute inset-0">
+      <img src="/images/home-exterior.jpg" alt="" class="absolute inset-0 w-full h-full object-cover opacity-[0.12]" loading="lazy" />
+      <div class="absolute inset-0 bg-gray-50/80"></div>
+    </div>
+    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16">
+        <p class="font-bold text-sm uppercase tracking-[0.15em] mb-3" style="color: #1e6fbf;">Where We Work</p>
+        <h2 class="text-4xl sm:text-5xl font-black text-gray-900 mb-5">
+          Serving 10+ Communities
+        </h2>
+        <p class="text-lg text-gray-500 max-w-2xl mx-auto">
+          In town or on an acreage — we cover the entire Peace Country region.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-4">
+        {[
+          { name: 'Grande Prairie', slug: 'grande-prairie', primary: true },
+          { name: 'Clairmont', slug: 'clairmont' },
+          { name: 'Sexsmith', slug: 'sexsmith' },
+          { name: 'Beaverlodge', slug: 'beaverlodge' },
+          { name: 'Wembley', slug: 'wembley' },
+          { name: 'Hythe', slug: 'hythe' },
+          { name: 'Spirit River', slug: 'spirit-river' },
+          { name: 'Valleyview', slug: 'valleyview' },
+          { name: 'Fairview', slug: 'fairview' },
+          { name: 'Peace River', slug: 'peace-river' },
+        ].map((area) => (
+          <a
+            href={`/areas/${area.slug}`}
+            class="group text-center p-5 rounded-2xl transition-all duration-300 hover:-translate-y-1 hover:shadow-lg"
+            style={area.primary
+              ? 'background: linear-gradient(135deg, #1e6fbf, #3b8de0); box-shadow: 0 8px 24px rgba(30,111,191,0.3); color: white;'
+              : 'background: white; border: 1px solid #e5e7eb; color: #374151;'}
+          >
+            <svg class={`w-6 h-6 mx-auto mb-2 ${area.primary ? 'text-blue-200' : 'text-gray-400 group-hover:text-blue-500'} transition-colors`} fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+            <span class="font-bold text-sm">{area.name}</span>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================ -->
+  <!-- FINAL CTA -->
+  <!-- ============================================================ -->
+  <section class="relative py-24 overflow-hidden" style="background: #0a0f1a;">
+    <div class="absolute inset-0">
+      <img src="/images/tools-bg.jpg" alt="" class="absolute inset-0 w-full h-full object-cover opacity-25" loading="lazy" />
+      <div class="absolute inset-0" style="background: linear-gradient(135deg, rgba(10,15,26,0.78) 0%, rgba(13,21,38,0.75) 100%);"></div>
+    </div>
+    <div class="absolute inset-0">
+      <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full" style="background: radial-gradient(circle, rgba(30,111,191,0.15) 0%, transparent 60%);"></div>
+    </div>
+    <div class="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h2 class="text-4xl sm:text-5xl font-black text-white mb-5">Ready to Get Started?</h2>
+      <p class="text-xl text-gray-300 mb-10 max-w-2xl mx-auto">
+        Whether it's a quick repair or a full shop build — get a free quote today. No pressure, no obligation.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center mb-8">
+        <a href="/contact" class="group inline-flex items-center justify-center gap-3 px-10 py-5 rounded-2xl font-bold text-lg text-white transition-all duration-300 hover:-translate-y-1" style="background: linear-gradient(135deg, #1e6fbf 0%, #3b8de0 100%); box-shadow: 0 8px 32px rgba(30,111,191,0.4);">
+          Get a Free Quote
+          <svg class="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+        </a>
+        <a href="tel:7808823046" class="group inline-flex items-center justify-center gap-3 px-10 py-5 rounded-2xl font-bold text-lg text-white transition-all duration-300 hover:-translate-y-1" style="background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.12);">
+          <svg class="w-6 h-6 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+          780-882-3046
+        </a>
+      </div>
+      <p class="text-sm text-gray-500">
+        Serving Grande Prairie, Clairmont, Sexsmith, Beaverlodge, and the entire Peace Country.
+      </p>
+    </div>
+  </section>
+
+</BaseLayout>

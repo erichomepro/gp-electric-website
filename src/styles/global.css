@@ -1,0 +1,113 @@
+@import "tailwindcss";
+
+@theme {
+  /* GP Electric Brand Colors */
+  --color-brand-black: #0a0a0a;
+  --color-brand-blue: #1e6fbf;
+  --color-brand-blue-dark: #154d87;
+  --color-brand-blue-light: #3b8de0;
+  --color-brand-electric: #4da3ff;
+  --color-brand-white: #ffffff;
+  --color-brand-gray-50: #f8fafc;
+  --color-brand-gray-100: #f1f5f9;
+  --color-brand-gray-200: #e2e8f0;
+  --color-brand-gray-300: #cbd5e1;
+  --color-brand-gray-500: #64748b;
+  --color-brand-gray-600: #475569;
+  --color-brand-gray-700: #334155;
+  --color-brand-gray-800: #1e293b;
+  --color-brand-gray-900: #0f172a;
+  --color-brand-yellow: #fbbf24;
+  --color-brand-orange: #f97316;
+  --color-brand-red: #ef4444;
+  --color-brand-green: #22c55e;
+
+  /* Fonts */
+  --font-heading: 'Inter', system-ui, -apple-system, sans-serif;
+  --font-body: 'Inter', system-ui, -apple-system, sans-serif;
+
+  /* Animations */
+  --animate-fade-in: fade-in 0.6s ease-out both;
+  --animate-fade-in-up: fade-in-up 0.6s ease-out both;
+  --animate-slide-in-left: slide-in-left 0.6s ease-out both;
+  --animate-slide-in-right: slide-in-right 0.6s ease-out both;
+  --animate-pulse-glow: pulse-glow 2s ease-in-out infinite;
+  --animate-count-up: count-up 0.4s ease-out both;
+  --animate-electric-flicker: electric-flicker 3s ease-in-out infinite;
+}
+
+@keyframes fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes fade-in-up {
+  from { opacity: 0; transform: translateY(24px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slide-in-left {
+  from { opacity: 0; transform: translateX(-32px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes slide-in-right {
+  from { opacity: 0; transform: translateX(32px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes pulse-glow {
+  0%, 100% { box-shadow: 0 0 20px rgba(30, 111, 191, 0.3); }
+  50% { box-shadow: 0 0 40px rgba(30, 111, 191, 0.6), 0 0 60px rgba(30, 111, 191, 0.2); }
+}
+
+@keyframes electric-flicker {
+  0%, 100% { opacity: 1; }
+  92% { opacity: 1; }
+  93% { opacity: 0.6; }
+  94% { opacity: 1; }
+  96% { opacity: 0.7; }
+  97% { opacity: 1; }
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+a[href^="tel:"] {
+  white-space: nowrap;
+}
+
+/* Intersection observer animation triggers */
+.reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Electric bolt SVG background pattern */
+.electric-grid {
+  background-image:
+    radial-gradient(circle at 20% 50%, rgba(30, 111, 191, 0.08) 0%, transparent 50%),
+    radial-gradient(circle at 80% 20%, rgba(77, 163, 255, 0.06) 0%, transparent 40%),
+    radial-gradient(circle at 60% 80%, rgba(30, 111, 191, 0.04) 0%, transparent 50%);
+}
+
+/* Gradient text */
+.text-gradient {
+  background: linear-gradient(135deg, #1e6fbf, #4da3ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Glass card effect */
+.glass {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}

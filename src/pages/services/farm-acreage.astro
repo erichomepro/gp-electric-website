@@ -1,0 +1,86 @@
+---
+import ServiceLayout from '../../layouts/ServiceLayout.astro';
+
+const services = [
+  { name: "Shop Wiring", description: "Complete electrical for new shops — service entrance, panels, 240V circuits for welders and compressors, lighting, and outlets." },
+  { name: "Barn & Livestock Building Electrical", description: "Lighting, ventilation fans, heated waterers, and power distribution for barns, shelters, and livestock buildings." },
+  { name: "Grain Bin & Dryer Circuits", description: "Dedicated circuits for grain bin fans, aeration systems, and grain dryers. Properly sized to handle the load." },
+  { name: "Underground Service Runs", description: "Buried power lines from your meter to shops, barns, grain bins, and outbuildings. Done right to last decades." },
+  { name: "Yard Lighting", description: "Yard lights, security lighting, motion-activated fixtures, and dusk-to-dawn lights for your entire yard site." },
+  { name: "Acreage Electrical Service", description: "New service entrances, meter base installations, and panel upgrades for rural properties and acreages." },
+  { name: "Well Pump & Water System Wiring", description: "Electrical for well pumps, pressure systems, cisterns, and water treatment equipment." },
+  { name: "Solar Panel Installation", description: "Farm solar installations with federal tax credits covering 20-30% of costs. Reduce your power bills permanently." },
+  { name: "Generator Installation", description: "Standby generators with automatic transfer switches. Keep your farm running when the grid goes down." },
+  { name: "Equipment Hookups", description: "Electrical connections for welders, air compressors, grain augers, and any other farm equipment." },
+];
+
+const faqs = [
+  { question: "How much does it cost to wire a new shop?", answer: "Shop wiring depends on the size, number of circuits, and what equipment you're running. A basic 40x60 shop might run $5,000-$10,000 for electrical, while a fully loaded shop with 400A service, welding circuits, and compressor circuits could be $15,000+. We provide free on-site quotes." },
+  { question: "Do you service acreages outside of Grande Prairie?", answer: "Yes. We serve the entire Peace Country region including Clairmont, Sexsmith, Beaverlodge, Wembley, Hythe, Spirit River, and beyond. If you're within our service area, we'll come to you." },
+  { question: "Can you do underground power runs?", answer: "Absolutely. We install underground electrical service runs to shops, barns, grain bins, and outbuildings. We handle everything from trenching coordination to the final connection." },
+  { question: "Are there rebates for farm solar installation?", answer: "Yes. The federal Solar Investment Tax Credit (ITC) covers 20-30% of installation costs for agricultural operations. Alberta also has the Clean Energy Improvement Program. We can walk you through the options during your free quote." },
+  { question: "What size service do I need for my shop?", answer: "It depends on what you're running. A shop with basic lighting and outlets might need 100A, but if you're running welders, compressors, and heaters, you'll likely need 200A or even 400A service. We'll assess your needs and recommend the right size." },
+];
+
+const relatedServices = [
+  { name: "Residential Electrical", href: "/services/residential" },
+  { name: "Panel Upgrades", href: "/services/panel-upgrades" },
+  { name: "Generator Installation", href: "/services/generator" },
+];
+---
+
+<ServiceLayout
+  title="Farm & Acreage Electrical Services in Grande Prairie"
+  description="Farm electrician in Grande Prairie & Peace Country. Shop wiring, barn electrical, grain bins, yard lighting, underground service, solar. Free quotes — 780-882-3046."
+  headline="Farm & Acreage Electrical Done Right the First Time"
+  subheadline="Farm & Acreage Electrical Services"
+  heroDescription="Peace Country farmers and acreage owners need an electrician who understands rural electrical. From wiring your new shop to running underground service to your grain bins — GP Electric has the experience to handle any farm electrical project, big or small."
+  services={services}
+  faqs={faqs}
+  relatedServices={relatedServices}
+>
+  <section slot="content" class="py-16 bg-brand-gray-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid lg:grid-cols-2 gap-12 items-center">
+        <div>
+          <h2 class="text-2xl sm:text-3xl font-extrabold text-brand-gray-900 mb-6">
+            Building a New Shop? Let's Talk Electrical.
+          </h2>
+          <p class="text-brand-gray-600 mb-4 leading-relaxed">
+            A shop is only as good as its electrical system. You need enough power for your welders, compressors, heaters, and lighting — and it needs to be done right so it lasts as long as the building.
+          </p>
+          <p class="text-brand-gray-600 mb-6 leading-relaxed">
+            GP Electric specializes in complete shop electrical packages. We'll design your system around what you actually need, install it to code, and make sure you've got power where you need it — from 240V welder circuits to LED high-bay lighting.
+          </p>
+          <div class="bg-brand-blue/5 border border-brand-blue/20 rounded-xl p-6">
+            <h3 class="font-bold text-brand-gray-900 mb-3">Complete Shop Electrical Package</h3>
+            <ul class="space-y-2 text-sm text-brand-gray-700">
+              <li class="flex items-center gap-2"><svg class="w-4 h-4 text-brand-blue shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg> Service entrance & panel</li>
+              <li class="flex items-center gap-2"><svg class="w-4 h-4 text-brand-blue shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg> LED high-bay lighting</li>
+              <li class="flex items-center gap-2"><svg class="w-4 h-4 text-brand-blue shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg> 240V welder & compressor circuits</li>
+              <li class="flex items-center gap-2"><svg class="w-4 h-4 text-brand-blue shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg> Outlets throughout</li>
+              <li class="flex items-center gap-2"><svg class="w-4 h-4 text-brand-blue shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg> Exterior & yard lighting</li>
+            </ul>
+            <a href="/contact" class="inline-flex items-center gap-2 bg-brand-blue hover:bg-brand-blue-dark text-brand-white px-5 py-2.5 rounded-lg font-bold text-sm mt-4 transition-colors">
+              Get a Quote for Your Shop Build
+            </a>
+          </div>
+        </div>
+        <div class="space-y-4">
+          <div class="bg-brand-white rounded-xl border border-brand-gray-200 p-6">
+            <div class="text-3xl font-black text-brand-blue mb-1">20-30%</div>
+            <div class="text-sm text-brand-gray-600">Federal tax credit for farm solar installations</div>
+          </div>
+          <div class="bg-brand-white rounded-xl border border-brand-gray-200 p-6">
+            <div class="text-3xl font-black text-brand-blue mb-1">10+</div>
+            <div class="text-sm text-brand-gray-600">Rural communities we serve across the Peace Country</div>
+          </div>
+          <div class="bg-brand-white rounded-xl border border-brand-gray-200 p-6">
+            <div class="text-3xl font-black text-brand-blue mb-1">24/7</div>
+            <div class="text-sm text-brand-gray-600">Emergency service — because farm life doesn't run 9 to 5</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</ServiceLayout>

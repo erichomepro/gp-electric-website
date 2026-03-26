@@ -1,0 +1,149 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import CTASection from '../../components/CTASection.astro';
+import { serviceAreas } from '../../data/service-areas';
+import type { GetStaticPaths } from 'astro';
+
+export const getStaticPaths: GetStaticPaths = () => {
+  return serviceAreas.map((area) => ({
+    params: { slug: area.slug },
+    props: { area }
+  }));
+};
+
+const { area } = Astro.props;
+
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "Electrician",
+  "name": "GP Electric Inc",
+  "url": `https://gpelectricinc.com/areas/${area.slug}`,
+  "telephone": "+1-780-882-3046",
+  "areaServed": {
+    "@type": "City",
+    "name": area.name,
+    "containedInPlace": {
+      "@type": "AdministrativeArea",
+      "name": "Alberta, Canada"
+    }
+  },
+  "description": `Licensed electrician serving ${area.name}, Alberta. Residential, commercial, industrial, and farm electrical services.`
+};
+---
+
+<BaseLayout
+  title={`Electrician in ${area.name}, Alberta`}
+  description={`Licensed electrician in ${area.name}. Residential, commercial, farm & emergency electrical services. GP Electric Inc — serving ${area.name} and the Peace Country. Call 780-882-3046.`}
+  schema={schema}
+>
+  <!-- Hero -->
+  <section class="relative overflow-hidden py-16 sm:py-24" style="background: #0a0f1a;">
+    <div class="absolute inset-0">
+      <img src="/images/home-exterior.jpg" alt="" class="absolute inset-0 w-full h-full object-cover opacity-20" loading="eager" />
+      <div class="absolute inset-0" style="background: linear-gradient(135deg, rgba(10,15,26,0.80) 0%, rgba(13,21,38,0.75) 100%);"></div>
+    </div>
+    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="max-w-3xl">
+        <p class="text-brand-blue font-semibold text-sm uppercase tracking-wider mb-3">
+          Serving {area.name} & Surrounding Area
+        </p>
+        <h1 class="text-3xl sm:text-4xl lg:text-5xl font-black text-brand-white leading-tight mb-6">
+          Licensed Electrician in {area.name} — GP Electric Inc
+        </h1>
+        <p class="text-lg text-brand-gray-300 mb-4 leading-relaxed">
+          {area.description}
+        </p>
+        <div class="flex flex-wrap gap-4 text-sm text-brand-gray-400 mb-8">
+          <span class="flex items-center gap-1.5">
+            <svg class="w-4 h-4 text-brand-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+            Population: {area.population}
+          </span>
+          <span class="flex items-center gap-1.5">
+            <svg class="w-4 h-4 text-brand-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+            {area.distance}
+          </span>
+        </div>
+        <div class="flex flex-col sm:flex-row gap-4">
+          <a href="/contact" class="inline-flex items-center justify-center gap-2 bg-brand-blue hover:bg-brand-blue-dark text-brand-white px-6 py-3.5 rounded-lg font-bold transition-colors">
+            Get a Free Quote for {area.name}
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+          </a>
+          <a href="tel:7808823046" class="inline-flex items-center justify-center gap-2 border-2 border-brand-gray-600 hover:border-brand-blue text-brand-white px-6 py-3.5 rounded-lg font-bold transition-colors">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+            780-882-3046
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Local Context -->
+  <section class="py-16 bg-brand-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid lg:grid-cols-3 gap-10">
+        <div class="lg:col-span-2">
+          <h2 class="text-2xl sm:text-3xl font-extrabold text-brand-gray-900 mb-6">
+            Electrical Services in {area.name}
+          </h2>
+          <p class="text-brand-gray-600 mb-6 leading-relaxed">
+            {area.localContext}
+          </p>
+          <h3 class="font-bold text-brand-gray-900 text-lg mb-4">What {area.name} Needs From an Electrician</h3>
+          <div class="grid sm:grid-cols-2 gap-3">
+            {area.electricalNeeds.map((need) => (
+              <div class="flex items-start gap-3 p-3 rounded-lg bg-brand-gray-50">
+                <svg class="w-5 h-5 text-brand-blue shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                <span class="text-sm text-brand-gray-700">{need}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <!-- Sidebar -->
+        <div class="space-y-6">
+          <div class="bg-brand-blue rounded-2xl p-6 text-brand-white">
+            <h3 class="font-bold text-lg mb-2">Need an Electrician in {area.name}?</h3>
+            <p class="text-blue-100 text-sm mb-4">Call GP Electric for a free, no-obligation quote. We serve {area.name} and the surrounding area.</p>
+            <a href="tel:7808823046" class="flex items-center justify-center gap-2 bg-brand-white text-brand-blue px-5 py-3 rounded-lg font-bold text-sm hover:bg-blue-50 transition-colors">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+              780-882-3046
+            </a>
+          </div>
+
+          <div class="bg-brand-gray-50 rounded-2xl p-6 border border-brand-gray-200">
+            <h3 class="font-bold text-brand-gray-900 mb-4">Our Services</h3>
+            <ul class="space-y-2 text-sm">
+              <li><a href="/services/residential" class="text-brand-gray-600 hover:text-brand-blue transition-colors">Residential Electrical</a></li>
+              <li><a href="/services/commercial" class="text-brand-gray-600 hover:text-brand-blue transition-colors">Commercial Electrical</a></li>
+              <li><a href="/services/industrial" class="text-brand-gray-600 hover:text-brand-blue transition-colors">Industrial Electrical</a></li>
+              <li><a href="/services/farm-acreage" class="text-brand-gray-600 hover:text-brand-blue transition-colors">Farm & Acreage</a></li>
+              <li><a href="/services/emergency" class="text-brand-gray-600 hover:text-brand-blue transition-colors">24/7 Emergency</a></li>
+              <li><a href="/services/panel-upgrades" class="text-brand-gray-600 hover:text-brand-blue transition-colors">Panel Upgrades</a></li>
+              <li><a href="/services/ev-charger" class="text-brand-gray-600 hover:text-brand-blue transition-colors">EV Charger Installation</a></li>
+              <li><a href="/services/generator" class="text-brand-gray-600 hover:text-brand-blue transition-colors">Generator Installation</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Other Service Areas -->
+  <section class="py-12 bg-brand-gray-50 border-t border-brand-gray-200">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h3 class="font-bold text-brand-gray-900 mb-6">We Also Serve</h3>
+      <div class="flex flex-wrap gap-3">
+        {serviceAreas.filter(a => a.slug !== area.slug).map((a) => (
+          <a href={`/areas/${a.slug}`} class="px-4 py-2 rounded-lg border border-brand-gray-200 bg-brand-white text-sm font-medium text-brand-gray-700 hover:border-brand-blue hover:text-brand-blue transition-colors">
+            {a.name}
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <CTASection
+    headline={`Ready to Start Your ${area.name} Project?`}
+    subtext={`GP Electric serves ${area.name} with the same quality and responsiveness as our Grande Prairie customers. Get a free quote today.`}
+  />
+</BaseLayout>

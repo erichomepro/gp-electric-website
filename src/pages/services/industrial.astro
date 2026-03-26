@@ -1,0 +1,40 @@
+---
+import ServiceLayout from '../../layouts/ServiceLayout.astro';
+
+const services = [
+  { name: "Oil & Gas Facility Electrical", description: "Well pad electrical, compressor stations, battery sites, and gas processing plant wiring." },
+  { name: "Instrumentation", description: "Installation, calibration, and maintenance of industrial instrumentation and control systems." },
+  { name: "Motor Controls & VFDs", description: "Motor starters, variable frequency drives, soft starters, and motor control centre installation." },
+  { name: "Power Distribution Systems", description: "High-voltage distribution, transformers, switchgear, and industrial panel installations." },
+  { name: "Plant Maintenance & Shutdowns", description: "Scheduled maintenance, turnaround support, and emergency repairs for industrial facilities." },
+  { name: "Hazardous Area Wiring", description: "Class I, Division 1 & 2 installations for oil and gas, chemical, and grain handling facilities." },
+  { name: "Industrial Lighting", description: "High-bay lighting, explosion-proof fixtures, exterior area lighting, and LED retrofits." },
+  { name: "PLC & Automation Wiring", description: "Wiring for programmable logic controllers, SCADA systems, and automated processes." },
+  { name: "Generator & Backup Power", description: "Standby generator installation and automatic transfer switches for industrial facilities." },
+  { name: "New Construction & Expansions", description: "Complete electrical for new industrial buildings, warehouses, shops, and facility expansions." },
+];
+
+const faqs = [
+  { question: "Do you work on oil and gas sites?", answer: "Yes. GP Electric has experience with oil and gas facilities including well pads, compressor stations, battery sites, and processing plants. We understand the safety requirements and hazardous area classifications required for this work." },
+  { question: "Can you handle large industrial projects?", answer: "Absolutely. We have the capacity and experience for projects of all sizes — from small maintenance tasks to full facility electrical installations." },
+  { question: "Do you offer 24/7 emergency service for industrial clients?", answer: "Yes. Industrial downtime is expensive. We provide 24/7 emergency response for our industrial clients to get your operations back online as fast as possible." },
+  { question: "Are your electricians trained for hazardous areas?", answer: "Yes. Our team is trained and experienced in hazardous area installations per the Canadian Electrical Code, including Class I Division 1 and Division 2 areas." },
+];
+
+const relatedServices = [
+  { name: "Commercial Electrical", href: "/services/commercial" },
+  { name: "Generator Installation", href: "/services/generator" },
+  { name: "24/7 Emergency", href: "/services/emergency" },
+];
+---
+
+<ServiceLayout
+  title="Industrial Electrical Services in Grande Prairie"
+  description="Industrial electrician in Grande Prairie. Oil & gas, instrumentation, motor controls, plant maintenance, hazardous area wiring. GP Electric — 780-882-3046."
+  headline="Industrial Electrical Built for the Peace Country"
+  subheadline="Industrial Electrical Services"
+  heroDescription="The Montney formation is driving billions in investment across the Grande Prairie region. GP Electric provides the industrial electrical expertise that oil and gas, forestry, and manufacturing facilities demand — safely, on time, and to code."
+  services={services}
+  faqs={faqs}
+  relatedServices={relatedServices}
+/>

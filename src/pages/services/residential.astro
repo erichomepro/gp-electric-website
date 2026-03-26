@@ -1,0 +1,84 @@
+---
+import ServiceLayout from '../../layouts/ServiceLayout.astro';
+
+const services = [
+  { name: "Electrical Panel Upgrades", description: "Upgrade from 100A to 200A+ to handle modern electrical demands — EV chargers, hot tubs, shop heaters, and more." },
+  { name: "Home Rewiring", description: "Complete rewiring for older homes. Replace outdated aluminum or knob-and-tube wiring with safe, modern copper." },
+  { name: "Lighting Installation", description: "Recessed lighting, under-cabinet lights, exterior lighting, landscape lighting, and LED upgrades throughout your home." },
+  { name: "Outlet & Switch Installation", description: "New outlets, GFCI protection for kitchens and bathrooms, USB outlets, smart switches, and childproof receptacles." },
+  { name: "Hot Tub & Pool Wiring", description: "Dedicated circuits and proper GFCI protection for hot tubs, pools, and saunas. Done safe, done to code." },
+  { name: "Smart Home Electrical", description: "Smart lighting, automated switches, home theater wiring, whole-home audio, and smart thermostat installation." },
+  { name: "Basement Development Electrical", description: "Complete electrical for basement finishing — circuits, lighting, outlets, bathroom fans, and smoke detectors." },
+  { name: "Kitchen & Bathroom Renovations", description: "Dedicated circuits for appliances, GFCI outlets, under-cabinet lighting, exhaust fans, and heated floors." },
+  { name: "Smoke & Carbon Monoxide Detectors", description: "Hardwired smoke detectors and CO alarms with battery backup. Keep your family safe and meet code requirements." },
+  { name: "Ceiling Fan Installation", description: "New ceiling fan wiring and installation, including adding switches and proper support brackets." },
+];
+
+const faqs = [
+  { question: "How much does a panel upgrade cost in Grande Prairie?", answer: "Panel upgrades typically range from $2,500 to $5,000+ depending on the scope. A standard 100A to 200A upgrade runs around $3,000-$4,000. We provide free quotes so you know exactly what to expect before any work begins." },
+  { question: "How do I know if my home needs rewiring?", answer: "Signs include: frequent breaker trips, flickering lights, outlets that feel warm, burning smells near outlets, two-prong outlets (no ground), aluminum wiring (common in 1960s-70s homes), or a panel that's over 25 years old. If you notice any of these, call us for a free inspection." },
+  { question: "Do you do work on weekends or evenings?", answer: "Yes. We understand your schedule matters. We offer flexible scheduling including evenings and weekends for residential work. For emergencies, we're available 24/7." },
+  { question: "Are you licensed to do electrical work in Alberta?", answer: "Absolutely. GP Electric is fully licensed, bonded, and insured. All our work meets the 2024 Canadian Electrical Code, and we pull all required permits." },
+  { question: "Do you offer free estimates?", answer: "Yes — every residential project starts with a free, no-obligation quote. We'll come to your home, assess the work needed, and give you a clear price before any work begins." },
+];
+
+const relatedServices = [
+  { name: "Panel Upgrades", href: "/services/panel-upgrades" },
+  { name: "EV Charger Installation", href: "/services/ev-charger" },
+  { name: "Generator Installation", href: "/services/generator" },
+  { name: "24/7 Emergency", href: "/services/emergency" },
+];
+---
+
+<ServiceLayout
+  title="Residential Electrical Services in Grande Prairie"
+  description="Licensed residential electrician in Grande Prairie. Panel upgrades, rewiring, lighting, outlets, smart home, hot tub wiring & more. Free quotes. Call 780-882-3046."
+  headline="Your Home Deserves an Electrician You Can Trust"
+  subheadline="Residential Electrical Services"
+  heroDescription="From panel upgrades to complete rewiring, GP Electric handles every residential electrical need in Grande Prairie and the surrounding communities. Licensed, insured, and committed to doing the job right the first time."
+  services={services}
+  faqs={faqs}
+  relatedServices={relatedServices}
+>
+  <section slot="content" class="py-16 bg-brand-gray-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid lg:grid-cols-2 gap-12 items-center">
+        <div>
+          <h2 class="text-2xl sm:text-3xl font-extrabold text-brand-gray-900 mb-6">
+            Is Your Home's Electrical System Up to Code?
+          </h2>
+          <p class="text-brand-gray-600 mb-4 leading-relaxed">
+            The new 2024 Canadian Electrical Code came into effect in April 2025. If your home was built more than 10 years ago, your electrical system may not meet current safety standards — especially if you've added high-draw appliances like EV chargers, hot tubs, or shop heaters.
+          </p>
+          <p class="text-brand-gray-600 mb-6 leading-relaxed">
+            GP Electric offers a <strong>free home electrical health check</strong> to assess your panel, outlets, and overall electrical safety. No pressure, no obligation — just honest answers about the state of your home's electrical system.
+          </p>
+          <a href="/contact" class="inline-flex items-center gap-2 bg-brand-blue hover:bg-brand-blue-dark text-brand-white px-6 py-3 rounded-lg font-bold transition-colors">
+            Book Your Free Health Check
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+          </a>
+        </div>
+        <div class="bg-brand-white rounded-2xl shadow-lg p-8 border border-brand-gray-200">
+          <h3 class="font-bold text-brand-gray-900 text-lg mb-4">Warning Signs to Watch For</h3>
+          <ul class="space-y-3">
+            {[
+              "Breakers trip frequently or won't reset",
+              "Lights flicker when appliances turn on",
+              "Outlets feel warm or make buzzing sounds",
+              "Burning smell near outlets or panel",
+              "Using multiple power bars and extension cords",
+              "Home has aluminum wiring (1960s-70s)",
+              "Panel is over 25 years old",
+              "Two-prong outlets (no ground wire)"
+            ].map((item) => (
+              <li class="flex items-start gap-3">
+                <svg class="w-5 h-5 text-brand-red shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"/></svg>
+                <span class="text-sm text-brand-gray-700">{item}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+</ServiceLayout>

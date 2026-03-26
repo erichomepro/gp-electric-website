@@ -1,0 +1,56 @@
+---
+import ServiceLayout from '../../layouts/ServiceLayout.astro';
+
+const services = [
+  { name: "New Construction Electrical", description: "Complete electrical systems for new commercial buildings — from design to final inspection." },
+  { name: "Tenant Improvements", description: "Electrical modifications for new retail, restaurant, and office spaces. Lighting, power, data, and more." },
+  { name: "Lighting Retrofits & LED Upgrades", description: "Upgrade to energy-efficient LED lighting. Reduce your power bills and improve your workspace." },
+  { name: "Power Distribution", description: "Electrical panels, transformers, switchgear, and power distribution for commercial buildings." },
+  { name: "Emergency & Exit Lighting", description: "Code-compliant emergency lighting, exit signs, and battery backup systems." },
+  { name: "Data & Communication Wiring", description: "Structured cabling, network drops, server room wiring, and telephone systems." },
+  { name: "Parking Lot & Exterior Lighting", description: "Security lighting, pole lights, building-mounted fixtures, and landscape lighting for commercial properties." },
+  { name: "Fire Alarm Systems", description: "Installation, inspection, and maintenance of commercial fire alarm systems to meet Alberta code." },
+  { name: "Signage & Display Lighting", description: "Electrical for commercial signs, display cases, and storefront lighting." },
+  { name: "Preventive Maintenance", description: "Scheduled electrical maintenance programs to prevent costly downtime and extend equipment life." },
+];
+
+const faqs = [
+  { question: "Can you work around our business hours?", answer: "Absolutely. We understand downtime costs you money. We offer after-hours, weekend, and overnight scheduling for commercial clients to minimize disruption to your operations." },
+  { question: "Do you handle commercial permits and inspections?", answer: "Yes. We handle all permit applications and coordinate inspections with the local authority. You don't have to worry about the paperwork." },
+  { question: "What types of commercial buildings do you work on?", answer: "Everything from retail stores and restaurants to offices, warehouses, medical clinics, and multi-unit buildings. If it's commercial, we can handle it." },
+  { question: "Do you offer maintenance contracts?", answer: "Yes. We offer scheduled preventive maintenance programs tailored to your building. Regular maintenance prevents costly emergency repairs and keeps you code-compliant." },
+];
+
+const relatedServices = [
+  { name: "Industrial Electrical", href: "/services/industrial" },
+  { name: "24/7 Emergency", href: "/services/emergency" },
+  { name: "EV Charger Installation", href: "/services/ev-charger" },
+];
+---
+
+<ServiceLayout
+  title="Commercial Electrical Services in Grande Prairie"
+  description="Licensed commercial electrician in Grande Prairie. Tenant improvements, new construction, lighting retrofits, power distribution & more. Call GP Electric at 780-882-3046."
+  headline="Commercial Electrical That Keeps Your Business Running"
+  subheadline="Commercial Electrical Services"
+  heroDescription="Grande Prairie is the business hub for over 300,000 people in northwestern Alberta. Whether you're opening a new location, renovating, or need reliable maintenance — GP Electric delivers commercial electrical that meets your timeline and budget."
+  services={services}
+  faqs={faqs}
+  relatedServices={relatedServices}
+>
+  <section slot="content" class="py-16 bg-brand-gray-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="max-w-3xl">
+        <h2 class="text-2xl sm:text-3xl font-extrabold text-brand-gray-900 mb-6">
+          Your Business Can't Afford Electrical Problems
+        </h2>
+        <p class="text-brand-gray-600 mb-4 leading-relaxed">
+          When your power goes down, your revenue stops. When your lighting is poor, customers leave. When your electrical isn't up to code, you're at risk. GP Electric understands what's at stake for Grande Prairie businesses.
+        </p>
+        <p class="text-brand-gray-600 mb-6 leading-relaxed">
+          We work with retail, restaurants, offices, warehouses, medical clinics, and more — delivering reliable commercial electrical that meets code, stays on schedule, and keeps your business running without interruption.
+        </p>
+      </div>
+    </div>
+  </section>
+</ServiceLayout>

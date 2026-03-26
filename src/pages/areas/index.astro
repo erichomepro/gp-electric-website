@@ -1,0 +1,50 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import CTASection from '../../components/CTASection.astro';
+import { serviceAreas } from '../../data/service-areas';
+
+const description = "GP Electric Inc serves Grande Prairie, Clairmont, Sexsmith, Beaverlodge, Wembley, Hythe, Spirit River, Valleyview, Fairview & Peace River. Licensed electrician — 780-882-3046.";
+---
+
+<BaseLayout title="Service Areas" description={description}>
+  <section class="relative overflow-hidden py-16 sm:py-24" style="background: #0a0f1a;">
+    <div class="absolute inset-0">
+      <img src="/images/home-exterior.jpg" alt="" class="absolute inset-0 w-full h-full object-cover opacity-20" loading="eager" />
+      <div class="absolute inset-0" style="background: linear-gradient(135deg, rgba(10,15,26,0.80) 0%, rgba(13,21,38,0.75) 100%);"></div>
+    </div>
+    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="max-w-3xl">
+        <p class="text-brand-blue font-semibold text-sm uppercase tracking-wider mb-3">GP Electric Inc</p>
+        <h1 class="text-3xl sm:text-4xl lg:text-5xl font-black text-brand-white leading-tight mb-6">
+          Serving Grande Prairie & the Entire Peace Country
+        </h1>
+        <p class="text-lg text-brand-gray-300 leading-relaxed">
+          From downtown Grande Prairie to rural acreages across the Peace Country — GP Electric provides licensed electrical services to over 120,000 people across 10+ communities.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 bg-brand-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid md:grid-cols-2 gap-6">
+        {serviceAreas.map((area) => (
+          <a href={`/areas/${area.slug}`} class="group p-6 rounded-2xl border border-brand-gray-200 hover:border-brand-blue hover:shadow-lg transition-all">
+            <div class="flex items-start justify-between mb-3">
+              <h2 class="text-xl font-bold text-brand-gray-900 group-hover:text-brand-blue transition-colors">{area.name}</h2>
+              <span class="text-xs font-medium text-brand-gray-500 bg-brand-gray-100 px-2.5 py-1 rounded-full">{area.distance}</span>
+            </div>
+            <p class="text-sm text-brand-gray-500 mb-3">Population: {area.population}</p>
+            <p class="text-sm text-brand-gray-600 mb-4 line-clamp-2">{area.uniqueAngle}</p>
+            <span class="inline-flex items-center gap-1 text-sm font-semibold text-brand-blue">
+              View Services for {area.name}
+              <svg class="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+            </span>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <CTASection />
+</BaseLayout>

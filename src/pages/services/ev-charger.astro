@@ -1,0 +1,54 @@
+---
+import ServiceLayout from '../../layouts/ServiceLayout.astro';
+
+const services = [
+  { name: "Home Level 2 Charger Installation", description: "Install a 240V Level 2 charger in your garage or carport. Charge your EV overnight — wake up with a full battery every morning." },
+  { name: "Commercial EV Charger Installation", description: "Offer EV charging at your business. Attract customers and employees with on-site charging stations." },
+  { name: "Multi-Unit Residential Charging", description: "Condo and apartment EV charging solutions. Dedicated or shared charging infrastructure for multi-unit buildings." },
+  { name: "Panel Upgrade for EV", description: "Many homes need a panel upgrade to support a Level 2 charger. We handle the full project — panel and charger." },
+  { name: "Fleet Charging Stations", description: "Electrifying your fleet? We design and install multi-vehicle charging setups for businesses transitioning to EVs." },
+  { name: "NEMA 14-50 Outlet Installation", description: "Simple and affordable — we install a 240V outlet so you can plug in your portable EV charger." },
+];
+
+const faqs = [
+  { question: "How much does home EV charger installation cost?", answer: "A typical home Level 2 EV charger installation runs $800-$2,000 for the electrical work (not including the charger unit itself). If a panel upgrade is needed, that adds $2,500-$4,500. We provide free quotes with an exact price." },
+  { question: "Are there rebates for EV charger installation?", answer: "Yes — for commercial and multi-unit residential installations, the Alberta EVCP program offers up to 46% funding. This program runs until March 2026. Individual home installations don't currently qualify for provincial rebates, but check with your employer about workplace programs." },
+  { question: "Do I need a panel upgrade for an EV charger?", answer: "It depends on your current panel. Level 2 chargers typically need a 40A or 50A circuit. If your panel is 100A and already near capacity, an upgrade to 200A is recommended. We'll assess your panel during the free quote." },
+  { question: "How long does EV charger installation take?", answer: "Most home installations take 2-4 hours. If a panel upgrade is needed, add a full day for that work." },
+  { question: "What EV charger brands do you install?", answer: "We can install any UL/CSA-listed EV charger. Popular brands include Tesla Wall Connector, ChargePoint, Grizzl-E (Canadian-made), FLO, and Juicebox. We can help you choose the right one for your vehicle and budget." },
+];
+
+const relatedServices = [
+  { name: "Panel Upgrades", href: "/services/panel-upgrades" },
+  { name: "Residential Electrical", href: "/services/residential" },
+  { name: "Commercial Electrical", href: "/services/commercial" },
+];
+---
+
+<ServiceLayout
+  title="EV Charger Installation in Grande Prairie"
+  description="EV charger installation in Grande Prairie. Home & commercial Level 2 chargers. Up to 46% rebates for businesses. Free quotes. GP Electric — 780-882-3046."
+  headline="Charge Your EV at Home. Wake Up Full Every Morning."
+  subheadline="EV Charger Installation"
+  heroDescription="Electric vehicles are growing in Grande Prairie. Whether you need a home charger in your garage or commercial charging stations at your business, GP Electric installs it right — with proper circuits, GFCI protection, and code-compliant wiring."
+  services={services}
+  faqs={faqs}
+  relatedServices={relatedServices}
+>
+  <section slot="content" class="py-16 bg-brand-gray-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="bg-brand-green/5 border border-brand-green/20 rounded-2xl p-8 max-w-3xl">
+        <h2 class="text-xl font-bold text-brand-gray-900 mb-3">Business Owners: Up to 46% Rebate on EV Chargers</h2>
+        <p class="text-brand-gray-600 mb-4">
+          The Alberta Electric Vehicle Charging Program (EVCP) covers up to 46% of costs for businesses, municipalities, condos, and Indigenous communities installing EV charging stations. This program runs until March 31, 2026 — time is limited.
+        </p>
+        <p class="text-brand-gray-600 mb-6">
+          GP Electric can help you plan, install, and apply for rebate funding. Get a free consultation to see how much you could save.
+        </p>
+        <a href="/contact" class="inline-flex items-center gap-2 bg-brand-blue hover:bg-brand-blue-dark text-brand-white px-6 py-3 rounded-lg font-bold transition-colors">
+          Get a Free EV Charger Consultation
+        </a>
+      </div>
+    </div>
+  </section>
+</ServiceLayout>

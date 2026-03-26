@@ -1,0 +1,35 @@
+---
+import ServiceLayout from '../../layouts/ServiceLayout.astro';
+
+const services = [
+  { name: "Pressure Washer Electrical", description: "Dedicated circuits and proper electrical hookups for commercial and industrial pressure washing equipment." },
+  { name: "Pump Installations", description: "Electrical for water pumps, sump pumps, sewage pumps, and irrigation systems." },
+  { name: "Air Conditioner Electrical", description: "Dedicated circuits, disconnect switches, and proper wiring for residential and commercial AC units." },
+  { name: "Hot Tub Wiring", description: "GFCI-protected circuits and proper electrical hookups for hot tubs and swim spas." },
+  { name: "Well Pump Wiring", description: "Submersible and jet pump electrical — new installations, replacements, and troubleshooting." },
+  { name: "Equipment Hookups", description: "Electrical connections for any specialized equipment — compressors, heaters, shop equipment, and more." },
+];
+
+const faqs = [
+  { question: "Do I need a dedicated circuit for my air conditioner?", answer: "Yes. Most central air conditioners require a dedicated 240V circuit with a proper disconnect switch. Window units may run on a dedicated 120V circuit. We'll assess your needs and install the right circuit." },
+  { question: "Can you wire my hot tub?", answer: "Absolutely. Hot tubs require a dedicated GFCI-protected circuit — usually 240V, 40A or 50A. We handle the full installation from panel to tub, including the GFCI disconnect required by code." },
+  { question: "What's involved in a well pump electrical installation?", answer: "We install the electrical from your panel to the pressure switch and pump, including the control box for submersible pumps. We size the wiring and breaker based on your pump's horsepower and distance." },
+];
+
+const relatedServices = [
+  { name: "Residential Electrical", href: "/services/residential" },
+  { name: "Farm & Acreage", href: "/services/farm-acreage" },
+  { name: "Commercial Electrical", href: "/services/commercial" },
+];
+---
+
+<ServiceLayout
+  title="Pumps & Pressure Equipment Electrical in Grande Prairie"
+  description="Electrical for pumps, pressure washers, air conditioners, hot tubs & equipment in Grande Prairie. Licensed electrician. GP Electric — 780-882-3046."
+  headline="Specialized Equipment Needs Proper Power"
+  subheadline="Pumps, Pressure & Equipment Electrical"
+  heroDescription="Pressure washers, pumps, air conditioners, hot tubs — they all need dedicated circuits and proper electrical hookups to run safely and efficiently. GP Electric handles the electrical side so your equipment performs the way it should."
+  services={services}
+  faqs={faqs}
+  relatedServices={relatedServices}
+/>
