@@ -20,7 +20,11 @@ const formattedDate = post.data.pubDate.toLocaleDateString('en-CA', {
   day: 'numeric',
 });
 
-const siteUrl = 'https://gpelectricinc.com';
+// Estimate reading time from raw markdown body
+const wordCount = post.body ? post.body.split(/\s+/).length : 0;
+const readingTime = Math.max(1, Math.ceil(wordCount / 230));
+
+const siteUrl = 'https://www.gpelectricinc.com';
 
 const articleSchema = {
   "@context": "https://schema.org",
@@ -161,44 +165,442 @@ const schemas = [articleSchema, faqSchema].filter(Boolean);
     <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
   )}
 
-  <section class="relative overflow-hidden py-16 sm:py-24" style="background: #0a0f1a;">
+  <!-- Reading Progress Bar -->
+  <div id="progress-bar" class="fixed top-0 left-0 h-1 z-50 transition-none" style="width: 0%; background: linear-gradient(90deg, #1e6fbf, #4da3ff);"></div>
+
+  <!-- Hero Section -->
+  <section class="relative overflow-hidden py-20 sm:py-28" style="background: #0a0f1a;">
     <div class="absolute inset-0">
-      <img src="/images/tools-bg.jpg" alt="" class="absolute inset-0 w-full h-full object-cover opacity-20" loading="eager" />
-      <div class="absolute inset-0" style="background: linear-gradient(135deg, rgba(10,15,26,0.80) 0%, rgba(13,21,38,0.75) 100%);"></div>
+      <img src="/images/tools-bg.jpg" alt="GP Electric Inc electrical expertise and tools" class="absolute inset-0 w-full h-full object-cover opacity-15" loading="eager" />
+      <div class="absolute inset-0" style="background: linear-gradient(180deg, rgba(10,15,26,0.90) 0%, rgba(10,15,26,0.70) 50%, rgba(10,15,26,0.95) 100%);"></div>
     </div>
+    <!-- Decorative accent line -->
+    <div class="absolute bottom-0 left-0 right-0 h-1" style="background: linear-gradient(90deg, transparent, #1e6fbf, #4da3ff, #1e6fbf, transparent);"></div>
+
     <div class="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="mb-6">
-        <a href="/blog" class="inline-flex items-center gap-2 text-brand-blue hover:text-brand-blue-light text-sm font-medium transition-colors">
-          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg>
+      <div class="mb-8">
+        <a href="/blog" class="inline-flex items-center gap-2 text-brand-gray-400 hover:text-brand-blue text-sm font-medium transition-colors group">
+          <svg class="w-4 h-4 transition-transform group-hover:-translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg>
           Back to Blog
         </a>
       </div>
-      <p class="text-brand-blue font-semibold text-sm uppercase tracking-wider mb-3">{formattedDate}</p>
-      <h1 class="text-3xl sm:text-4xl lg:text-5xl font-black text-brand-white leading-tight mb-4">
+
+      <!-- Meta badges -->
+      <div class="flex flex-wrap items-center gap-3 mb-6">
+        <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-wider" style="background: rgba(30, 111, 191, 0.15); color: #4da3ff; border: 1px solid rgba(30, 111, 191, 0.3);">
+          <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
+          {formattedDate}
+        </span>
+        <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-wider" style="background: rgba(30, 111, 191, 0.15); color: #4da3ff; border: 1px solid rgba(30, 111, 191, 0.3);">
+          <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+          {readingTime} min read
+        </span>
+      </div>
+
+      <h1 class="text-3xl sm:text-4xl lg:text-5xl font-black text-white leading-tight mb-6" style="letter-spacing: -0.02em;">
         {post.data.title}
       </h1>
-      <p class="text-lg text-brand-gray-300 leading-relaxed">
+
+      <p class="text-lg sm:text-xl leading-relaxed mb-8 max-w-3xl" style="color: #cbd5e1;">
         {post.data.description}
       </p>
-      <p class="text-sm text-brand-gray-500 mt-4">By {post.data.author}</p>
+
+      <!-- Author line -->
+      <div class="flex items-center gap-3">
+        <div class="w-10 h-10 rounded-full flex items-center justify-center" style="background: linear-gradient(135deg, #1e6fbf, #4da3ff);">
+          <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+        </div>
+        <div>
+          <p class="text-sm font-semibold text-white">{post.data.author}</p>
+          <p class="text-xs" style="color: #64748b;">GP Electric Inc &middot; Grande Prairie, AB</p>
+        </div>
+      </div>
     </div>
   </section>
 
-  <article class="py-12 sm:py-16 bg-brand-white">
-    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 prose prose-lg prose-gray max-w-none
-      prose-headings:font-bold prose-headings:text-brand-gray-900
-      prose-h2:text-2xl prose-h2:mt-10 prose-h2:mb-4
-      prose-h3:text-xl prose-h3:mt-8 prose-h3:mb-3
-      prose-p:text-brand-gray-700 prose-p:leading-relaxed
-      prose-strong:text-brand-gray-900
-      prose-li:text-brand-gray-700
-      prose-a:text-brand-blue prose-a:font-semibold hover:prose-a:text-brand-blue-dark">
+  <!-- Article Body -->
+  <article class="py-14 sm:py-20" style="background: #fafbfc;">
+    <div class="blog-content max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
       <Content />
     </div>
   </article>
+
+  <!-- Author / Company Card -->
+  <section class="py-12 bg-white border-t border-b" style="border-color: #e2e8f0;">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex flex-col sm:flex-row items-start gap-6 p-6 sm:p-8 rounded-2xl" style="background: linear-gradient(135deg, #f8fafc, #f1f5f9); border: 1px solid #e2e8f0;">
+        <div class="flex-shrink-0 w-16 h-16 rounded-xl flex items-center justify-center" style="background: linear-gradient(135deg, #1e6fbf, #4da3ff); box-shadow: 0 4px 14px rgba(30, 111, 191, 0.3);">
+          <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+        </div>
+        <div class="flex-1">
+          <h3 class="text-lg font-bold mb-1" style="color: #0f172a;">GP Electric Inc</h3>
+          <p class="text-sm font-medium mb-3" style="color: #1e6fbf;">Licensed Electrician &middot; Grande Prairie, Alberta</p>
+          <p class="text-sm leading-relaxed mb-4" style="color: #475569;">Residential, commercial, industrial, and farm electrical services across the Peace Country region. Available 24/7 for emergencies. Free assessments for specific concerns.</p>
+          <div class="flex flex-wrap gap-3">
+            <a href="tel:7808823046" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg text-sm font-semibold text-white transition-colors" style="background: #1e6fbf;" onmouseover="this.style.background='#154d87'" onmouseout="this.style.background='#1e6fbf'">
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+              780-882-3046
+            </a>
+            <a href="/contact" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg text-sm font-semibold transition-colors" style="color: #1e6fbf; border: 1.5px solid #1e6fbf;" onmouseover="this.style.background='#1e6fbf';this.style.color='#fff'" onmouseout="this.style.background='transparent';this.style.color='#1e6fbf'">
+              Get a Free Quote
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
   <CTASection
     headline="Have an Electrical Question?"
     subtext="Whether you need a quote, want to understand the code, or just have a quick question — we're always happy to help. Give us a call or send us a message."
   />
 </BaseLayout>
+
+<style is:global>
+  /* ============================================
+     READING PROGRESS BAR
+     ============================================ */
+  #progress-bar {
+    box-shadow: 0 0 10px rgba(30, 111, 191, 0.5);
+  }
+
+  /* ============================================
+     BLOG CONTENT — MAGAZINE TYPOGRAPHY
+     ============================================ */
+  .blog-content {
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    font-size: 1.125rem;
+    line-height: 1.8;
+    color: #334155;
+  }
+
+  /* Hide the first H1 since we display it in the hero */
+  .blog-content > h1:first-child {
+    display: none;
+  }
+
+  /* --- Headings --- */
+  .blog-content h2 {
+    font-size: 1.75rem;
+    font-weight: 800;
+    color: #0f172a;
+    margin-top: 3.5rem;
+    margin-bottom: 1.25rem;
+    padding-bottom: 0.75rem;
+    border-bottom: 3px solid #1e6fbf;
+    letter-spacing: -0.01em;
+    line-height: 1.3;
+  }
+
+  .blog-content h3 {
+    font-size: 1.35rem;
+    font-weight: 700;
+    color: #1e293b;
+    margin-top: 2.5rem;
+    margin-bottom: 1rem;
+    padding-left: 1rem;
+    border-left: 4px solid #4da3ff;
+    line-height: 1.4;
+  }
+
+  .blog-content h4 {
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: #1e293b;
+    margin-top: 2rem;
+    margin-bottom: 0.75rem;
+  }
+
+  /* --- Paragraphs --- */
+  .blog-content p {
+    margin-bottom: 1.5rem;
+    color: #334155;
+  }
+
+  /* --- Lead paragraph (first paragraph after hidden h1) --- */
+  .blog-content > h1:first-child + p,
+  .blog-content > p:first-child {
+    font-size: 1.25rem;
+    line-height: 1.75;
+    color: #1e293b;
+    font-weight: 450;
+  }
+
+  /* --- Links --- */
+  .blog-content a {
+    color: #1e6fbf;
+    font-weight: 600;
+    text-decoration: underline;
+    text-decoration-color: rgba(30, 111, 191, 0.3);
+    text-underline-offset: 3px;
+    transition: text-decoration-color 0.2s ease, color 0.2s ease;
+  }
+
+  .blog-content a:hover {
+    color: #154d87;
+    text-decoration-color: #154d87;
+  }
+
+  /* --- Strong / Bold --- */
+  .blog-content strong {
+    color: #0f172a;
+    font-weight: 700;
+  }
+
+  /* --- Unordered Lists --- */
+  .blog-content ul {
+    margin: 1.5rem 0;
+    padding-left: 0;
+    list-style: none;
+  }
+
+  .blog-content ul > li {
+    position: relative;
+    padding-left: 1.75rem;
+    margin-bottom: 0.75rem;
+    line-height: 1.7;
+  }
+
+  .blog-content ul > li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0.65em;
+    width: 8px;
+    height: 8px;
+    background: linear-gradient(135deg, #1e6fbf, #4da3ff);
+    border-radius: 2px;
+    transform: rotate(45deg);
+  }
+
+  /* --- Ordered Lists --- */
+  .blog-content ol {
+    margin: 1.5rem 0;
+    padding-left: 0;
+    list-style: none;
+    counter-reset: blog-counter;
+  }
+
+  .blog-content ol > li {
+    position: relative;
+    padding-left: 2.5rem;
+    margin-bottom: 0.75rem;
+    line-height: 1.7;
+    counter-increment: blog-counter;
+  }
+
+  .blog-content ol > li::before {
+    content: counter(blog-counter);
+    position: absolute;
+    left: 0;
+    top: 0.15em;
+    width: 1.75rem;
+    height: 1.75rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: white;
+    background: linear-gradient(135deg, #1e6fbf, #4da3ff);
+    border-radius: 50%;
+  }
+
+  /* --- Nested lists --- */
+  .blog-content li > ul,
+  .blog-content li > ol {
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+  }
+
+  /* --- Blockquotes --- */
+  .blog-content blockquote {
+    margin: 2rem 0;
+    padding: 1.5rem 1.5rem 1.5rem 2rem;
+    background: linear-gradient(135deg, #eff6ff, #f0f9ff);
+    border-left: 4px solid #1e6fbf;
+    border-radius: 0 12px 12px 0;
+    font-style: italic;
+    color: #1e293b;
+    position: relative;
+  }
+
+  .blog-content blockquote::before {
+    content: '\201C';
+    position: absolute;
+    top: -0.25rem;
+    left: 0.75rem;
+    font-size: 3rem;
+    color: rgba(30, 111, 191, 0.2);
+    font-family: Georgia, serif;
+    line-height: 1;
+  }
+
+  .blog-content blockquote p {
+    margin-bottom: 0;
+    color: #1e293b;
+  }
+
+  /* --- Tables --- */
+  .blog-content table {
+    width: 100%;
+    margin: 2rem 0;
+    border-collapse: separate;
+    border-spacing: 0;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08), 0 4px 12px rgba(0, 0, 0, 0.04);
+    font-size: 0.95rem;
+  }
+
+  .blog-content thead {
+    background: linear-gradient(135deg, #0f172a, #1e293b);
+  }
+
+  .blog-content thead th {
+    padding: 0.875rem 1rem;
+    text-align: left;
+    font-weight: 700;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: #4da3ff;
+    border-bottom: 2px solid #1e6fbf;
+  }
+
+  .blog-content tbody tr {
+    transition: background-color 0.15s ease;
+  }
+
+  .blog-content tbody tr:nth-child(even) {
+    background-color: #f8fafc;
+  }
+
+  .blog-content tbody tr:hover {
+    background-color: #eff6ff;
+  }
+
+  .blog-content tbody td {
+    padding: 0.75rem 1rem;
+    border-bottom: 1px solid #e2e8f0;
+    color: #334155;
+    vertical-align: top;
+  }
+
+  .blog-content tbody tr:last-child td {
+    border-bottom: none;
+  }
+
+  /* --- Code blocks --- */
+  .blog-content code {
+    font-family: 'JetBrains Mono', 'Fira Code', monospace;
+    font-size: 0.875em;
+    padding: 0.2em 0.45em;
+    background: #f1f5f9;
+    color: #1e6fbf;
+    border-radius: 4px;
+    border: 1px solid #e2e8f0;
+  }
+
+  .blog-content pre {
+    margin: 2rem 0;
+    padding: 1.5rem;
+    background: #0f172a;
+    border-radius: 12px;
+    overflow-x: auto;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  }
+
+  .blog-content pre code {
+    background: none;
+    color: #e2e8f0;
+    border: none;
+    padding: 0;
+    font-size: 0.9em;
+  }
+
+  /* --- Horizontal rules --- */
+  .blog-content hr {
+    margin: 3rem auto;
+    border: none;
+    height: 1px;
+    max-width: 120px;
+    background: linear-gradient(90deg, transparent, #1e6fbf, transparent);
+  }
+
+  /* --- Images --- */
+  .blog-content img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 12px;
+    margin: 2rem 0;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+  }
+
+  /* ============================================
+     INLINE CTA STYLING — for bold paragraphs
+     containing phone numbers as call-to-actions
+     ============================================ */
+  .blog-content p > strong:only-child {
+    display: block;
+    text-align: center;
+    font-size: 1.15rem;
+    margin: 0.5rem 0;
+  }
+
+  /* ============================================
+     RESPONSIVE ADJUSTMENTS
+     ============================================ */
+  @media (max-width: 640px) {
+    .blog-content {
+      font-size: 1rem;
+    }
+
+    .blog-content h2 {
+      font-size: 1.4rem;
+      margin-top: 2.5rem;
+    }
+
+    .blog-content h3 {
+      font-size: 1.15rem;
+      margin-top: 2rem;
+    }
+
+    .blog-content table {
+      font-size: 0.85rem;
+      display: block;
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+    }
+
+    .blog-content thead th {
+      padding: 0.625rem 0.75rem;
+      font-size: 0.7rem;
+    }
+
+    .blog-content tbody td {
+      padding: 0.625rem 0.75rem;
+      min-width: 100px;
+    }
+
+    .blog-content blockquote {
+      padding: 1rem 1rem 1rem 1.25rem;
+      margin: 1.5rem 0;
+    }
+  }
+</style>
+
+<script>
+  // Reading progress bar
+  const progressBar = document.getElementById('progress-bar');
+  if (progressBar) {
+    const updateProgress = () => {
+      const scrollTop = window.scrollY;
+      const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+      const progress = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+      progressBar.style.width = `${Math.min(progress, 100)}%`;
+    };
+    window.addEventListener('scroll', updateProgress, { passive: true });
+    updateProgress();
+  }
+</script>

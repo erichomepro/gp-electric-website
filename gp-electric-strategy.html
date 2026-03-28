@@ -1,0 +1,1752 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Grande Prairie Electric Inc. - Digital Domination Strategy</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+
+  :root {
+    --primary: #1a365d;
+    --primary-light: #2d5a9e;
+    --accent: #f59e0b;
+    --accent-dark: #d97706;
+    --success: #10b981;
+    --danger: #ef4444;
+    --gray-50: #f9fafb;
+    --gray-100: #f3f4f6;
+    --gray-200: #e5e7eb;
+    --gray-300: #d1d5db;
+    --gray-500: #6b7280;
+    --gray-700: #374151;
+    --gray-800: #1f2937;
+    --gray-900: #111827;
+    --electric-blue: #3b82f6;
+    --electric-yellow: #fbbf24;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    color: var(--gray-800);
+    line-height: 1.6;
+    background: #fff;
+  }
+
+  @page {
+    size: A4;
+    margin: 0;
+  }
+
+  .page {
+    width: 210mm;
+    min-height: 297mm;
+    padding: 25mm 20mm;
+    margin: 0 auto;
+    page-break-after: always;
+    position: relative;
+  }
+
+  .page::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 6px;
+    height: 100%;
+    background: linear-gradient(180deg, var(--accent), var(--primary));
+  }
+
+  /* COVER PAGE */
+  .cover {
+    background: linear-gradient(135deg, var(--primary) 0%, #0f2440 100%);
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .cover::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    right: -30%;
+    width: 80%;
+    height: 200%;
+    background: radial-gradient(ellipse, rgba(251, 191, 36, 0.08) 0%, transparent 70%);
+  }
+
+  .cover::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: linear-gradient(90deg, var(--accent), var(--electric-blue), var(--accent));
+  }
+
+  .cover .badge {
+    background: rgba(251, 191, 36, 0.15);
+    border: 1px solid rgba(251, 191, 36, 0.3);
+    color: var(--electric-yellow);
+    padding: 8px 24px;
+    border-radius: 50px;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 40px;
+  }
+
+  .cover h1 {
+    font-size: 42px;
+    font-weight: 900;
+    line-height: 1.1;
+    margin-bottom: 16px;
+    letter-spacing: -1px;
+  }
+
+  .cover h1 span {
+    color: var(--electric-yellow);
+  }
+
+  .cover .subtitle {
+    font-size: 18px;
+    font-weight: 300;
+    color: rgba(255,255,255,0.7);
+    margin-bottom: 50px;
+    max-width: 500px;
+  }
+
+  .cover .meta {
+    font-size: 13px;
+    color: rgba(255,255,255,0.5);
+    margin-top: 60px;
+  }
+
+  .cover .meta strong {
+    color: rgba(255,255,255,0.8);
+  }
+
+  .cover .bolt {
+    font-size: 80px;
+    margin-bottom: 30px;
+    opacity: 0.9;
+  }
+
+  /* SECTION HEADERS */
+  h2.section-title {
+    font-size: 28px;
+    font-weight: 800;
+    color: var(--primary);
+    margin-bottom: 6px;
+    letter-spacing: -0.5px;
+    border-bottom: 3px solid var(--accent);
+    padding-bottom: 10px;
+    display: inline-block;
+  }
+
+  .section-subtitle {
+    color: var(--gray-500);
+    font-size: 14px;
+    margin-bottom: 24px;
+    font-weight: 400;
+  }
+
+  h3 {
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--primary);
+    margin: 20px 0 10px;
+  }
+
+  h4 {
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--gray-700);
+    margin: 14px 0 8px;
+  }
+
+  p, li {
+    font-size: 13px;
+    line-height: 1.7;
+    color: var(--gray-700);
+  }
+
+  ul, ol {
+    margin-left: 20px;
+    margin-bottom: 12px;
+  }
+
+  li {
+    margin-bottom: 4px;
+  }
+
+  /* COMPETITOR TABLE */
+  .comp-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 16px 0;
+    font-size: 11.5px;
+  }
+
+  .comp-table th {
+    background: var(--primary);
+    color: white;
+    padding: 10px 12px;
+    text-align: left;
+    font-weight: 600;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+
+  .comp-table td {
+    padding: 9px 12px;
+    border-bottom: 1px solid var(--gray-200);
+    vertical-align: top;
+  }
+
+  .comp-table tr:nth-child(even) {
+    background: var(--gray-50);
+  }
+
+  .comp-table .rating {
+    color: var(--accent-dark);
+    font-weight: 700;
+  }
+
+  /* STAT BOXES */
+  .stats-row {
+    display: flex;
+    gap: 14px;
+    margin: 20px 0;
+  }
+
+  .stat-box {
+    flex: 1;
+    background: var(--gray-50);
+    border: 1px solid var(--gray-200);
+    border-radius: 10px;
+    padding: 16px;
+    text-align: center;
+  }
+
+  .stat-box .number {
+    font-size: 32px;
+    font-weight: 800;
+    color: var(--primary);
+  }
+
+  .stat-box .label {
+    font-size: 11px;
+    color: var(--gray-500);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-top: 4px;
+  }
+
+  /* CALLOUT BOXES */
+  .callout {
+    background: linear-gradient(135deg, #fffbeb, #fef3c7);
+    border-left: 4px solid var(--accent);
+    padding: 16px 20px;
+    border-radius: 0 8px 8px 0;
+    margin: 16px 0;
+  }
+
+  .callout.blue {
+    background: linear-gradient(135deg, #eff6ff, #dbeafe);
+    border-left-color: var(--electric-blue);
+  }
+
+  .callout.green {
+    background: linear-gradient(135deg, #ecfdf5, #d1fae5);
+    border-left-color: var(--success);
+  }
+
+  .callout.red {
+    background: linear-gradient(135deg, #fef2f2, #fee2e2);
+    border-left-color: var(--danger);
+  }
+
+  .callout strong {
+    display: block;
+    margin-bottom: 4px;
+    font-size: 13px;
+  }
+
+  .callout p {
+    font-size: 12px;
+    margin: 0;
+  }
+
+  /* PHASE TIMELINE */
+  .phase {
+    background: white;
+    border: 1px solid var(--gray-200);
+    border-radius: 12px;
+    padding: 18px 20px;
+    margin: 14px 0;
+    position: relative;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+  }
+
+  .phase-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 10px;
+  }
+
+  .phase-num {
+    background: var(--primary);
+    color: white;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 800;
+    font-size: 14px;
+    flex-shrink: 0;
+  }
+
+  .phase-title {
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--primary);
+  }
+
+  .phase-timeline {
+    font-size: 11px;
+    color: var(--accent-dark);
+    font-weight: 600;
+    background: #fef3c7;
+    padding: 2px 10px;
+    border-radius: 20px;
+    margin-left: auto;
+  }
+
+  /* KEYWORD TABLE */
+  .kw-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 12px 0;
+    font-size: 12px;
+  }
+
+  .kw-table th {
+    background: var(--gray-100);
+    padding: 8px 12px;
+    text-align: left;
+    font-weight: 600;
+    font-size: 11px;
+    color: var(--gray-700);
+    border-bottom: 2px solid var(--gray-300);
+  }
+
+  .kw-table td {
+    padding: 7px 12px;
+    border-bottom: 1px solid var(--gray-100);
+  }
+
+  .priority-high {
+    background: #fef2f2;
+    color: #dc2626;
+    font-weight: 700;
+    padding: 2px 8px;
+    border-radius: 4px;
+    font-size: 10px;
+  }
+
+  .priority-med {
+    background: #fffbeb;
+    color: #d97706;
+    font-weight: 700;
+    padding: 2px 8px;
+    border-radius: 4px;
+    font-size: 10px;
+  }
+
+  .priority-low {
+    background: #ecfdf5;
+    color: #059669;
+    font-weight: 700;
+    padding: 2px 8px;
+    border-radius: 4px;
+    font-size: 10px;
+  }
+
+  /* CHECKLIST */
+  .checklist {
+    list-style: none;
+    margin-left: 0;
+  }
+
+  .checklist li {
+    padding: 6px 0 6px 28px;
+    position: relative;
+    border-bottom: 1px solid var(--gray-100);
+  }
+
+  .checklist li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 10px;
+    width: 16px;
+    height: 16px;
+    border: 2px solid var(--gray-300);
+    border-radius: 4px;
+  }
+
+  /* TWO COLUMN */
+  .two-col {
+    display: flex;
+    gap: 24px;
+  }
+
+  .two-col > div {
+    flex: 1;
+  }
+
+  /* FOOTER */
+  .page-footer {
+    position: absolute;
+    bottom: 15mm;
+    left: 20mm;
+    right: 20mm;
+    display: flex;
+    justify-content: space-between;
+    font-size: 10px;
+    color: var(--gray-400);
+    border-top: 1px solid var(--gray-200);
+    padding-top: 8px;
+  }
+
+  .toc-item {
+    display: flex;
+    align-items: baseline;
+    padding: 10px 0;
+    border-bottom: 1px dotted var(--gray-300);
+  }
+
+  .toc-num {
+    font-weight: 800;
+    color: var(--accent);
+    width: 30px;
+    font-size: 16px;
+  }
+
+  .toc-title {
+    font-weight: 600;
+    color: var(--primary);
+    font-size: 15px;
+    flex: 1;
+  }
+
+  .toc-page {
+    color: var(--gray-500);
+    font-size: 13px;
+  }
+
+  .swot-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    margin: 16px 0;
+  }
+
+  .swot-box {
+    padding: 14px;
+    border-radius: 10px;
+    font-size: 12px;
+  }
+
+  .swot-box h4 {
+    margin: 0 0 8px;
+    font-size: 14px;
+  }
+
+  .swot-box ul {
+    margin-left: 16px;
+    margin-bottom: 0;
+  }
+
+  .swot-s { background: #ecfdf5; border: 1px solid #a7f3d0; }
+  .swot-w { background: #fef2f2; border: 1px solid #fecaca; }
+  .swot-o { background: #eff6ff; border: 1px solid #bfdbfe; }
+  .swot-t { background: #fffbeb; border: 1px solid #fde68a; }
+
+  .swot-s h4 { color: #059669; }
+  .swot-w h4 { color: #dc2626; }
+  .swot-o h4 { color: #2563eb; }
+  .swot-t h4 { color: #d97706; }
+
+  .metric-row {
+    display: flex;
+    gap: 10px;
+    margin: 12px 0;
+  }
+
+  .metric {
+    flex: 1;
+    text-align: center;
+    padding: 12px;
+    border-radius: 8px;
+    border: 1px solid var(--gray-200);
+  }
+
+  .metric .val {
+    font-size: 24px;
+    font-weight: 800;
+    color: var(--primary);
+  }
+
+  .metric .desc {
+    font-size: 10px;
+    color: var(--gray-500);
+    text-transform: uppercase;
+    margin-top: 2px;
+  }
+
+  @media print {
+    body { background: white; }
+    .page { margin: 0; box-shadow: none; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ============================================================ -->
+<!-- COVER PAGE -->
+<!-- ============================================================ -->
+<div class="page cover">
+  <div class="badge">Confidential Strategy Document</div>
+  <div class="bolt">&#9889;</div>
+  <h1>Digital Domination<br><span>Strategy</span></h1>
+  <p class="subtitle">A complete roadmap to make Grande Prairie Electric Inc. the #1 electrician in Grande Prairie across Google, social media, AI search, and beyond.</p>
+  <div class="meta">
+    Prepared for <strong>Grande Prairie Electric Inc.</strong><br>
+    Prepared by <strong>AIP Agency</strong> | March 23, 2026
+  </div>
+</div>
+
+<!-- ============================================================ -->
+<!-- TABLE OF CONTENTS -->
+<!-- ============================================================ -->
+<div class="page">
+  <h2 class="section-title">Table of Contents</h2>
+  <p class="section-subtitle">Complete strategy overview</p>
+
+  <div style="margin-top: 30px;">
+    <div class="toc-item"><span class="toc-num">01</span><span class="toc-title">Executive Summary</span></div>
+    <div class="toc-item"><span class="toc-num">02</span><span class="toc-title">Competitive Landscape Analysis</span></div>
+    <div class="toc-item"><span class="toc-num">03</span><span class="toc-title">SWOT Analysis</span></div>
+    <div class="toc-item"><span class="toc-num">04</span><span class="toc-title">SEO Keyword Strategy</span></div>
+    <div class="toc-item"><span class="toc-num">05</span><span class="toc-title">Google Business Profile & Map Pack Domination</span></div>
+    <div class="toc-item"><span class="toc-num">06</span><span class="toc-title">Website Rebuild Blueprint</span></div>
+    <div class="toc-item"><span class="toc-num">07</span><span class="toc-title">AI & LLM Search Optimization (GEO)</span></div>
+    <div class="toc-item"><span class="toc-num">08</span><span class="toc-title">Social Media Strategy</span></div>
+    <div class="toc-item"><span class="toc-num">09</span><span class="toc-title">Content Marketing & Blog Strategy</span></div>
+    <div class="toc-item"><span class="toc-num">10</span><span class="toc-title">CRM & Lead Tracking Integration</span></div>
+    <div class="toc-item"><span class="toc-num">11</span><span class="toc-title">Citation & Directory Strategy</span></div>
+    <div class="toc-item"><span class="toc-num">12</span><span class="toc-title">Review Generation System</span></div>
+    <div class="toc-item"><span class="toc-num">13</span><span class="toc-title">Implementation Roadmap & Timeline</span></div>
+    <div class="toc-item"><span class="toc-num">14</span><span class="toc-title">KPIs & Success Metrics</span></div>
+  </div>
+  <div class="page-footer"><span>Grande Prairie Electric Inc.</span><span>AIP Agency | Confidential</span></div>
+</div>
+
+<!-- ============================================================ -->
+<!-- 01 EXECUTIVE SUMMARY -->
+<!-- ============================================================ -->
+<div class="page">
+  <h2 class="section-title">01. Executive Summary</h2>
+  <p class="section-subtitle">The opportunity and the plan</p>
+
+  <div class="callout">
+    <strong>The Opportunity</strong>
+    <p>Grande Prairie (pop. ~71,000, growing 3.1% annually) saw housing starts <strong>surge 60% in 2025</strong>, making it Alberta's fastest-growing non-metro corridor. Demand for electrical services is booming. Yet GP Electric has <strong>zero digital presence</strong> beyond a dormant Facebook page with 186 likes and an expired website. Meanwhile, competitors like Gray Electric (4.9 stars), ADC Electric (4.8 stars), and Full Draw Electric (100+ reviews) dominate local search. This is a greenfield opportunity &mdash; with the right strategy, GP Electric can leapfrog competitors who are coasting on mediocre digital efforts.</p>
+  </div>
+
+  <h3>What We Will Build</h3>
+  <ul>
+    <li><strong>A conversion-optimized website</strong> on gpelectricinc.com &mdash; built for SEO, speed, and lead capture</li>
+    <li><strong>Google Business Profile</strong> from scratch &mdash; optimized to enter the Map Pack within 90 days</li>
+    <li><strong>Social media engine</strong> &mdash; Facebook relaunch + LinkedIn presence with consistent posting</li>
+    <li><strong>Content marketing system</strong> &mdash; blog articles targeting high-value keywords and AI search</li>
+    <li><strong>CRM integration</strong> &mdash; Command Centre login with full lead tracking and pipeline management</li>
+    <li><strong>Review generation system</strong> &mdash; automated post-job review requests</li>
+    <li><strong>AI search optimization</strong> &mdash; structured for ChatGPT, Gemini, Perplexity recommendations</li>
+    <li><strong>Citation network</strong> &mdash; consistent NAP across 20+ directories</li>
+  </ul>
+
+  <div class="stats-row">
+    <div class="stat-box">
+      <div class="number">15+</div>
+      <div class="label">Competitors</div>
+    </div>
+    <div class="stat-box">
+      <div class="number">0</div>
+      <div class="label">GP Electric Reviews</div>
+    </div>
+    <div class="stat-box">
+      <div class="number">4.9</div>
+      <div class="label">Top Competitor Rating</div>
+    </div>
+    <div class="stat-box">
+      <div class="number">90</div>
+      <div class="label">Days to Map Pack</div>
+    </div>
+  </div>
+
+  <div class="callout green">
+    <strong>Bottom Line</strong>
+    <p>Within 6 months, GP Electric will have a professional website generating leads, a Google presence competing for Map Pack placement, active social media channels building trust, and a CRM tracking every opportunity from first touch to closed deal. Within 12 months, we aim for top-3 Map Pack positioning for "electrician Grande Prairie."</p>
+  </div>
+  <div class="page-footer"><span>Grande Prairie Electric Inc.</span><span>AIP Agency | Confidential</span></div>
+</div>
+
+<!-- ============================================================ -->
+<!-- 02 COMPETITIVE LANDSCAPE -->
+<!-- ============================================================ -->
+<div class="page">
+  <h2 class="section-title">02. Competitive Landscape</h2>
+  <p class="section-subtitle">Who we're up against in Grande Prairie, AB</p>
+
+  <h3>Top Competitors &mdash; Tier 1 (Strong Digital Presence)</h3>
+  <table class="comp-table">
+    <thead>
+      <tr>
+        <th>Company</th>
+        <th>Rating</th>
+        <th>Est.</th>
+        <th>Services</th>
+        <th>Website</th>
+        <th>Strengths</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>Gray Electric & Plumbing</strong></td>
+        <td class="rating">4.9/5</td>
+        <td>2011</td>
+        <td>Residential, Commercial, Industrial, Plumbing, Solar, EV Chargers, Agriculture</td>
+        <td>grayelectric.ca</td>
+        <td>24/7, dual trade (electric + plumbing), wide service area, ThreeBestRated #1</td>
+      </tr>
+      <tr>
+        <td><strong>ADC Electric Ltd.</strong></td>
+        <td class="rating">4.8/5</td>
+        <td>2014</td>
+        <td>Residential, Commercial, Industrial, Oilfield, EV, Generators</td>
+        <td>adcelectric.ca</td>
+        <td>Master Electrician, ECAA member, 24/7/365, strong schema markup</td>
+      </tr>
+      <tr>
+        <td><strong>Full Draw Electric</strong></td>
+        <td class="rating">4.8/5</td>
+        <td>2000</td>
+        <td>Residential, Commercial, Hot Tubs, Generators, Safety Codes</td>
+        <td>fulldrawelectricgp.com</td>
+        <td>30+ years, Master Electrician, Safety Codes Officer on staff, 100+ reviews</td>
+      </tr>
+      <tr>
+        <td><strong>Northgate Electric</strong></td>
+        <td class="rating">4.3/5</td>
+        <td>1966</td>
+        <td>Commercial, Industrial, Residential, Solar, Fire Alarm, Power Distribution</td>
+        <td>northgateelectric.ca</td>
+        <td>54+ years legacy, design-build, large commercial projects</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h3>Tier 2 Competitors (Moderate Presence)</h3>
+  <table class="comp-table">
+    <thead>
+      <tr>
+        <th>Company</th>
+        <th>Est.</th>
+        <th>Services</th>
+        <th>Notes</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>Gatr Electric</strong></td>
+        <td>N/A</td>
+        <td>Residential, Commercial, EV Chargers, Emergency, Home Automation</td>
+        <td>Individual service pages per offering, targets Beaverlodge area, dedicated EV charger page</td>
+      </tr>
+      <tr>
+        <td><strong>Youngman Electric</strong></td>
+        <td>N/A</td>
+        <td>Residential, Aluminum Wiring, New Construction</td>
+        <td>Detailed residential services list, aluminum wiring niche</td>
+      </tr>
+      <tr>
+        <td><strong>Ultimate Energy Controls</strong></td>
+        <td>~2017</td>
+        <td>Residential, Commercial, Industrial, Instrumentation</td>
+        <td>WordPress site, basic SEO, instrument services specialty</td>
+      </tr>
+      <tr>
+        <td><strong>Thor Electric Ltd</strong></td>
+        <td>N/A</td>
+        <td>Commercial, Industrial, Residential, Fire Alarm</td>
+        <td>Wix site, limited content</td>
+      </tr>
+      <tr>
+        <td><strong>Tyconn Services</strong></td>
+        <td>N/A</td>
+        <td>Industrial, Oilfield, Commercial, Drilling Rigs</td>
+        <td>Heavy industrial focus</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h3>Tier 3 Competitors (Minimal/No Digital Presence)</h3>
+  <p>These companies have little to no online presence &mdash; similar to GP Electric's current state:</p>
+  <div class="two-col" style="font-size: 12px;">
+    <div>
+      <ul>
+        <li>LH Electric (2005) Ltd</li>
+        <li>Matrix Electric</li>
+        <li>Cookshaw Electric (1975) Ltd</li>
+        <li>Overload Electric Ltd</li>
+      </ul>
+    </div>
+    <div>
+      <ul>
+        <li>Builder's Electric Co Ltd</li>
+        <li>Bill's Electric</li>
+        <li>Magnum Electric</li>
+        <li>Pronghorn Controls Ltd</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="callout red">
+    <strong>Key Insight</strong>
+    <p>Only 4 competitors have genuinely strong digital presence. The rest are weak or nonexistent online. GP Electric doesn't need to beat 15 companies &mdash; it needs to outperform 4. And none of them are doing AI search optimization, giving us a first-mover advantage on LLM visibility.</p>
+  </div>
+  <div class="page-footer"><span>Grande Prairie Electric Inc.</span><span>AIP Agency | Confidential</span></div>
+</div>
+
+<!-- ============================================================ -->
+<!-- 03 SWOT ANALYSIS -->
+<!-- ============================================================ -->
+<div class="page">
+  <h2 class="section-title">03. SWOT Analysis</h2>
+  <p class="section-subtitle">Strategic positioning assessment</p>
+
+  <div class="swot-grid">
+    <div class="swot-box swot-s">
+      <h4>Strengths</h4>
+      <ul>
+        <li>Established business with real-world reputation</li>
+        <li>Domain gpelectricinc.com already owned</li>
+        <li>Existing Facebook page (186 likes = social proof seed)</li>
+        <li>Professional agency backing (AIP) for execution</li>
+        <li>CRM / Command Centre integration available</li>
+        <li>Clean slate = no bad SEO history to overcome</li>
+      </ul>
+    </div>
+    <div class="swot-box swot-w">
+      <h4>Weaknesses</h4>
+      <ul>
+        <li>Zero Google reviews</li>
+        <li>No Google Business Profile</li>
+        <li>Website expired / offline</li>
+        <li>Facebook page dormant, low engagement</li>
+        <li>No LinkedIn presence</li>
+        <li>No citation network exists</li>
+        <li>Starting from zero domain authority</li>
+      </ul>
+    </div>
+    <div class="swot-box swot-o">
+      <h4>Opportunities</h4>
+      <ul>
+        <li>Most competitors have weak websites (Wix, basic WordPress)</li>
+        <li>No competitor is doing AI/LLM search optimization</li>
+        <li>EV charger demand growing rapidly in Alberta</li>
+        <li>Solar installation demand increasing</li>
+        <li>Blog content gap &mdash; no competitor blogs regularly</li>
+        <li>8+ competitors have zero online reviews</li>
+        <li>Grande Prairie growing population = more demand</li>
+      </ul>
+    </div>
+    <div class="swot-box swot-t">
+      <h4>Threats</h4>
+      <ul>
+        <li>Gray Electric has strong 4.9 rating + dual trades</li>
+        <li>Full Draw has 30+ year reputation + 100+ reviews</li>
+        <li>ADC Electric is 24/7 with Master Electrician credential</li>
+        <li>Northgate has 54+ years of brand legacy</li>
+        <li>Review velocity needed to catch up</li>
+        <li>Google Maps proximity factor (physical location matters)</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="callout blue">
+    <strong>Strategic Advantage</strong>
+    <p>The biggest gap in this market is <strong>content and AI optimization</strong>. No competitor is producing regular blog content, optimizing for LLM search, or running a sophisticated social media strategy. GP Electric can own these channels from day one while simultaneously building the fundamentals (GBP, reviews, citations).</p>
+  </div>
+
+  <h3>Competitor Website Quality Assessment</h3>
+  <table class="comp-table">
+    <thead>
+      <tr><th>Company</th><th>Platform</th><th>Speed</th><th>Schema</th><th>Blog</th><th>Mobile</th><th>Overall</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>Gray Electric</td><td>Elementor/WP</td><td>Average</td><td>Basic</td><td>No</td><td>Yes</td><td>6/10</td></tr>
+      <tr><td>ADC Electric</td><td>Custom/WP</td><td>Good</td><td>Yes</td><td>No</td><td>Yes</td><td>7/10</td></tr>
+      <tr><td>Full Draw Electric</td><td>Wix</td><td>Slow</td><td>Basic</td><td>No</td><td>Yes</td><td>5/10</td></tr>
+      <tr><td>Northgate Electric</td><td>Custom</td><td>Average</td><td>Basic</td><td>No</td><td>Yes</td><td>6/10</td></tr>
+      <tr><td>Ultimate Energy</td><td>WordPress/Astra</td><td>Average</td><td>Basic</td><td>No</td><td>Yes</td><td>5/10</td></tr>
+      <tr><td>Thor Electric</td><td>Wix</td><td>Slow</td><td>Minimal</td><td>No</td><td>Yes</td><td>4/10</td></tr>
+      <tr style="background: #ecfdf5; font-weight: 600;"><td>GP Electric (target)</td><td>SSG/Next.js</td><td>Excellent</td><td>Full</td><td>Yes</td><td>Yes</td><td>9/10</td></tr>
+    </tbody>
+  </table>
+  <div class="page-footer"><span>Grande Prairie Electric Inc.</span><span>AIP Agency | Confidential</span></div>
+</div>
+
+<!-- ============================================================ -->
+<!-- 04 SEO KEYWORD STRATEGY -->
+<!-- ============================================================ -->
+<div class="page">
+  <h2 class="section-title">04. SEO Keyword Strategy</h2>
+  <p class="section-subtitle">Target keywords organized by intent and priority</p>
+
+  <h3>Primary Keywords (Highest Priority &mdash; Transactional Intent)</h3>
+  <table class="kw-table">
+    <thead>
+      <tr><th>Keyword</th><th>Intent</th><th>Priority</th><th>Page Target</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>electrician Grande Prairie</td><td>Transactional</td><td><span class="priority-high">HIGH</span></td><td>Homepage</td></tr>
+      <tr><td>electrical contractor Grande Prairie</td><td>Transactional</td><td><span class="priority-high">HIGH</span></td><td>Homepage</td></tr>
+      <tr><td>electrician near me (Grande Prairie)</td><td>Transactional</td><td><span class="priority-high">HIGH</span></td><td>GBP + Homepage</td></tr>
+      <tr><td>emergency electrician Grande Prairie</td><td>Urgent</td><td><span class="priority-high">HIGH</span></td><td>Emergency Service Page</td></tr>
+      <tr><td>24 hour electrician Grande Prairie</td><td>Urgent</td><td><span class="priority-high">HIGH</span></td><td>Emergency Service Page</td></tr>
+      <tr><td>residential electrician Grande Prairie</td><td>Transactional</td><td><span class="priority-high">HIGH</span></td><td>Residential Services Page</td></tr>
+      <tr><td>commercial electrician Grande Prairie</td><td>Transactional</td><td><span class="priority-high">HIGH</span></td><td>Commercial Services Page</td></tr>
+    </tbody>
+  </table>
+
+  <h3>Service-Specific Keywords (High Value)</h3>
+  <table class="kw-table">
+    <thead>
+      <tr><th>Keyword</th><th>Intent</th><th>Priority</th><th>Page Target</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>panel upgrade Grande Prairie</td><td>Transactional</td><td><span class="priority-high">HIGH</span></td><td>Dedicated Service Page</td></tr>
+      <tr><td>EV charger installation Grande Prairie</td><td>Transactional</td><td><span class="priority-high">HIGH</span></td><td>Dedicated Service Page</td></tr>
+      <tr><td>generator installation Grande Prairie</td><td>Transactional</td><td><span class="priority-med">MED</span></td><td>Dedicated Service Page</td></tr>
+      <tr><td>electrical inspection Grande Prairie</td><td>Transactional</td><td><span class="priority-med">MED</span></td><td>Dedicated Service Page</td></tr>
+      <tr><td>home rewiring Grande Prairie</td><td>Transactional</td><td><span class="priority-med">MED</span></td><td>Dedicated Service Page</td></tr>
+      <tr><td>hot tub wiring Grande Prairie</td><td>Transactional</td><td><span class="priority-med">MED</span></td><td>Dedicated Service Page</td></tr>
+      <tr><td>lighting installation Grande Prairie</td><td>Transactional</td><td><span class="priority-med">MED</span></td><td>Dedicated Service Page</td></tr>
+      <tr><td>solar panel installation Grande Prairie</td><td>Transactional</td><td><span class="priority-med">MED</span></td><td>Dedicated Service Page</td></tr>
+      <tr><td>fire alarm installation Grande Prairie</td><td>Transactional</td><td><span class="priority-low">LOW</span></td><td>Commercial Services Page</td></tr>
+      <tr><td>electrical repair Grande Prairie</td><td>Transactional</td><td><span class="priority-high">HIGH</span></td><td>Dedicated Service Page</td></tr>
+    </tbody>
+  </table>
+
+  <h3>Informational Keywords (Blog Content Targets)</h3>
+  <table class="kw-table">
+    <thead>
+      <tr><th>Keyword / Topic</th><th>Intent</th><th>Priority</th><th>Content Type</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>cost to upgrade electrical panel</td><td>Informational</td><td><span class="priority-high">HIGH</span></td><td>Blog Article</td></tr>
+      <tr><td>signs your home needs rewiring</td><td>Informational</td><td><span class="priority-high">HIGH</span></td><td>Blog Article</td></tr>
+      <tr><td>is my house safe for EV charger</td><td>Informational</td><td><span class="priority-high">HIGH</span></td><td>Blog Article</td></tr>
+      <tr><td>what causes circuit breaker to trip</td><td>Informational</td><td><span class="priority-med">MED</span></td><td>Blog / FAQ</td></tr>
+      <tr><td>how much does an electrician cost Grande Prairie</td><td>Informational</td><td><span class="priority-high">HIGH</span></td><td>Blog Article</td></tr>
+      <tr><td>Alberta electrical code requirements</td><td>Informational</td><td><span class="priority-med">MED</span></td><td>Blog Article</td></tr>
+      <tr><td>electrical safety tips for homeowners</td><td>Informational</td><td><span class="priority-low">LOW</span></td><td>Blog Article</td></tr>
+      <tr><td>when to call an electrician vs DIY</td><td>Informational</td><td><span class="priority-med">MED</span></td><td>Blog Article</td></tr>
+    </tbody>
+  </table>
+
+  <h3>Untapped Keyword Gaps (No Competitor Targeting)</h3>
+  <div class="callout green">
+    <strong>Low-Hanging Fruit</strong>
+    <p>These keywords have real search demand but NO competitor has a dedicated page for them. We can rank quickly by creating targeted service pages.</p>
+  </div>
+  <table class="kw-table">
+    <thead>
+      <tr><th>Keyword</th><th>Competition</th><th>Opportunity</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>electrical inspection Grande Prairie</td><td><span class="priority-low">NONE</span></td><td>No competitor has a dedicated page</td></tr>
+      <tr><td>shop wiring Grande Prairie</td><td><span class="priority-low">NONE</span></td><td>Huge local need (farms, acreages), untargeted</td></tr>
+      <tr><td>garage wiring Grande Prairie</td><td><span class="priority-low">NONE</span></td><td>Common residential need, zero competition</td></tr>
+      <tr><td>home rewiring Grande Prairie</td><td><span class="priority-low">NONE</span></td><td>High-value service, no one targets it</td></tr>
+      <tr><td>smart home electrician Grande Prairie</td><td><span class="priority-low">NONE</span></td><td>Only Gatr lists "Home Automation" briefly</td></tr>
+      <tr><td>electrical troubleshooting Grande Prairie</td><td><span class="priority-low">NONE</span></td><td>No dedicated pages anywhere</td></tr>
+      <tr><td>meter base upgrade Grande Prairie</td><td><span class="priority-low">NONE</span></td><td>Technical, zero competition</td></tr>
+      <tr><td>aluminum wiring inspection Grande Prairie</td><td><span class="priority-low">NONE</span></td><td>Only Youngman mentions it; safety concern for older homes</td></tr>
+      <tr><td>code compliance electrician Grande Prairie</td><td><span class="priority-low">NONE</span></td><td>No one targets this at all</td></tr>
+    </tbody>
+  </table>
+
+  <h3>AI/LLM Search Queries (GEO Targets)</h3>
+  <table class="kw-table">
+    <thead>
+      <tr><th>Query Pattern</th><th>Optimization Target</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>"Who is the best electrician in Grande Prairie?"</td><td>About page, reviews, schema, citations</td></tr>
+      <tr><td>"I need an electrician in Grande Prairie, who should I call?"</td><td>GBP, website CTA, review sentiment</td></tr>
+      <tr><td>"What electricians in Grande Prairie do commercial work?"</td><td>Service pages with detailed descriptions</td></tr>
+      <tr><td>"Best rated electrician Grande Prairie Alberta"</td><td>Review volume + rating, brand mentions</td></tr>
+      <tr><td>"Affordable electrician Grande Prairie for panel upgrade"</td><td>Pricing content, service page, blog</td></tr>
+    </tbody>
+  </table>
+  <div class="page-footer"><span>Grande Prairie Electric Inc.</span><span>AIP Agency | Confidential</span></div>
+</div>
+
+<!-- ============================================================ -->
+<!-- 05 GOOGLE BUSINESS PROFILE -->
+<!-- ============================================================ -->
+<div class="page">
+  <h2 class="section-title">05. Google Business Profile & Map Pack</h2>
+  <p class="section-subtitle">From zero to Map Pack in 90 days</p>
+
+  <div class="callout red">
+    <strong>Current State: GP Electric has NO Google Business Profile</strong>
+    <p>This is the single most critical gap. Without GBP, the business is invisible on Google Maps, cannot collect Google reviews, and cannot appear in the Local 3-Pack. This is task #1.</p>
+  </div>
+
+  <h3>GBP Setup Checklist</h3>
+  <ul class="checklist">
+    <li><strong>Create Google Business Profile</strong> at business.google.com using client's Google account</li>
+    <li><strong>Primary Category:</strong> "Electrician"</li>
+    <li><strong>Secondary Categories:</strong> "Electrical Contractor", "Lighting Contractor", "EV Charging Station Contractor"</li>
+    <li><strong>Business Description:</strong> Full 750 characters with natural keyword integration</li>
+    <li><strong>Service Area:</strong> Grande Prairie, Sexsmith, Hythe, Beaverlodge, Clairmont, Wembley, Valleyview, Spirit River, Fairview, Peace River</li>
+    <li><strong>Phone:</strong> 780-882-3046 (must match website exactly)</li>
+    <li><strong>Website:</strong> gpelectricinc.com</li>
+    <li><strong>Hours:</strong> Set accurate business hours + emergency availability note</li>
+    <li><strong>Verification:</strong> Postcard or phone verification (5-14 days)</li>
+    <li><strong>Upload 25+ photos:</strong> Team, vehicles, completed work, office, equipment</li>
+    <li><strong>Add all services</strong> with detailed descriptions</li>
+    <li><strong>Enable messaging</strong> and set up auto-responses</li>
+    <li><strong>Populate Q&A</strong> with 10-15 common customer questions</li>
+  </ul>
+
+  <h3>Map Pack Ranking Strategy</h3>
+  <div class="two-col">
+    <div>
+      <h4>Relevance Signals</h4>
+      <ul>
+        <li>Complete GBP profile (100% filled)</li>
+        <li>Correct primary + secondary categories</li>
+        <li>Detailed service descriptions with keywords</li>
+        <li>Website content matching GBP services</li>
+        <li>Regular Google Posts (weekly)</li>
+      </ul>
+      <h4>Prominence Signals</h4>
+      <ul>
+        <li>Review quantity (target: 25 in first 90 days)</li>
+        <li>Review quality (4.8+ average)</li>
+        <li>Review responses (reply to 100%)</li>
+        <li>Citation consistency across 20+ directories</li>
+        <li>Website authority (backlinks from local orgs)</li>
+      </ul>
+    </div>
+    <div>
+      <h4>Engagement Signals</h4>
+      <ul>
+        <li>Click-through rate from search results</li>
+        <li>Phone calls from GBP listing</li>
+        <li>Direction requests</li>
+        <li>Website clicks from GBP</li>
+        <li>Photo views</li>
+        <li>Post interactions</li>
+      </ul>
+      <h4>Google Posts Calendar</h4>
+      <ul>
+        <li><strong>Week 1:</strong> Safety tip / educational</li>
+        <li><strong>Week 2:</strong> Project highlight / before-after</li>
+        <li><strong>Week 3:</strong> Seasonal offer or promotion</li>
+        <li><strong>Week 4:</strong> Team spotlight / community</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="callout green">
+    <strong>90-Day Map Pack Targets</strong>
+    <p><strong>Month 1:</strong> Profile live, verified, 100% complete, 5-8 reviews, weekly posts started.<br>
+    <strong>Month 2:</strong> 15+ reviews, citation network built, consistent posting, appearing in Maps results.<br>
+    <strong>Month 3:</strong> 25+ reviews, engagement signals strong, entering Local 3-Pack for secondary keywords.</p>
+  </div>
+  <div class="page-footer"><span>Grande Prairie Electric Inc.</span><span>AIP Agency | Confidential</span></div>
+</div>
+
+<!-- ============================================================ -->
+<!-- 06 WEBSITE REBUILD -->
+<!-- ============================================================ -->
+<div class="page">
+  <h2 class="section-title">06. Website Rebuild Blueprint</h2>
+  <p class="section-subtitle">Fast, SEO-optimized, conversion-focused</p>
+
+  <h3>Tech Stack</h3>
+  <div class="callout blue">
+    <strong>Recommended: Static Site Generator (SSG)</strong>
+    <p><strong>Next.js (Static Export) or Astro</strong> &mdash; lightning-fast page loads, excellent SEO, easy content management, cheap hosting (Vercel/Netlify). HTML-first rendering ensures AI crawlers can read all content. No heavy JavaScript frameworks that block crawling.</p>
+  </div>
+
+  <h3>Site Architecture (Pages)</h3>
+  <table class="kw-table">
+    <thead>
+      <tr><th>Page</th><th>Primary Keyword Target</th><th>Purpose</th></tr>
+    </thead>
+    <tbody>
+      <tr><td><strong>Homepage</strong></td><td>electrician Grande Prairie</td><td>Trust, overview, primary CTA</td></tr>
+      <tr><td><strong>About Us</strong></td><td>electrical contractor Grande Prairie</td><td>E-E-A-T, team bios, certifications</td></tr>
+      <tr><td><strong>Residential Services</strong></td><td>residential electrician Grande Prairie</td><td>Service overview + sub-service links</td></tr>
+      <tr><td><strong>Commercial Services</strong></td><td>commercial electrician Grande Prairie</td><td>Service overview + sub-service links</td></tr>
+      <tr><td><strong>Industrial Services</strong></td><td>industrial electrician Grande Prairie</td><td>Service overview for oilfield/industrial</td></tr>
+      <tr><td><strong>Emergency Services</strong></td><td>emergency electrician Grande Prairie</td><td>24/7 availability, click-to-call</td></tr>
+      <tr><td><strong>Panel Upgrades</strong></td><td>panel upgrade Grande Prairie</td><td>Dedicated high-value service page</td></tr>
+      <tr><td><strong>EV Charger Installation</strong></td><td>EV charger installation Grande Prairie</td><td>Growing demand, high-ticket</td></tr>
+      <tr><td><strong>Generator Installation</strong></td><td>generator installation Grande Prairie</td><td>Seasonal demand, Alberta winters</td></tr>
+      <tr><td><strong>Lighting Installation</strong></td><td>lighting installation Grande Prairie</td><td>Residential + commercial</td></tr>
+      <tr><td><strong>Home Rewiring</strong></td><td>home rewiring Grande Prairie</td><td>High-value project page</td></tr>
+      <tr><td><strong>Service Areas</strong></td><td>electrician [city name]</td><td>Individual pages for each served city</td></tr>
+      <tr><td><strong>Blog</strong></td><td>Informational keywords</td><td>SEO content hub</td></tr>
+      <tr><td><strong>Reviews / Testimonials</strong></td><td>best electrician Grande Prairie</td><td>Social proof, trust signals</td></tr>
+      <tr><td><strong>Contact / Get a Quote</strong></td><td>N/A</td><td>Lead capture form &rarr; CRM</td></tr>
+      <tr><td><strong>Client Login</strong></td><td>N/A</td><td>Command Centre portal access</td></tr>
+    </tbody>
+  </table>
+
+  <h3>Conversion Elements (Every Page)</h3>
+  <ul>
+    <li><strong>Sticky header</strong> with phone number and "Get a Free Quote" button</li>
+    <li><strong>Mobile click-to-call</strong> button (sticky bottom bar)</li>
+    <li><strong>Trust badges:</strong> licensed, insured, certified, years in business</li>
+    <li><strong>Review stars</strong> pulled from Google (once available)</li>
+    <li><strong>Lead capture form</strong> on every service page (Name, Phone, Email, Service Needed, Message)</li>
+    <li><strong>Emergency banner</strong> with after-hours phone number</li>
+    <li><strong>Before/after project gallery</strong></li>
+  </ul>
+
+  <h3>Technical SEO Requirements</h3>
+  <ul>
+    <li>Full LocalBusiness + Electrician schema markup (JSON-LD)</li>
+    <li>FAQ schema on service pages and blog posts</li>
+    <li>Service schema for each service offered</li>
+    <li>OpenGraph + Twitter Card meta tags</li>
+    <li>XML sitemap auto-generation</li>
+    <li>Page speed: &lt;2s load time (SSG advantage)</li>
+    <li>Core Web Vitals all green</li>
+    <li>Semantic HTML (H1, H2, H3 hierarchy)</li>
+    <li>Alt text on all images with keyword integration</li>
+    <li>Internal linking strategy between service pages</li>
+    <li>Canonical URLs on all pages</li>
+    <li>HTTPS enforced</li>
+  </ul>
+  <div class="page-footer"><span>Grande Prairie Electric Inc.</span><span>AIP Agency | Confidential</span></div>
+</div>
+
+<!-- ============================================================ -->
+<!-- 06B WEBSITE REBUILD - SERVICE AREA PAGES -->
+<!-- ============================================================ -->
+<div class="page">
+  <h2 class="section-title">06b. Service Area Pages</h2>
+  <p class="section-subtitle">Unique, localized pages for each community served</p>
+
+  <div class="callout">
+    <strong>Why Individual Service Area Pages Matter</strong>
+    <p>Each city/town gets its own page with unique content about local electrical needs, building types, climate considerations, and community-specific details. Duplicate city pages are a ranking killer &mdash; every page must be genuinely unique.</p>
+  </div>
+
+  <h3>Target Service Areas</h3>
+  <table class="kw-table">
+    <thead>
+      <tr><th>City/Town</th><th>URL Slug</th><th>Unique Angle</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>Grande Prairie</td><td>/electrician-grande-prairie</td><td>Primary hub, full service showcase</td></tr>
+      <tr><td>Clairmont</td><td>/electrician-clairmont</td><td>Growing residential area, new builds</td></tr>
+      <tr><td>Sexsmith</td><td>/electrician-sexsmith</td><td>Small town, rural residential + farm</td></tr>
+      <tr><td>Beaverlodge</td><td>/electrician-beaverlodge</td><td>Agricultural community, farm electrical</td></tr>
+      <tr><td>Wembley</td><td>/electrician-wembley</td><td>Rural residential, acreage wiring</td></tr>
+      <tr><td>Hythe</td><td>/electrician-hythe</td><td>Remote community, emergency response</td></tr>
+      <tr><td>Spirit River</td><td>/electrician-spirit-river</td><td>Northern community, winter prep</td></tr>
+      <tr><td>Valleyview</td><td>/electrician-valleyview</td><td>Highway 43 corridor, commercial</td></tr>
+      <tr><td>Fairview</td><td>/electrician-fairview</td><td>College town, rentals + commercial</td></tr>
+      <tr><td>Peace River</td><td>/electrician-peace-river</td><td>Northern hub, industrial + residential</td></tr>
+    </tbody>
+  </table>
+
+  <h3>Service Area Page Template</h3>
+  <ul>
+    <li>H1: "Licensed Electrician in [City Name] &mdash; Grande Prairie Electric Inc."</li>
+    <li>Intro paragraph with local context (population, growth, unique needs)</li>
+    <li>Services available in that area</li>
+    <li>Response time / distance from GP office</li>
+    <li>Local testimonials (when available)</li>
+    <li>FAQ section specific to that area</li>
+    <li>Embedded Google Map showing service coverage</li>
+    <li>CTA: "Get a Free Quote for Your [City] Project"</li>
+    <li>Full LocalBusiness schema with GeoCoordinates</li>
+  </ul>
+
+  <h3>Homepage Design Principles</h3>
+  <div class="two-col">
+    <div>
+      <h4>Above the Fold (Hero)</h4>
+      <ul>
+        <li>Bold headline: "Grande Prairie's Trusted Electrician"</li>
+        <li>Phone number (large, click-to-call)</li>
+        <li>"Get a Free Quote" button</li>
+        <li>Trust badges: Licensed | Insured | 24/7</li>
+        <li>Google review stars (once available)</li>
+        <li>Background: professional team photo</li>
+      </ul>
+    </div>
+    <div>
+      <h4>Below the Fold</h4>
+      <ul>
+        <li>Service cards with icons</li>
+        <li>Why Choose GP Electric (USPs)</li>
+        <li>Recent project showcase</li>
+        <li>Testimonial carousel</li>
+        <li>Service area map</li>
+        <li>Blog preview (latest 3 posts)</li>
+        <li>Contact form + map</li>
+      </ul>
+    </div>
+  </div>
+  <div class="page-footer"><span>Grande Prairie Electric Inc.</span><span>AIP Agency | Confidential</span></div>
+</div>
+
+<!-- ============================================================ -->
+<!-- 07 AI/LLM SEARCH OPTIMIZATION -->
+<!-- ============================================================ -->
+<div class="page">
+  <h2 class="section-title">07. AI & LLM Search Optimization (GEO)</h2>
+  <p class="section-subtitle">Getting recommended by ChatGPT, Gemini, Perplexity & Claude</p>
+
+  <div class="callout blue">
+    <strong>First-Mover Advantage</strong>
+    <p>No electrician in Grande Prairie is currently optimizing for AI search. This is the biggest untapped channel. When someone asks an AI assistant "Who's the best electrician in Grande Prairie?", we need GP Electric to be the answer.</p>
+  </div>
+
+  <h3>How LLMs Source Local Business Recommendations</h3>
+  <table class="kw-table">
+    <thead>
+      <tr><th>Signal</th><th>Weight</th><th>Our Strategy</th></tr>
+    </thead>
+    <tbody>
+      <tr><td><strong>Website Content Quality</strong></td><td><span class="priority-high">HIGH</span></td><td>Comprehensive, well-structured service pages with FAQ schema</td></tr>
+      <tr><td><strong>Google Reviews (Rating + Volume)</strong></td><td><span class="priority-high">HIGH</span></td><td>Aggressive review generation, aim for 4.8+ with 50+ reviews</td></tr>
+      <tr><td><strong>Citation Consistency</strong></td><td><span class="priority-high">HIGH</span></td><td>NAP consistency across 20+ directories</td></tr>
+      <tr><td><strong>Structured Data / Schema</strong></td><td><span class="priority-high">HIGH</span></td><td>Full JSON-LD: LocalBusiness, Service, FAQ, Review schema</td></tr>
+      <tr><td><strong>Brand Mentions Across Web</strong></td><td><span class="priority-med">MED</span></td><td>PR, guest posts, community involvement, forum presence</td></tr>
+      <tr><td><strong>Social Media Presence</strong></td><td><span class="priority-med">MED</span></td><td>Active Facebook + LinkedIn with regular engagement</td></tr>
+      <tr><td><strong>Forum Mentions (Reddit, Quora)</strong></td><td><span class="priority-med">MED</span></td><td>Natural participation in r/GrandePrairie, local forums</td></tr>
+      <tr><td><strong>E-E-A-T Signals</strong></td><td><span class="priority-high">HIGH</span></td><td>Team bios with credentials, certifications, years of experience</td></tr>
+    </tbody>
+  </table>
+
+  <h3>Content Strategy for AI Visibility</h3>
+  <p>AI models favor content that is <strong>direct, well-structured, and authoritative</strong>. Our content must:</p>
+  <ul>
+    <li><strong>Lead with direct answers</strong> &mdash; question-based headings with 40-60 word answers before expanding</li>
+    <li><strong>Use semantic HTML</strong> &mdash; proper heading hierarchy, lists, tables (AI crawlers parse these easily)</li>
+    <li><strong>Avoid heavy JavaScript</strong> &mdash; SSG ensures all content is in HTML (critical for AI crawling)</li>
+    <li><strong>Include location + entity references</strong> naturally throughout content</li>
+    <li><strong>Build topical authority</strong> &mdash; comprehensive coverage of all electrical topics signals expertise</li>
+    <li><strong>Maintain FAQ sections</strong> on every service page with schema markup</li>
+  </ul>
+
+  <h3>Platform Presence Checklist for LLM Visibility</h3>
+  <div class="two-col">
+    <div>
+      <h4>Must Have</h4>
+      <ul>
+        <li>Google Business Profile (with reviews)</li>
+        <li>Website with full schema markup</li>
+        <li>Yellow Pages Canada</li>
+        <li>Yelp Canada</li>
+        <li>HomeStars</li>
+        <li>BBB listing</li>
+        <li>Facebook business page</li>
+        <li>LinkedIn company page</li>
+      </ul>
+    </div>
+    <div>
+      <h4>Should Have</h4>
+      <ul>
+        <li>Grande Prairie Chamber of Commerce</li>
+        <li>TrustedPros profile</li>
+        <li>Reddit presence (r/GrandePrairie)</li>
+        <li>Industry association listings</li>
+        <li>Local news mentions</li>
+        <li>Blog with educational content</li>
+        <li>YouTube channel (project videos)</li>
+        <li>Apple Maps listing</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="callout green">
+    <strong>AI Visibility Rule</strong>
+    <p>"AI visibility is fueled by traditional SEO strength." Every signal that helps Google rankings also helps LLM recommendations. The difference is that AI models also weight <strong>brand mentions without links</strong>, <strong>review sentiment analysis</strong>, and <strong>structured data</strong> more heavily than traditional search.</p>
+  </div>
+  <div class="page-footer"><span>Grande Prairie Electric Inc.</span><span>AIP Agency | Confidential</span></div>
+</div>
+
+<!-- ============================================================ -->
+<!-- 08 SOCIAL MEDIA STRATEGY -->
+<!-- ============================================================ -->
+<div class="page">
+  <h2 class="section-title">08. Social Media Strategy</h2>
+  <p class="section-subtitle">Facebook relaunch + LinkedIn launch</p>
+
+  <h3>Platform Strategy</h3>
+  <div class="two-col">
+    <div>
+      <h4>Facebook (Primary)</h4>
+      <p><strong>Current:</strong> 186 likes, dormant page</p>
+      <p><strong>Goal:</strong> Active community presence, local engagement, review generation, project showcases</p>
+      <p><strong>Posting Frequency:</strong> 4-5 posts/week</p>
+      <p><strong>Content Mix:</strong></p>
+      <ul>
+        <li>30% &mdash; Project showcases (before/after)</li>
+        <li>25% &mdash; Educational tips & safety</li>
+        <li>20% &mdash; Team & behind-the-scenes</li>
+        <li>15% &mdash; Community involvement</li>
+        <li>10% &mdash; Promotions & seasonal offers</li>
+      </ul>
+    </div>
+    <div>
+      <h4>LinkedIn (New)</h4>
+      <p><strong>Current:</strong> No presence</p>
+      <p><strong>Goal:</strong> Commercial/industrial client acquisition, professional credibility, networking</p>
+      <p><strong>Posting Frequency:</strong> 2-3 posts/week</p>
+      <p><strong>Content Mix:</strong></p>
+      <ul>
+        <li>35% &mdash; Commercial project case studies</li>
+        <li>25% &mdash; Industry insights & code updates</li>
+        <li>20% &mdash; Company news & milestones</li>
+        <li>10% &mdash; Team spotlights & hiring</li>
+        <li>10% &mdash; Local business partnerships</li>
+      </ul>
+    </div>
+  </div>
+
+  <h3>Monthly Content Calendar Template</h3>
+  <table class="comp-table">
+    <thead>
+      <tr><th>Week</th><th>Monday</th><th>Wednesday</th><th>Friday</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>Week 1</strong></td>
+        <td>Project Showcase (before/after photos)</td>
+        <td>Safety Tip Tuesday (electrical safety for homes)</td>
+        <td>Fun Friday (team photo, job site moment)</td>
+      </tr>
+      <tr>
+        <td><strong>Week 2</strong></td>
+        <td>Service Spotlight (e.g., EV charger installation)</td>
+        <td>Educational Post (e.g., "Signs your panel needs upgrading")</td>
+        <td>Customer Testimonial / Review share</td>
+      </tr>
+      <tr>
+        <td><strong>Week 3</strong></td>
+        <td>Community Post (local event, sponsorship)</td>
+        <td>Industry News (code changes, new tech)</td>
+        <td>Project Showcase</td>
+      </tr>
+      <tr>
+        <td><strong>Week 4</strong></td>
+        <td>Seasonal Tip (winter prep, storm readiness)</td>
+        <td>Team Spotlight (meet the crew)</td>
+        <td>CTA Post (free quote offer, contact us)</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h3>Social Media Content Ideas (First 30 Days)</h3>
+  <ol>
+    <li>"We're back online! GP Electric has a brand new website" &mdash; relaunch announcement</li>
+    <li>Meet the team &mdash; introduce the owner and crew</li>
+    <li>"5 Signs Your Electrical Panel Needs an Upgrade" &mdash; educational carousel</li>
+    <li>Before/after of a recent project</li>
+    <li>"Why Every Grande Prairie Home Should Have a Whole-Home Surge Protector"</li>
+    <li>Google review milestone celebration (once first reviews come in)</li>
+    <li>"EV Charger Installation: What Grande Prairie Homeowners Need to Know"</li>
+    <li>Winter electrical safety tips for Alberta</li>
+    <li>Commercial project case study</li>
+    <li>"Thank you to our latest customer!" &mdash; review screenshot share</li>
+  </ol>
+
+  <div class="callout">
+    <strong>Google My Business Posts</strong>
+    <p>In addition to Facebook and LinkedIn, we'll post weekly updates directly to the Google Business Profile. These posts appear in Google Search and Maps results and boost engagement signals for Map Pack ranking. Same content can often be repurposed across all three platforms.</p>
+  </div>
+  <div class="page-footer"><span>Grande Prairie Electric Inc.</span><span>AIP Agency | Confidential</span></div>
+</div>
+
+<!-- ============================================================ -->
+<!-- 09 CONTENT MARKETING -->
+<!-- ============================================================ -->
+<div class="page">
+  <h2 class="section-title">09. Content Marketing & Blog Strategy</h2>
+  <p class="section-subtitle">Building topical authority and capturing informational search traffic</p>
+
+  <div class="callout blue">
+    <strong>Competitive Gap</strong>
+    <p>Zero competitors in Grande Prairie are publishing blog content. Not one. This is a massive opportunity to capture informational search traffic and build topical authority that feeds both Google rankings and AI/LLM recommendations.</p>
+  </div>
+
+  <h3>Blog Publishing Schedule</h3>
+  <p><strong>Frequency:</strong> 2 articles per month (minimum), ramping to 4/month after Month 3</p>
+  <p><strong>Word Count:</strong> 1,200-2,000 words per article</p>
+  <p><strong>Structure:</strong> Question-based heading &rarr; direct answer (40-60 words) &rarr; detailed expansion &rarr; FAQ section &rarr; CTA</p>
+
+  <h3>First 6 Months Blog Content Plan</h3>
+  <table class="kw-table">
+    <thead>
+      <tr><th>Month</th><th>Article 1</th><th>Article 2</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>Month 1</strong></td>
+        <td>"How Much Does an Electrician Cost in Grande Prairie? (2026 Guide)"</td>
+        <td>"7 Signs Your Home Needs an Electrical Panel Upgrade"</td>
+      </tr>
+      <tr>
+        <td><strong>Month 2</strong></td>
+        <td>"EV Charger Installation in Grande Prairie: Complete Homeowner's Guide"</td>
+        <td>"When to Call an Electrician vs. DIY: Alberta Safety Guide"</td>
+      </tr>
+      <tr>
+        <td><strong>Month 3</strong></td>
+        <td>"Generator Installation for Grande Prairie Homes: What You Need to Know"</td>
+        <td>"Alberta Electrical Code: What Homeowners Need to Know in 2026"</td>
+      </tr>
+      <tr>
+        <td><strong>Month 4</strong></td>
+        <td>"Complete Guide to Home Rewiring in Grande Prairie"</td>
+        <td>"What Causes Circuit Breakers to Keep Tripping? (And When to Worry)"</td>
+      </tr>
+      <tr>
+        <td><strong>Month 5</strong></td>
+        <td>"Hot Tub Wiring Requirements in Alberta: Permits, Costs & Safety"</td>
+        <td>"Commercial Electrical Maintenance: Preventing Costly Downtime"</td>
+      </tr>
+      <tr>
+        <td><strong>Month 6</strong></td>
+        <td>"Whole-Home Surge Protection: Why Every GP Home Needs One"</td>
+        <td>"Preparing Your Home's Electrical System for Alberta Winters"</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h3>Content Optimization Checklist (Every Article)</h3>
+  <ul class="checklist">
+    <li>Target keyword in H1, first 100 words, and at least 2 subheadings</li>
+    <li>FAQ section with 3-5 questions (FAQ schema markup)</li>
+    <li>"Grande Prairie" mentioned naturally 3-5 times throughout</li>
+    <li>Internal links to relevant service pages</li>
+    <li>CTA at bottom: "Need help? Call GP Electric at 780-882-3046"</li>
+    <li>Original images (job photos, diagrams) with descriptive alt text</li>
+    <li>Meta title under 60 characters with keyword</li>
+    <li>Meta description under 155 characters with CTA</li>
+    <li>Table of contents for articles over 1,500 words</li>
+    <li>Share on Facebook, LinkedIn, and Google Posts after publishing</li>
+  </ul>
+
+  <div class="callout green">
+    <strong>Content Repurposing Strategy</strong>
+    <p>Every blog article gets repurposed into: 2-3 social media posts (key takeaways), 1 Google Business post, 1 LinkedIn article summary, and FAQ additions to relevant service pages. One piece of content = 6+ touchpoints.</p>
+  </div>
+  <div class="page-footer"><span>Grande Prairie Electric Inc.</span><span>AIP Agency | Confidential</span></div>
+</div>
+
+<!-- ============================================================ -->
+<!-- 10 CRM & LEAD TRACKING -->
+<!-- ============================================================ -->
+<div class="page">
+  <h2 class="section-title">10. CRM & Lead Tracking</h2>
+  <p class="section-subtitle">Command Centre integration for full pipeline visibility</p>
+
+  <h3>CRM Architecture</h3>
+  <div class="callout blue">
+    <strong>Command Centre Integration</strong>
+    <p>GP Electric will have a dedicated login on the Command Centre platform with a full CRM tailored to electrical contracting. Every lead from every channel flows into one place.</p>
+  </div>
+
+  <h3>Lead Sources &rarr; CRM Pipeline</h3>
+  <table class="kw-table">
+    <thead>
+      <tr><th>Lead Source</th><th>Capture Method</th><th>Auto-Actions</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>Website Contact Form</td><td>Form submission &rarr; webhook &rarr; CRM</td><td>Auto-assign, email confirmation, SMS notification to owner</td></tr>
+      <tr><td>Phone Calls</td><td>Call tracking number &rarr; CRM log</td><td>Missed call follow-up reminder</td></tr>
+      <tr><td>Google Business Profile</td><td>GBP messaging &rarr; CRM integration</td><td>Auto-response, lead creation</td></tr>
+      <tr><td>Facebook Messages</td><td>FB Messenger &rarr; CRM integration</td><td>Auto-response, lead tagging</td></tr>
+      <tr><td>Email Inquiries</td><td>Email forwarding &rarr; CRM</td><td>Auto-categorize, assign</td></tr>
+      <tr><td>Referrals</td><td>Manual entry with source tag</td><td>Referral tracking, thank-you trigger</td></tr>
+    </tbody>
+  </table>
+
+  <h3>CRM Pipeline Stages</h3>
+  <div style="display: flex; gap: 8px; margin: 16px 0; flex-wrap: wrap;">
+    <div style="background: #dbeafe; padding: 10px 16px; border-radius: 8px; font-size: 12px; font-weight: 600; color: #1e40af;">1. New Lead</div>
+    <div style="font-size: 18px; color: #ccc; align-self: center;">&rarr;</div>
+    <div style="background: #e0e7ff; padding: 10px 16px; border-radius: 8px; font-size: 12px; font-weight: 600; color: #3730a3;">2. Contacted</div>
+    <div style="font-size: 18px; color: #ccc; align-self: center;">&rarr;</div>
+    <div style="background: #fef3c7; padding: 10px 16px; border-radius: 8px; font-size: 12px; font-weight: 600; color: #92400e;">3. Quote Sent</div>
+    <div style="font-size: 18px; color: #ccc; align-self: center;">&rarr;</div>
+    <div style="background: #d1fae5; padding: 10px 16px; border-radius: 8px; font-size: 12px; font-weight: 600; color: #065f46;">4. Quote Accepted</div>
+    <div style="font-size: 18px; color: #ccc; align-self: center;">&rarr;</div>
+    <div style="background: #ecfdf5; padding: 10px 16px; border-radius: 8px; font-size: 12px; font-weight: 600; color: #047857;">5. Job Scheduled</div>
+    <div style="font-size: 18px; color: #ccc; align-self: center;">&rarr;</div>
+    <div style="background: #10b981; padding: 10px 16px; border-radius: 8px; font-size: 12px; font-weight: 700; color: white;">6. Completed</div>
+  </div>
+
+  <h3>Dashboard Metrics (Client-Facing)</h3>
+  <div class="metric-row">
+    <div class="metric"><div class="val">--</div><div class="desc">New Leads This Month</div></div>
+    <div class="metric"><div class="val">--</div><div class="desc">Quotes Sent</div></div>
+    <div class="metric"><div class="val">--</div><div class="desc">Jobs Won</div></div>
+    <div class="metric"><div class="val">--</div><div class="desc">Revenue Pipeline</div></div>
+  </div>
+
+  <h3>Automation Workflows</h3>
+  <ul>
+    <li><strong>New Lead Alert:</strong> Instant SMS + email to owner when a new lead comes in</li>
+    <li><strong>Follow-Up Sequence:</strong> If no contact within 24 hours, auto-reminder</li>
+    <li><strong>Post-Job Review Request:</strong> 2 hours after job marked complete, SMS with Google review link</li>
+    <li><strong>Quote Follow-Up:</strong> If quote not accepted within 3 days, automated check-in</li>
+    <li><strong>Monthly Report:</strong> Auto-generated report of leads, conversion rates, revenue</li>
+    <li><strong>Anniversary/Maintenance Reminders:</strong> Annual check-up reminders for past customers</li>
+  </ul>
+
+  <div class="callout">
+    <strong>Client Login Portal</strong>
+    <p>GP Electric owner gets a Command Centre login to see: lead pipeline, upcoming jobs, review requests status, social media post calendar, website analytics, and monthly performance reports &mdash; all in one dashboard.</p>
+  </div>
+  <div class="page-footer"><span>Grande Prairie Electric Inc.</span><span>AIP Agency | Confidential</span></div>
+</div>
+
+<!-- ============================================================ -->
+<!-- 11 CITATION STRATEGY -->
+<!-- ============================================================ -->
+<div class="page">
+  <h2 class="section-title">11. Citation & Directory Strategy</h2>
+  <p class="section-subtitle">Building NAP consistency across the web</p>
+
+  <div class="callout red">
+    <strong>NAP Consistency is Critical</strong>
+    <p>Name, Address, and Phone number must be <strong>exactly identical</strong> across every listing. Even small variations ("Inc." vs "Inc" vs "Incorporated") confuse Google and hurt Map Pack rankings.</p>
+  </div>
+
+  <h3>Standard NAP Format</h3>
+  <div style="background: var(--gray-50); border: 2px solid var(--primary); border-radius: 8px; padding: 16px; margin: 12px 0; font-family: monospace; font-size: 14px;">
+    <strong>Grande Prairie Electric Inc.</strong><br>
+    [Street Address], Grande Prairie, AB [Postal Code]<br>
+    (780) 882-3046<br>
+    gpelectricinc.com
+  </div>
+
+  <h3>Priority Citation Directory List</h3>
+  <table class="kw-table">
+    <thead>
+      <tr><th>Directory</th><th>Priority</th><th>Type</th><th>Status</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>Google Business Profile</td><td><span class="priority-high">HIGH</span></td><td>Search Engine</td><td>To Create</td></tr>
+      <tr><td>Facebook Business Page</td><td><span class="priority-high">HIGH</span></td><td>Social</td><td>Exists - Update NAP</td></tr>
+      <tr><td>Yelp Canada</td><td><span class="priority-high">HIGH</span></td><td>Review Site</td><td>To Create</td></tr>
+      <tr><td>Yellow Pages Canada</td><td><span class="priority-high">HIGH</span></td><td>Directory</td><td>To Create</td></tr>
+      <tr><td>HomeStars</td><td><span class="priority-high">HIGH</span></td><td>Home Services</td><td>To Create</td></tr>
+      <tr><td>Better Business Bureau</td><td><span class="priority-high">HIGH</span></td><td>Trust/Directory</td><td>To Create</td></tr>
+      <tr><td>Apple Maps / Apple Business Connect</td><td><span class="priority-high">HIGH</span></td><td>Search/Maps</td><td>To Create</td></tr>
+      <tr><td>Bing Places</td><td><span class="priority-med">MED</span></td><td>Search Engine</td><td>To Create</td></tr>
+      <tr><td>LinkedIn Company Page</td><td><span class="priority-med">MED</span></td><td>Social/Professional</td><td>To Create</td></tr>
+      <tr><td>TrustedPros</td><td><span class="priority-med">MED</span></td><td>Home Services</td><td>To Create</td></tr>
+      <tr><td>Grande Prairie Chamber of Commerce</td><td><span class="priority-med">MED</span></td><td>Local Business</td><td>Check Membership</td></tr>
+      <tr><td>ECAA (Electrical Contractors Assoc. of AB)</td><td><span class="priority-med">MED</span></td><td>Industry</td><td>Check Membership</td></tr>
+      <tr><td>Canada411</td><td><span class="priority-low">LOW</span></td><td>Directory</td><td>To Create</td></tr>
+      <tr><td>Canpages</td><td><span class="priority-low">LOW</span></td><td>Directory</td><td>To Create</td></tr>
+      <tr><td>iBegin</td><td><span class="priority-low">LOW</span></td><td>Directory</td><td>To Create</td></tr>
+      <tr><td>Hotfrog Canada</td><td><span class="priority-low">LOW</span></td><td>Directory</td><td>To Create</td></tr>
+      <tr><td>Cylex Canada</td><td><span class="priority-low">LOW</span></td><td>Directory</td><td>To Create</td></tr>
+      <tr><td>ThreeBestRated</td><td><span class="priority-med">MED</span></td><td>Review/Ranking</td><td>To Submit</td></tr>
+      <tr><td>MeetAnElectrician.com</td><td><span class="priority-low">LOW</span></td><td>Industry Directory</td><td>To Create</td></tr>
+      <tr><td>RenovationFind</td><td><span class="priority-low">LOW</span></td><td>Home Services</td><td>To Create</td></tr>
+    </tbody>
+  </table>
+
+  <div class="callout green">
+    <strong>Citation Building Timeline</strong>
+    <p><strong>Week 1-2:</strong> GBP, Facebook update, Yelp, Yellow Pages, HomeStars, BBB, Apple Maps (7 core citations)<br>
+    <strong>Week 3-4:</strong> Bing Places, LinkedIn, TrustedPros, Chamber of Commerce, ECAA (5 secondary)<br>
+    <strong>Month 2:</strong> Remaining directories (8+ tertiary citations)<br>
+    <strong>Total Target:</strong> 20+ consistent citations within 60 days</p>
+  </div>
+  <div class="page-footer"><span>Grande Prairie Electric Inc.</span><span>AIP Agency | Confidential</span></div>
+</div>
+
+<!-- ============================================================ -->
+<!-- 12 REVIEW GENERATION -->
+<!-- ============================================================ -->
+<div class="page">
+  <h2 class="section-title">12. Review Generation System</h2>
+  <p class="section-subtitle">Building social proof from zero</p>
+
+  <div class="stats-row">
+    <div class="stat-box">
+      <div class="number">0</div>
+      <div class="label">Current Reviews</div>
+    </div>
+    <div class="stat-box">
+      <div class="number">25</div>
+      <div class="label">90-Day Target</div>
+    </div>
+    <div class="stat-box">
+      <div class="number">50</div>
+      <div class="label">6-Month Target</div>
+    </div>
+    <div class="stat-box">
+      <div class="number">4.8+</div>
+      <div class="label">Rating Target</div>
+    </div>
+  </div>
+
+  <h3>Review Request System</h3>
+  <ol>
+    <li><strong>Job Completion:</strong> Technician marks job as complete in CRM</li>
+    <li><strong>Automated SMS (2 hours later):</strong> "Hi [Name], thank you for choosing GP Electric! We'd love your feedback. Please leave us a quick Google review: [direct link]. It means a lot to our small business!"</li>
+    <li><strong>Follow-Up Email (24 hours):</strong> If no review, send email version with same link</li>
+    <li><strong>Thank-You Response:</strong> Owner responds to every review within 24 hours</li>
+  </ol>
+
+  <h3>Review Response Templates</h3>
+  <div class="two-col">
+    <div>
+      <h4>Positive Review Response</h4>
+      <p style="font-size: 12px; background: var(--gray-50); padding: 12px; border-radius: 8px; font-style: italic;">"Thank you so much, [Name]! We're glad we could help with your [service type] in [area]. Our team takes pride in delivering quality electrical work for every customer. We'll be here whenever you need us! &mdash; The GP Electric Team"</p>
+    </div>
+    <div>
+      <h4>Negative Review Response</h4>
+      <p style="font-size: 12px; background: var(--gray-50); padding: 12px; border-radius: 8px; font-style: italic;">"[Name], we're sorry to hear about your experience. This isn't up to our standards. Please reach out to us directly at (780) 882-3046 so we can make this right. Customer satisfaction is our top priority. &mdash; [Owner Name], GP Electric"</p>
+    </div>
+  </div>
+
+  <h3>Additional Review Generation Tactics</h3>
+  <ul>
+    <li><strong>QR Code on Invoices:</strong> Physical QR code linking directly to Google review page</li>
+    <li><strong>In-Person Ask:</strong> Train technicians to ask satisfied customers for reviews at job completion</li>
+    <li><strong>Email Signature:</strong> "Love our work? Leave us a Google review!" with link</li>
+    <li><strong>Website Review Page:</strong> Dedicated page with Google review button</li>
+    <li><strong>Social Media:</strong> Share positive reviews on Facebook/LinkedIn (builds social proof + encourages others)</li>
+    <li><strong>Past Customer Outreach:</strong> Contact previous satisfied customers for reviews (one-time batch)</li>
+  </ul>
+
+  <div class="callout">
+    <strong>Important: Ethical Review Practices</strong>
+    <p>Never offer incentives for reviews (violates Google guidelines). Never post fake reviews. Focus on making it easy for genuinely satisfied customers to share their experience. Consistency matters more than spikes &mdash; 3-5 reviews per month is sustainable and looks natural to Google.</p>
+  </div>
+
+  <h3>Review Monitoring</h3>
+  <ul>
+    <li>Set up Google Alerts for "Grande Prairie Electric" mentions</li>
+    <li>Monitor Google, Facebook, Yelp, and HomeStars weekly</li>
+    <li>Respond to all reviews within 24 hours</li>
+    <li>Track review velocity and rating trends in CRM dashboard</li>
+  </ul>
+  <div class="page-footer"><span>Grande Prairie Electric Inc.</span><span>AIP Agency | Confidential</span></div>
+</div>
+
+<!-- ============================================================ -->
+<!-- 13 IMPLEMENTATION ROADMAP -->
+<!-- ============================================================ -->
+<div class="page">
+  <h2 class="section-title">13. Implementation Roadmap</h2>
+  <p class="section-subtitle">Phased execution plan</p>
+
+  <div class="phase">
+    <div class="phase-header">
+      <div class="phase-num">1</div>
+      <div class="phase-title">Foundation & Setup</div>
+      <div class="phase-timeline">Weeks 1-2</div>
+    </div>
+    <ul>
+      <li>Get access to client's Google account and Facebook page</li>
+      <li>Create and verify Google Business Profile</li>
+      <li>Update Facebook page (profile, cover, about, NAP, CTA)</li>
+      <li>Create LinkedIn company page</li>
+      <li>Begin website development (scaffold, homepage, core pages)</li>
+      <li>Set up CRM pipeline in Command Centre</li>
+      <li>Create client login portal</li>
+      <li>Submit first 7 priority citations (GBP, Yelp, Yellow Pages, HomeStars, BBB, Apple Maps, Bing)</li>
+      <li>Establish standard NAP format document</li>
+    </ul>
+  </div>
+
+  <div class="phase">
+    <div class="phase-header">
+      <div class="phase-num">2</div>
+      <div class="phase-title">Website Launch & Content Engine</div>
+      <div class="phase-timeline">Weeks 3-4</div>
+    </div>
+    <ul>
+      <li>Complete all service pages with full schema markup</li>
+      <li>Build service area pages (10 cities/towns)</li>
+      <li>Launch website on gpelectricinc.com</li>
+      <li>Connect lead capture forms to CRM</li>
+      <li>Publish first 2 blog articles</li>
+      <li>Begin social media posting schedule (Facebook + LinkedIn)</li>
+      <li>Set up Google Posts weekly publishing</li>
+      <li>Submit secondary citations (5 more directories)</li>
+      <li>Start past-customer review outreach campaign</li>
+    </ul>
+  </div>
+
+  <div class="phase">
+    <div class="phase-header">
+      <div class="phase-num">3</div>
+      <div class="phase-title">Growth & Optimization</div>
+      <div class="phase-timeline">Months 2-3</div>
+    </div>
+    <ul>
+      <li>Continue social media posting (4-5x/week Facebook, 2-3x/week LinkedIn)</li>
+      <li>Publish 2 blog articles per month</li>
+      <li>Complete remaining citation submissions (20+ total)</li>
+      <li>Activate automated review request system</li>
+      <li>Monitor and respond to all reviews</li>
+      <li>Optimize GBP based on Insights data</li>
+      <li>A/B test website CTAs and forms</li>
+      <li>Track lead sources and conversion rates in CRM</li>
+      <li>Begin building local backlinks (Chamber, associations)</li>
+      <li>Target: 15-25 Google reviews by end of Month 3</li>
+    </ul>
+  </div>
+
+  <div class="phase">
+    <div class="phase-header">
+      <div class="phase-num">4</div>
+      <div class="phase-title">Authority & Domination</div>
+      <div class="phase-timeline">Months 4-6</div>
+    </div>
+    <ul>
+      <li>Ramp blog to 4 articles/month</li>
+      <li>Begin targeting competitive keywords with deeper content</li>
+      <li>Build relationships for guest posting and local PR</li>
+      <li>Launch YouTube channel (optional: project walkthrough videos)</li>
+      <li>Explore Reddit/forum presence for AI visibility</li>
+      <li>Refine CRM automations based on data</li>
+      <li>Target: 50+ Google reviews, Map Pack for secondary keywords</li>
+      <li>Target: Top 5 organic for "electrician Grande Prairie"</li>
+      <li>Monthly performance reporting to client</li>
+    </ul>
+  </div>
+
+  <div class="phase">
+    <div class="phase-header">
+      <div class="phase-num">5</div>
+      <div class="phase-title">Long-Term Dominance</div>
+      <div class="phase-timeline">Months 6-12</div>
+    </div>
+    <ul>
+      <li>Maintain content velocity (4 articles/month + social)</li>
+      <li>Target: Top 3 Map Pack for primary keywords</li>
+      <li>Target: 100+ Google reviews</li>
+      <li>AI/LLM search monitoring and optimization</li>
+      <li>Expand into video content and YouTube SEO</li>
+      <li>Consider Google Ads for immediate lead generation (supplemental)</li>
+      <li>Annual website refresh and content audit</li>
+    </ul>
+  </div>
+  <div class="page-footer"><span>Grande Prairie Electric Inc.</span><span>AIP Agency | Confidential</span></div>
+</div>
+
+<!-- ============================================================ -->
+<!-- 14 KPIs & SUCCESS METRICS -->
+<!-- ============================================================ -->
+<div class="page">
+  <h2 class="section-title">14. KPIs & Success Metrics</h2>
+  <p class="section-subtitle">How we measure success</p>
+
+  <h3>90-Day Targets</h3>
+  <div class="metric-row">
+    <div class="metric"><div class="val">25+</div><div class="desc">Google Reviews</div></div>
+    <div class="metric"><div class="val">4.8+</div><div class="desc">Average Rating</div></div>
+    <div class="metric"><div class="val">20+</div><div class="desc">Citations Built</div></div>
+    <div class="metric"><div class="val">100%</div><div class="desc">GBP Optimized</div></div>
+  </div>
+  <div class="metric-row">
+    <div class="metric"><div class="val">6</div><div class="desc">Blog Articles</div></div>
+    <div class="metric"><div class="val">60+</div><div class="desc">Social Posts</div></div>
+    <div class="metric"><div class="val">Top 10</div><div class="desc">Organic Ranking</div></div>
+    <div class="metric"><div class="val">Maps</div><div class="desc">Visible in Results</div></div>
+  </div>
+
+  <h3>6-Month Targets</h3>
+  <div class="metric-row">
+    <div class="metric"><div class="val">50+</div><div class="desc">Google Reviews</div></div>
+    <div class="metric"><div class="val">Top 5</div><div class="desc">Organic Ranking</div></div>
+    <div class="metric"><div class="val">Top 3</div><div class="desc">Map Pack (Secondary)</div></div>
+    <div class="metric"><div class="val">10+</div><div class="desc">Leads/Month from Web</div></div>
+  </div>
+
+  <h3>12-Month Targets</h3>
+  <div class="metric-row">
+    <div class="metric"><div class="val">100+</div><div class="desc">Google Reviews</div></div>
+    <div class="metric"><div class="val">Top 3</div><div class="desc">Map Pack (Primary)</div></div>
+    <div class="metric"><div class="val">Top 3</div><div class="desc">Organic Ranking</div></div>
+    <div class="metric"><div class="val">AI</div><div class="desc">LLM Recommended</div></div>
+  </div>
+
+  <h3>Monthly Reporting Dashboard</h3>
+  <table class="kw-table">
+    <thead>
+      <tr><th>Metric Category</th><th>Tracked Metrics</th><th>Tool/Source</th></tr>
+    </thead>
+    <tbody>
+      <tr><td><strong>Search Rankings</strong></td><td>Keyword positions, Map Pack placement</td><td>Google Search Console, rank tracker</td></tr>
+      <tr><td><strong>Website Traffic</strong></td><td>Sessions, users, bounce rate, pages/session</td><td>Google Analytics 4</td></tr>
+      <tr><td><strong>Lead Generation</strong></td><td>Form submissions, phone calls, chat messages</td><td>CRM / Command Centre</td></tr>
+      <tr><td><strong>Conversion</strong></td><td>Lead-to-quote rate, quote-to-close rate, revenue</td><td>CRM / Command Centre</td></tr>
+      <tr><td><strong>Reviews</strong></td><td>New reviews, average rating, response rate</td><td>GBP Insights</td></tr>
+      <tr><td><strong>Social Media</strong></td><td>Followers, engagement rate, reach, clicks</td><td>Facebook Insights, LinkedIn Analytics</td></tr>
+      <tr><td><strong>GBP Performance</strong></td><td>Views, searches, calls, direction requests, clicks</td><td>GBP Insights</td></tr>
+      <tr><td><strong>Content</strong></td><td>Articles published, organic traffic per article</td><td>GA4 + Search Console</td></tr>
+    </tbody>
+  </table>
+
+  <div class="callout green" style="margin-top: 24px;">
+    <strong>The Bottom Line</strong>
+    <p>This strategy transforms GP Electric from invisible to dominant. No competitor in Grande Prairie is executing at this level &mdash; they're coasting on legacy reputation and basic websites. By combining a world-class website, aggressive GBP optimization, consistent content marketing, social media presence, AI search optimization, and full CRM integration, GP Electric will systematically capture market share and become the go-to electrician in the Peace Region.</p>
+    <p style="margin-top: 8px;"><strong>Let's get to work.</strong></p>
+  </div>
+  <div class="page-footer"><span>Grande Prairie Electric Inc.</span><span>AIP Agency | Confidential</span></div>
+</div>
+
+</body>
+</html>
