@@ -50,11 +50,9 @@ const articleSchema = {
   "keywords": post.data.keywords.join(', ')
 };
 
-// Build FAQ schema if the post content includes FAQ-style questions
-const faqSchema = post.id === 'how-much-does-electrician-cost-grande-prairie' ? {
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
+// Build FAQ schema for posts with FAQ sections
+const faqSchemas: Record<string, any[]> = {
+  'how-much-does-electrician-cost-grande-prairie': [
     {
       "@type": "Question",
       "name": "Do I need a permit for electrical work in Grande Prairie?",
@@ -95,7 +93,64 @@ const faqSchema = post.id === 'how-much-does-electrician-cost-grande-prairie' ? 
         "text": "100-amp was standard in older homes but doesn't cut it for modern electrical loads. 200-amp service gives you the capacity to run air conditioning, EV chargers, hot tubs, and home offices without overloading your system."
       }
     }
+  ],
+  'spring-electrical-safety-checklist-grande-prairie': [
+    {
+      "@type": "Question",
+      "name": "How often should I have my home's electrical system inspected?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "For homes under 25 years old with no known issues, every 5 to 10 years. For older homes built before 1990, every 3 to 5 years. If you notice warning signs like flickering lights, tripping breakers, or burning smells, call immediately."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I do spring electrical maintenance myself?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "You can safely do visual inspections, test GFCI outlets, replace outdoor outlet covers, change light bulbs, and test smoke detectors. Anything involving opening panels, touching wiring, or adding circuits should be done by a licensed electrician."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What does an electrical safety inspection cost in Grande Prairie?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A full electrical safety inspection typically runs $150 to $300 depending on the size of your home. GP Electric offers free assessments for specific concerns — if you've spotted a problem and want us to look at it, the initial visit is on us."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is rodent damage to wiring covered by home insurance?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "It depends on your policy. Some Alberta home insurance policies cover damage caused by vermin; others exclude it. Check with your insurer. The real risk is fire, not the repair bill."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "When should I call an electrician versus handling it myself?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "If it involves visual inspection only, you can do it. If it involves touching anything that carries electricity, pulling wires, or working inside a panel, call a professional. Electrical accidents send people to the hospital and start house fires."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do I need to upgrade my outdoor outlets to GFCI?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "If your outdoor outlets aren't GFCI-protected, they don't meet current code. Upgrading is a smart safety decision, especially if you have kids, a hot tub, or use outdoor outlets frequently. A GFCI outlet replacement typically costs $150 to $250 installed."
+      }
+    }
   ]
+};
+
+const faqEntries = faqSchemas[post.id];
+const faqSchema = faqEntries ? {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": faqEntries
 } : null;
 
 const schemas = [articleSchema, faqSchema].filter(Boolean);
