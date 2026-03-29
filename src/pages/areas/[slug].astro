@@ -64,7 +64,7 @@ const schema = {
           </span>
         </div>
         <div class="flex flex-col sm:flex-row gap-4">
-          <a href="/contact" class="inline-flex items-center justify-center gap-2 bg-brand-blue hover:bg-brand-blue-dark text-brand-white px-6 py-3.5 rounded-lg font-bold transition-colors">
+          <a href="/contact/" class="inline-flex items-center justify-center gap-2 bg-brand-blue hover:bg-brand-blue-dark text-brand-white px-6 py-3.5 rounded-lg font-bold transition-colors">
             Get a Free Quote for {area.name}
             <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
           </a>
@@ -113,14 +113,14 @@ const schema = {
           <div class="bg-brand-gray-50 rounded-2xl p-6 border border-brand-gray-200">
             <h3 class="font-bold text-brand-gray-900 mb-4">Our Services</h3>
             <ul class="space-y-2 text-sm">
-              <li><a href="/services/residential" class="text-brand-gray-600 hover:text-brand-blue transition-colors">Residential Electrical</a></li>
-              <li><a href="/services/commercial" class="text-brand-gray-600 hover:text-brand-blue transition-colors">Commercial Electrical</a></li>
-              <li><a href="/services/industrial" class="text-brand-gray-600 hover:text-brand-blue transition-colors">Industrial Electrical</a></li>
-              <li><a href="/services/farm-acreage" class="text-brand-gray-600 hover:text-brand-blue transition-colors">Farm & Acreage</a></li>
-              <li><a href="/services/emergency" class="text-brand-gray-600 hover:text-brand-blue transition-colors">24/7 Emergency</a></li>
-              <li><a href="/services/panel-upgrades" class="text-brand-gray-600 hover:text-brand-blue transition-colors">Panel Upgrades</a></li>
-              <li><a href="/services/ev-charger" class="text-brand-gray-600 hover:text-brand-blue transition-colors">EV Charger Installation</a></li>
-              <li><a href="/services/generator" class="text-brand-gray-600 hover:text-brand-blue transition-colors">Generator Installation</a></li>
+              <li><a href="/services/residential/" class="text-brand-gray-600 hover:text-brand-blue transition-colors">Residential Electrical</a></li>
+              <li><a href="/services/commercial/" class="text-brand-gray-600 hover:text-brand-blue transition-colors">Commercial Electrical</a></li>
+              <li><a href="/services/industrial/" class="text-brand-gray-600 hover:text-brand-blue transition-colors">Industrial Electrical</a></li>
+              <li><a href="/services/farm-acreage/" class="text-brand-gray-600 hover:text-brand-blue transition-colors">Farm & Acreage</a></li>
+              <li><a href="/services/emergency/" class="text-brand-gray-600 hover:text-brand-blue transition-colors">24/7 Emergency</a></li>
+              <li><a href="/services/panel-upgrades/" class="text-brand-gray-600 hover:text-brand-blue transition-colors">Panel Upgrades</a></li>
+              <li><a href="/services/ev-charger/" class="text-brand-gray-600 hover:text-brand-blue transition-colors">EV Charger Installation</a></li>
+              <li><a href="/services/generator/" class="text-brand-gray-600 hover:text-brand-blue transition-colors">Generator Installation</a></li>
             </ul>
           </div>
         </div>
@@ -134,7 +134,7 @@ const schema = {
       <h3 class="font-bold text-brand-gray-900 mb-6">We Also Serve</h3>
       <div class="flex flex-wrap gap-3">
         {serviceAreas.filter(a => a.slug !== area.slug).map((a) => (
-          <a href={`/areas/${a.slug}`} class="px-4 py-2 rounded-lg border border-brand-gray-200 bg-brand-white text-sm font-medium text-brand-gray-700 hover:border-brand-blue hover:text-brand-blue transition-colors">
+          <a href={`/areas/${a.slug}/`} class="px-4 py-2 rounded-lg border border-brand-gray-200 bg-brand-white text-sm font-medium text-brand-gray-700 hover:border-brand-blue hover:text-brand-blue transition-colors">
             {a.name}
           </a>
         ))}

@@ -43,7 +43,7 @@ const posts = (await getCollection('blog')).sort(
               <div class="p-6 sm:p-8">
                 <p class="text-sm text-brand-blue font-semibold uppercase tracking-wider mb-3">{formattedDate}</p>
                 <h2 class="text-xl font-bold text-brand-gray-900 mb-3 group-hover:text-brand-blue transition-colors leading-snug">
-                  <a href={`/blog/${post.id}`} class="block">
+                  <a href={`/blog/${post.id}/`} class="block">
                     {post.data.title}
                   </a>
                 </h2>
@@ -52,7 +52,7 @@ const posts = (await getCollection('blog')).sort(
                 </p>
                 <div class="flex items-center justify-between">
                   <p class="text-xs text-brand-gray-500">By {post.data.author}</p>
-                  <a href={`/blog/${post.id}`} class="inline-flex items-center gap-1 text-brand-blue font-semibold text-sm hover:text-brand-blue-dark transition-colors">
+                  <a href={`/blog/${post.id}/`} class="inline-flex items-center gap-1 text-brand-blue font-semibold text-sm hover:text-brand-blue-dark transition-colors">
                     Read More
                     <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
                   </a>
