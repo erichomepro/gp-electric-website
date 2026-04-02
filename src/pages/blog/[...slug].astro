@@ -147,6 +147,56 @@ const faqSchemas: Record<string, any[]> = {
         "text": "If your outdoor outlets aren't GFCI-protected, they don't meet current code. Upgrading is a smart safety decision, especially if you have kids, a hot tub, or use outdoor outlets frequently. A GFCI outlet replacement typically costs $150 to $250 installed."
       }
     }
+  ],
+  'ev-charger-installation-grande-prairie': [
+    {
+      "@type": "Question",
+      "name": "How much does EV charger installation cost in Grande Prairie?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A Level 2 EV charger installation in Grande Prairie typically costs $800 to $2,000 for a home with an adequate panel. If a panel upgrade is required, add $2,500 to $5,000. Factors include distance from panel to charger location, indoor vs outdoor installation, and charger brand."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do I need a permit for EV charger installation in Grande Prairie?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. All Level 2 EV charger installations requiring new wiring require an electrical permit in Alberta under the Safety Codes Act. GP Electric handles the permit application and coordinates the Safety Codes Officer inspection on every job."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the best Level 2 EV charger for Alberta winters?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "For Grande Prairie and Peace Country winters, look for chargers rated to at least -40°C. The JuiceBox 40 is rated to -40°C and is ENERGY STAR certified, making it eligible for federal rebates. ChargePoint Home Flex is rated to -30°C. Wallbox Pulsar Plus is rated to -25°C, which is adequate for most Alberta winters but worth checking for fully exposed outdoor installations."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I get a rebate for EV charger installation in Alberta?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. The federal iMHZEV program offers up to $600 toward the purchase and installation of an eligible Level 2 EVSE at a private residence. Alberta does not currently offer a provincial rebate for residential EV charger installation. Keep your charger and installation receipts to claim the federal rebate."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How long does EV charger installation take?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A straightforward installation on a home with an adequate 200-amp panel typically takes 2 to 4 hours. Longer wire runs, conduit work, or a disconnect switch requirement may extend that to a half day. If a panel upgrade is also needed, plan for a full day."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does my panel need upgrading before installing an EV charger?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Not always. If you have a 200-amp panel with available breaker slots and sufficient load headroom, a Level 2 charger can typically be added without upgrading. GP Electric assesses your panel before quoting. Homes with 100-amp service or already-loaded panels usually require a panel upgrade first."
+      }
+    }
   ]
 };
 
@@ -160,7 +210,7 @@ const faqSchema = faqEntries ? {
 const schemas = [articleSchema, faqSchema].filter(Boolean);
 ---
 
-<BaseLayout title={post.data.title} description={post.data.description} schema={articleSchema}>
+<BaseLayout title={post.data.title} description={post.data.description} schema={articleSchema} ogType="article">
   {faqSchema && (
     <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
   )}

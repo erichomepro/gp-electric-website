@@ -1,5 +1,5 @@
 ---
-title: "EV Charger Installation in Grande Prairie: Everything You Need to Know (2026)"
+title: "EV Charger Installation in Grande Prairie"
 description: "EV charger installation in Grande Prairie: Level 2 costs, Alberta cold-weather tips, federal rebates, permits, and top charger brands. Full 2026 guide."
 pubDate: 2026-04-02
 author: "GP Electric Team"
