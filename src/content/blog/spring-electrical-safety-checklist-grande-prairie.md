@@ -1,6 +1,6 @@
 ---
 title: "Spring Electrical Safety Checklist for Grande Prairie Homeowners (2026)"
-description: "After a long Peace Country winter, your home's electrical system needs attention. Use this spring electrical safety checklist to catch hazards, prevent fires, and get your outdoor wiring ready for summer."
+description: "Spring electrical checklist for Grande Prairie homes: outdoor wiring, GFCI testing, panel inspection, rodent damage, and getting your system summer-ready."
 pubDate: 2026-03-27
 author: "GP Electric Team"
 keywords:
@@ -120,7 +120,7 @@ If you find rodent-damaged wiring, don't just tape it up. The damaged section ne
 
 Spring thunderstorms in the Peace Country can be intense. Lightning strikes are a real threat to your electronics, and even distant strikes can send surges through the power lines.
 
-If you don't have whole-home surge protection, spring is the time to add it. A whole-home surge protector installs at your electrical panel and protects everything in the house from power surges. Cost is typically **$300 to $600 installed** — a fraction of what it costs to replace a furnace control board, a fridge compressor, or a home office full of electronics after a lightning event.
+If you don't have whole-home surge protection, spring is the time to add it. A whole-home surge protector installs at your electrical panel and protects everything in the house from power surges. Cost is typically **$300 to $600 installed** — a fraction of what it costs to replace a furnace control board, a fridge compressor, or a home office full of electronics after a lightning event. The [Electrical Safety Authority](https://esasafe.com/safety/electrical-fire-safety/) recommends whole-home surge protection for any home with modern electronics and appliances.
 
 Point-of-use surge protectors (power bars) are a good supplement but aren't enough on their own. The whole-home unit catches the big surges at the panel before they reach your devices.
 
@@ -182,6 +182,6 @@ If your outdoor outlets aren't GFCI-protected, they don't meet current code. Whi
 
 The best time to catch an electrical issue is before it becomes an emergency. A spring walkthrough of your home's electrical system takes 30 minutes and could prevent a house fire, an electrocution, or a costly emergency repair in the middle of July when you'd rather be at the lake.
 
-If your spring inspection turns up anything concerning — or if you'd rather have a licensed electrician do the whole thing — give GP Electric a call at **780-882-3046**. We'll come out, go through everything with you, and give you a clear picture of where your home stands.
+If your spring inspection turns up anything concerning — or if you'd rather have a licensed electrician do the whole thing — give GP Electric a call at **780-882-3046** or [book online through our contact page](/contact). We'll come out, go through everything with you, and give you a clear picture of where your home stands. See our full [residential electrical services](/services/residential) for everything we offer.
 
 We serve Grande Prairie, Clairmont, Sexsmith, Beaverlodge, Wembley, and the entire Peace Country region. Let's get your home ready for a safe, worry-free summer.

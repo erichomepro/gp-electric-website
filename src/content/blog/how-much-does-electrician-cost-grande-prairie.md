@@ -1,6 +1,6 @@
 ---
 title: "How Much Does an Electrician Cost in Grande Prairie? (2026 Guide)"
-description: "Wondering what electricians charge in Grande Prairie? Here's a straightforward breakdown of pricing for panel upgrades, outlet installs, rewiring, EV chargers, and more from a local electrician."
+description: "What do electricians charge in Grande Prairie? Straight-up pricing for panel upgrades, outlets, rewiring, EV chargers, and more from a local electrician."
 pubDate: 2026-03-25
 author: "GP Electric Team"
 keywords:
@@ -48,7 +48,7 @@ If your home still has aluminum wiring or knob-and-tube (yes, we still see it so
 
 **EV Charger Installation: $800 – $2,000**
 
-Electric vehicles are showing up more and more in Grande Prairie, even with our winters. A Level 2 charger install usually involves running a dedicated 240V circuit from your panel to your garage. If your panel can handle the load, it's a straightforward job. If you need a panel upgrade first, that adds to the total.
+Electric vehicles are showing up more and more in Grande Prairie, even with our winters. A Level 2 charger install usually involves running a dedicated 240V circuit from your panel to your garage. If your panel can handle the load, it's a straightforward job. If you need a [panel upgrade](/services/panel-upgrades) first, that adds to the total. See our dedicated [EV charger installation page](/services/ev-charger) for full details on what's involved.
 
 **Light Fixture Installation: $100 – $250 per fixture**
 
@@ -80,7 +80,7 @@ Show us the panel. A quick photo of your electrical panel helps us understand wh
 
 Mention the age of your home. This tells us a lot about what to expect behind the walls.
 
-Ask about permits. A legit electrician will pull the proper permits. If someone says you don't need one, that's a red flag.
+Ask about permits. A legit electrician will pull the proper permits through [Safety Codes Alberta](https://www.alberta.ca/safety-codes). If someone says you don't need one, that's a red flag.
 
 ## Why Prices Vary Between Electricians
 
@@ -113,4 +113,4 @@ We offer free quotes for most jobs. Give us a call at 780-882-3046 or fill out o
 
 We don't do hidden fees or surprise charges. When GP Electric gives you a quote, that's what you pay. We've been doing this in Grande Prairie and across the Peace Country long enough to know that trust is everything in a small city like ours.
 
-If you've got an electrical project in mind — big or small — give us a call at 780-882-3046 or head over to our contact page for a free quote. We'll give you an honest price and get the job done right.
+If you've got an electrical project in mind — big or small — give us a call at 780-882-3046 or head over to our [contact page](/contact) for a free quote. You can also browse our full range of [electrical services](/services) to see everything we do. We'll give you an honest price and get the job done right.

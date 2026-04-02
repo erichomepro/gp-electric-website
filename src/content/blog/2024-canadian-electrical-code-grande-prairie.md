@@ -1,6 +1,6 @@
 ---
 title: "The 2024 Canadian Electrical Code: What Grande Prairie Homeowners Need to Know"
-description: "The 2024 Canadian Electrical Code took effect in Alberta in April 2025. Here's what changed and what it means for your home in Grande Prairie — from EV chargers to arc fault protection."
+description: "The 2024 Canadian Electrical Code is now Alberta law. What changed: EV charger readiness, expanded AFCI protection, and updated outdoor wiring rules."
 pubDate: 2026-03-25
 author: "GP Electric Team"
 keywords:
@@ -26,7 +26,7 @@ The CEC is the national standard that governs how electrical systems are install
 
 Think of it as the rulebook for electrical work. Every wire, breaker, outlet, and fixture installed in your home has to meet these standards. When your electrician pulls a permit through Safety Codes and the inspector comes out, they're checking against this code.
 
-The 2024 edition is the 26th edition of the CEC, and it includes some significant updates — particularly around EV charging, arc fault protection, and renewable energy systems.
+The 2024 edition is the 26th edition of the CEC, and it includes some significant updates — particularly around EV charging, arc fault protection, and renewable energy systems. You can find the official standard through [CSA Group](https://www.csagroup.org/store/product/CSA%20C22.1%3A24/).
 
 ## Key Changes That Affect Grande Prairie Homeowners
 
@@ -36,7 +36,7 @@ This is a big one. The 2024 code now requires new homes to include provisions fo
 
 For Grande Prairie, this is forward-thinking. EV adoption has been slower up here than in Calgary or Edmonton, partly because of the cold and partly because of the distances we drive. But the infrastructure needs to be there, and the code is making sure new homes are ready.
 
-If you already own a home and want to add an EV charger, the old code still technically covered you. But the 2024 code provides clearer guidelines on circuit sizing, outlet placement, and load management — which actually makes the installation process more straightforward.
+If you already own a home and want to add an EV charger, the old code still technically covered you. But the 2024 code provides clearer guidelines on circuit sizing, outlet placement, and load management — which actually makes the installation process more straightforward. GP Electric installs Level 2 home chargers across Grande Prairie — see our [EV charger installation service](/services/ev-charger) for details.
 
 ### Expanded Arc Fault Circuit Interrupter (AFCI) Protection
 
@@ -74,7 +74,7 @@ But — and this is important — the moment you touch it, the new code applies.
 
 This catches some homeowners off guard. You go in thinking you're just updating the kitchen cabinets, and suddenly you need electrical upgrades because the inspector is looking at everything the permit covers.
 
-The smart play? Talk to your electrician before you start any renovation project. We can tell you what's going to be required so there are no surprises midway through.
+The smart play? Talk to your electrician before you start any renovation project. We can tell you what's going to be required so there are no surprises midway through. [Contact GP Electric](/contact) for a free pre-renovation consultation.
 
 ## Why Inspections Matter More Than Ever
 
@@ -100,6 +100,6 @@ The 2024 Canadian Electrical Code is here, and it's the standard for all electri
 
 The easiest way to make sure your project is done right? Work with a licensed electrician who knows the current code inside and out.
 
-GP Electric stays current on every code update so you don't have to. If you've got questions about how the 2024 CEC affects your home or project, give us a call at 780-882-3046. We're happy to walk you through it — no charge for the conversation.
+GP Electric stays current on every code update so you don't have to. If you've got questions about how the 2024 CEC affects your home or project, give us a call at 780-882-3046. We're happy to walk you through it — no charge for the conversation. Browse our [full list of electrical services](/services) to see how we can help with your next project.
 
 We serve Grande Prairie, Clairmont, Sexsmith, Beaverlodge, and the entire Peace Country region. Let's make sure your home is safe, up to code, and ready for whatever comes next.

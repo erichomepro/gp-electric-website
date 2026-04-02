@@ -1,6 +1,6 @@
 ---
 title: "5 Signs Your Grande Prairie Home Needs an Electrical Panel Upgrade"
-description: "Is your electrical panel keeping up with your home's demands? Here are 5 warning signs Grande Prairie homeowners should watch for — and what happens if you ignore them."
+description: "5 signs your Grande Prairie home needs a panel upgrade: fuse boxes, flickering lights, tripping breakers, burning smell. Know when to call an electrician."
 pubDate: 2026-03-25
 author: "GP Electric Team"
 keywords:
@@ -46,7 +46,7 @@ Fuse panels aren't inherently dangerous when they're working correctly, but they
 
 We still see fuse panels in older homes around Grande Prairie, especially in some of the original neighborhoods and on acreages outside of town. If you've got one, upgrading to a modern 200-amp breaker panel is one of the best investments you can make in your home.
 
-Insurance companies are paying attention to this too. Some insurers in Alberta will charge higher premiums or decline coverage for homes with fuse panels. That alone is reason enough to upgrade.
+Insurance companies are paying attention to this too. Some insurers in Alberta will charge higher premiums or decline coverage for homes with fuse panels. That alone is reason enough to upgrade. Learn more about what a [panel upgrade](/services/panel-upgrades) involves and what it costs.
 
 ## 4. You're Planning a Major Addition or New Appliance
 
@@ -54,7 +54,7 @@ Thinking about finishing the basement? Adding a garage? Installing a hot tub, EV
 
 Before you start any major project, your panel needs to be evaluated. If it's already at capacity, adding a 50-amp hot tub circuit or a 40-amp EV charger circuit isn't just impractical — it's not going to pass inspection.
 
-Here in Grande Prairie, we see this a lot with shop builds. Guys want to wire up a heated shop with a welder outlet, compressor, and lights. That takes serious power, and it usually means upgrading the house panel or running a separate service to the shop.
+Here in Grande Prairie, we see this a lot with shop builds. Guys want to wire up a heated shop with a welder outlet, compressor, and lights. That takes serious power, and it usually means upgrading the house panel or running a separate service to the shop. See our [residential electrical services](/services/residential) for shop and acreage work.
 
 ## 5. Your Panel Is Warm to the Touch or Smells Like Burning
 
@@ -68,7 +68,7 @@ Don't open the panel yourself. Don't try to figure it out. Call a licensed elect
 
 Putting off a panel upgrade isn't just inconvenient — it's risky. Here's what you're looking at:
 
-Fire risk is the big one. Overloaded panels and failing connections cause house fires. The Grande Prairie Fire Department responds to electrical fires every year, and many of them are preventable with proper panel maintenance and upgrades.
+Fire risk is the big one. Overloaded panels and failing connections cause house fires. The [Electrical Safety Authority of Canada](https://esasafe.com/safety/electrical-fire-safety/) notes that faulty electrical panels are a leading cause of preventable house fires. The Grande Prairie Fire Department responds to electrical fires every year, and many of them are preventable with proper panel maintenance and upgrades.
 
 Damage to appliances and electronics happens when your electrical system can't deliver clean, consistent power. Voltage fluctuations can fry computers, damage refrigerators, and shorten the life of everything plugged into your walls.
 
@@ -92,6 +92,6 @@ Your power will be off for part of the day, so we always recommend scheduling pa
 
 ## Ready to Find Out If Your Panel Needs an Upgrade?
 
-If any of these signs sound familiar, don't wait for a breaker to trip at the worst possible time — or worse, for something to overheat. Give GP Electric a call at 780-882-3046 and we'll come take a look. We'll give you an honest assessment and a fair price.
+If any of these signs sound familiar, don't wait for a breaker to trip at the worst possible time — or worse, for something to overheat. Give GP Electric a call at 780-882-3046 or [request a free quote online](/contact) and we'll come take a look. We'll give you an honest assessment and a fair price.
 
 We serve Grande Prairie, Clairmont, Sexsmith, Beaverlodge, Wembley, and everywhere in between. Your home deserves an electrical system that works as hard as you do.
