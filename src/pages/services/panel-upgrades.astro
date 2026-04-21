@@ -1,9 +1,9 @@
 ---
-import ServiceLayout from '../../layouts/ServiceLayout.astro';
+import ServiceLayout from '././layouts/ServiceLayout.astro';
 
 const services = [
   { name: "100A to 200A Upgrade", description: "The most common upgrade for Grande Prairie homes. Handles modern electrical loads including EV chargers, hot tubs, and shop circuits." },
-  { name: "200A to 400A Upgrade", description: "For homes with heavy loads — large shops, multiple outbuildings, or commercial-grade equipment." },
+  { name: "200A to 400A Upgrade", description: "For homes with heavy loads. Large shops, multiple outbuildings, or commercial-grade equipment." },
   { name: "Meter Base Replacement", description: "Upgrade your meter base to meet current code and support your new panel size." },
   { name: "Sub-Panel Installation", description: "Add a sub-panel for your garage, shop, or basement to distribute power where you need it." },
   { name: "Breaker Replacement", description: "Replace faulty, outdated, or recalled breakers with modern, safe alternatives." },
@@ -15,7 +15,7 @@ const services = [
 const faqs = [
   { question: "How much does a panel upgrade cost in Grande Prairie?", answer: "A standard 100A to 200A panel upgrade typically costs $2,500 to $4,500 depending on your home's specific requirements. Factors that affect cost include meter base replacement, the number of circuits, and any code upgrades needed. We provide free, detailed quotes." },
   { question: "How long does a panel upgrade take?", answer: "Most residential panel upgrades are completed in one day (6-8 hours). Complex upgrades involving meter base replacement or extensive circuit work may take up to two days." },
-  { question: "Will I lose power during the upgrade?", answer: "Yes — your power will be off while we swap the panel, typically for 4-6 hours. We'll let you know the schedule upfront so you can plan accordingly." },
+  { question: "Will I lose power during the upgrade?", answer: "Yes. Your power will be off while we swap the panel, typically for 4-6 hours. We'll let you know the schedule upfront so you can plan accordingly." },
   { question: "Do I need a panel upgrade for an EV charger?", answer: "Often, yes. Most Level 2 EV chargers require a 40A or 50A circuit. If your panel is already at capacity (common with 100A panels), you'll need an upgrade to support the additional load safely." },
   { question: "How do I know if I need a panel upgrade?", answer: "Common signs include: breakers tripping frequently, running out of breaker spaces, needing to add high-draw equipment (EV charger, hot tub, shop heater), or having a panel that's over 25 years old." },
 ];
@@ -30,10 +30,10 @@ const relatedServices = [
 
 <ServiceLayout
   title="Electrical Panel Upgrades in Grande Prairie"
-  description="Panel upgrade electrician in Grande Prairie. 100A to 200A upgrades, meter base replacement, fuse to breaker conversion. Free quotes. GP Electric — 780-882-3046."
+  description="Panel upgrade electrician in Grande Prairie. 100A to 200A upgrades, meter base replacement, fuse to breaker conversion. Free quotes. GP Electric. 780-882-3046."
   headline="Is Your Electrical Panel a Fire Hazard? Let's Fix That."
   subheadline="Electrical Panel Upgrades"
-  heroDescription="Your electrical panel is the heart of your home's electrical system. If it can't keep up with modern demands — EV chargers, hot tubs, shop heaters, air conditioners — it's working overtime and that's a safety risk. GP Electric upgrades panels across Grande Prairie and the Peace Country."
+  heroDescription="Your electrical panel is the heart of your home's electrical system. If it can't keep up with modern demands. EV chargers, hot tubs, shop heaters, air conditioners. It's working overtime and that's a safety risk. GP Electric upgrades panels across Grande Prairie and the Peace Country."
   services={services}
   faqs={faqs}
   relatedServices={relatedServices}

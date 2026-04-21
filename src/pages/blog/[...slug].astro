@@ -1,7 +1,7 @@
 ---
 import { getCollection, render } from 'astro:content';
-import BaseLayout from '../../layouts/BaseLayout.astro';
-import CTASection from '../../components/CTASection.astro';
+import BaseLayout from '././layouts/BaseLayout.astro';
+import CTASection from '././components/CTASection.astro';
 
 export async function getStaticPaths() {
   const posts = await getCollection('blog');
@@ -70,7 +70,7 @@ const faqSchemas: Record<string, any[]> = {
       "name": "How long does a panel upgrade take?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Most panel upgrades take 4 to 8 hours. Your power will be off for part of the day, so plan accordingly — especially in winter when you don't want your pipes freezing."
+        "text": "Most panel upgrades take 4 to 8 hours. Your power will be off for part of the day, so plan accordingly. Especially in winter when you don't want your pipes freezing."
       }
     },
     {
@@ -120,7 +120,7 @@ const faqSchemas: Record<string, any[]> = {
       "name": "What does an electrical safety inspection cost in Grande Prairie?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "A full electrical safety inspection typically runs $150 to $300 depending on the size of your home. GP Electric offers free assessments for specific concerns — if you've spotted a problem and want us to look at it, the initial visit is on us."
+        "text": "A full electrical safety inspection typically runs $150 to $300 depending on the size of your home. GP Electric offers free assessments for specific concerns. If you've spotted a problem and want us to look at it, the initial visit is on us."
       }
     },
     {
@@ -302,7 +302,7 @@ const schemas = [articleSchema, faqSchema].filter(Boolean);
 
   <CTASection
     headline="Have an Electrical Question?"
-    subtext="Whether you need a quote, want to understand the code, or just have a quick question — we're always happy to help. Give us a call or send us a message."
+    subtext="Whether you need a quote, want to understand the code, or just have a quick question. We're always happy to help. Give us a call or send us a message."
   />
 </BaseLayout>
 
@@ -315,7 +315,7 @@ const schemas = [articleSchema, faqSchema].filter(Boolean);
   }
 
   /* ============================================
-     BLOG CONTENT — MAGAZINE TYPOGRAPHY
+     BLOG CONTENT. MAGAZINE TYPOGRAPHY
      ============================================ */
   .blog-content {
     font-family: 'Inter', system-ui, -apple-system, sans-serif;
@@ -588,7 +588,7 @@ const schemas = [articleSchema, faqSchema].filter(Boolean);
   }
 
   /* ============================================
-     INLINE CTA STYLING — for bold paragraphs
+     INLINE CTA STYLING. For bold paragraphs
      containing phone numbers as call-to-actions
      ============================================ */
   .blog-content p > strong:only-child {

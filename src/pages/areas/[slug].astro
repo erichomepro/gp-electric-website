@@ -1,7 +1,7 @@
 ---
-import BaseLayout from '../../layouts/BaseLayout.astro';
-import CTASection from '../../components/CTASection.astro';
-import { serviceAreas } from '../../data/service-areas';
+import BaseLayout from '././layouts/BaseLayout.astro';
+import CTASection from '././components/CTASection.astro';
+import { serviceAreas } from '././data/service-areas';
 import type { GetStaticPaths } from 'astro';
 
 export const getStaticPaths: GetStaticPaths = () => {
@@ -33,7 +33,7 @@ const schema = {
 
 <BaseLayout
   title={`Electrician in ${area.name}, Alberta`}
-  description={`Licensed electrician in ${area.name}. Residential, commercial, farm & emergency electrical services. GP Electric Inc — serving ${area.name} and the Peace Country. Call 780-882-3046.`}
+  description={`Licensed electrician in ${area.name}. Residential, commercial, farm & emergency electrical services. GP Electric Inc. Serving ${area.name} and the Peace Country. Call 780-882-3046.`}
   schema={schema}
 >
   <!-- Hero -->
@@ -48,7 +48,7 @@ const schema = {
           Serving {area.name} & Surrounding Area
         </p>
         <h1 class="text-3xl sm:text-4xl lg:text-5xl font-black text-brand-white leading-tight mb-6">
-          Licensed Electrician in {area.name} — GP Electric Inc
+          Licensed Electrician in {area.name}. GP Electric Inc
         </h1>
         <p class="text-lg text-brand-gray-300 mb-4 leading-relaxed">
           {area.description}

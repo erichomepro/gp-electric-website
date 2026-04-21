@@ -1,8 +1,8 @@
 ---
-import BaseLayout from '../layouts/BaseLayout.astro';
-import ServiceCard from '../components/ServiceCard.astro';
-import TrustBadges from '../components/TrustBadges.astro';
-import CTASection from '../components/CTASection.astro';
+import BaseLayout from './layouts/BaseLayout.astro';
+import ServiceCard from './components/ServiceCard.astro';
+import TrustBadges from './components/TrustBadges.astro';
+import CTASection from './components/CTASection.astro';
 
 const description = "GP Electric Inc is Grande Prairie's trusted licensed electrician. Residential, commercial, industrial & farm electrical services. 24/7 emergency response. Call 780-882-3046 for a free quote.";
 ---
@@ -10,7 +10,7 @@ const description = "GP Electric Inc is Grande Prairie's trusted licensed electr
 <BaseLayout title="Home" description={description}>
 
   <!-- ============================================================ -->
-  <!-- HERO — Full impact. Electric. Bold. -->
+  <!-- HERO. Full impact. Electric. Bold. -->
   <!-- ============================================================ -->
   <section class="relative min-h-[92vh] flex items-center overflow-hidden" style="background: #0a0f1a;">
     <!-- Background image - faded electrical panel -->
@@ -37,7 +37,7 @@ const description = "GP Electric Inc is Grande Prairie's trusted licensed electr
               <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
               <span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-green-500"></span>
             </span>
-            <span class="text-green-400 text-sm font-semibold tracking-wide">AVAILABLE 24/7 — CALL ANYTIME</span>
+            <span class="text-green-400 text-sm font-semibold tracking-wide">AVAILABLE 24/7. CALL ANYTIME</span>
           </div>
 
           <!-- Main headline -->
@@ -52,7 +52,7 @@ const description = "GP Electric Inc is Grande Prairie's trusted licensed electr
           </h1>
 
           <p class="text-xl text-gray-300 mb-10 max-w-lg leading-relaxed">
-            From emergency calls at 2am to wiring your dream shop — GP Electric Inc delivers work you can count on. <span class="text-white font-semibold">Licensed. Insured. Guaranteed.</span>
+            From emergency calls at 2am to wiring your dream shop. GP Electric Inc delivers work you can count on. <span class="text-white font-semibold">Licensed. Insured. Guaranteed.</span>
           </p>
 
           <!-- CTA Buttons -->
@@ -139,7 +139,7 @@ const description = "GP Electric Inc is Grande Prairie's trusted licensed electr
   </section>
 
   <!-- ============================================================ -->
-  <!-- TRUST BAR — Bold, not subtle -->
+  <!-- TRUST BAR. Bold, not subtle -->
   <!-- ============================================================ -->
   <section class="relative -mt-6 z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="rounded-2xl shadow-xl p-6 sm:p-8 bg-white border border-gray-100" style="box-shadow: 0 20px 60px rgba(0,0,0,0.08), 0 0 0 1px rgba(0,0,0,0.03);">
@@ -163,7 +163,7 @@ const description = "GP Electric Inc is Grande Prairie's trusted licensed electr
   </section>
 
   <!-- ============================================================ -->
-  <!-- SERVICES — Bold cards with color-coded categories -->
+  <!-- SERVICES. Bold cards with color-coded categories -->
   <!-- ============================================================ -->
   <section class="py-24 bg-white">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -183,7 +183,7 @@ const description = "GP Electric Inc is Grande Prairie's trusted licensed electr
           { title: 'Commercial', desc: 'Tenant improvements, lighting retrofits, power distribution, new construction for businesses.', href: '/services/commercial/', gradient: 'from-indigo-500 to-indigo-600', icon: 'M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4' },
           { title: 'Industrial', desc: 'Oil & gas, instrumentation, motor controls, power distribution, plant maintenance.', href: '/services/industrial/', gradient: 'from-gray-700 to-gray-800', icon: 'M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.066 2.573c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.573 1.066c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.066-2.573c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z' },
           { title: 'Farm & Acreage', desc: 'Shop wiring, barn electrical, grain bins, yard lighting, underground service.', href: '/services/farm-acreage/', gradient: 'from-green-600 to-green-700', icon: 'M3 21h18M3 10h18M3 7l9-4 9 4M4 10h16v11H4z' },
-          { title: '24/7 Emergency', desc: 'Power out? Panel sparking? We respond fast — day or night, weekends and holidays.', href: '/services/emergency/', gradient: 'from-red-500 to-red-600', icon: 'M13 10V3L4 14h7v7l9-11h-7z' },
+          { title: '24/7 Emergency', desc: 'Power out? Panel sparking? We respond fast. Day or night, weekends and holidays.', href: '/services/emergency/', gradient: 'from-red-500 to-red-600', icon: 'M13 10V3L4 14h7v7l9-11h-7z' },
           { title: 'Pumps & Pressure', desc: 'Pressure washers, pump installs, AC electrical, hot tubs, equipment hookups.', href: '/services/pumps-pressure/', gradient: 'from-cyan-500 to-cyan-600', icon: 'M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z' },
         ].map(({ title, desc, href, gradient, icon }) => (
           <a href={href} class="group relative rounded-2xl overflow-hidden transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl" style="box-shadow: 0 4px 20px rgba(0,0,0,0.06);">
@@ -224,7 +224,7 @@ const description = "GP Electric Inc is Grande Prairie's trusted licensed electr
   </section>
 
   <!-- ============================================================ -->
-  <!-- GRAND SLAM OFFER — Impossible to miss -->
+  <!-- GRAND SLAM OFFER. Impossible to miss -->
   <!-- ============================================================ -->
   <section class="relative py-24 overflow-hidden" style="background: #0a0f1a;">
     <!-- Background image - electrician working -->
@@ -248,14 +248,14 @@ const description = "GP Electric Inc is Grande Prairie's trusted licensed electr
           <span style="background: linear-gradient(135deg, #fbbf24, #f59e0b); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">Health Check</span>
         </h2>
         <p class="text-xl text-gray-300 max-w-2xl mx-auto">
-          Would you rather spend 30 minutes on a free inspection now — or $30,000 on fire damage later?
+          Would you rather spend 30 minutes on a free inspection now. Or $30,000 on fire damage later?
         </p>
       </div>
 
       <div class="grid lg:grid-cols-5 gap-8 items-start">
         <!-- What's included (3 cols) -->
         <div class="lg:col-span-3 rounded-3xl p-8 sm:p-10" style="background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08); backdrop-filter: blur(20px);">
-          <h3 class="text-xl font-bold text-white mb-8">Here's what you get — completely free:</h3>
+          <h3 class="text-xl font-bold text-white mb-8">Here's what you get. Completely free:</h3>
           <div class="grid sm:grid-cols-2 gap-4">
             {[
               'Complete panel inspection & assessment',
@@ -263,7 +263,7 @@ const description = "GP Electric Inc is Grande Prairie's trusted licensed electr
               'GFCI protection check',
               'Smoke & CO alarm verification',
               'Written safety report with photos',
-              'Honest recommendations — zero pressure',
+              'Honest recommendations. Zero pressure',
             ].map((item) => (
               <div class="flex items-start gap-3">
                 <div class="w-6 h-6 rounded-full flex items-center justify-center shrink-0 mt-0.5" style="background: rgba(34,197,94,0.15); border: 1px solid rgba(34,197,94,0.3);">
@@ -294,7 +294,7 @@ const description = "GP Electric Inc is Grande Prairie's trusted licensed electr
             { sign: 'Breakers tripping regularly', detail: 'Panel overload = fire risk' },
             { sign: 'Lights flickering', detail: 'Loose or overloaded circuits' },
             { sign: 'Outlets warm to the touch', detail: 'Active fire hazard' },
-            { sign: 'Burning smell near panel', detail: 'Call immediately — this is an emergency' },
+            { sign: 'Burning smell near panel', detail: 'Call immediately. This is an emergency' },
             { sign: 'Home built before 2000', detail: 'Likely needs panel & wiring assessment' },
           ].map(({ sign, detail }) => (
             <div class="flex items-start gap-3 p-4 rounded-xl" style="background: rgba(239,68,68,0.06); border: 1px solid rgba(239,68,68,0.12);">
@@ -311,7 +311,7 @@ const description = "GP Electric Inc is Grande Prairie's trusted licensed electr
   </section>
 
   <!-- ============================================================ -->
-  <!-- URGENCY CARDS — Time-sensitive, color-coded -->
+  <!-- URGENCY CARDS. Time-sensitive, color-coded -->
   <!-- ============================================================ -->
   <section class="py-16 bg-gray-50">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -406,7 +406,7 @@ const description = "GP Electric Inc is Grande Prairie's trusted licensed electr
           Serving 10+ Communities
         </h2>
         <p class="text-lg text-gray-500 max-w-2xl mx-auto">
-          In town or on an acreage — we cover the entire Peace Country region.
+          In town or on an acreage. We cover the entire Peace Country region.
         </p>
       </div>
 
@@ -452,7 +452,7 @@ const description = "GP Electric Inc is Grande Prairie's trusted licensed electr
     <div class="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
       <h2 class="text-4xl sm:text-5xl font-black text-white mb-5">Ready to Get Started?</h2>
       <p class="text-xl text-gray-300 mb-10 max-w-2xl mx-auto">
-        Whether it's a quick repair or a full shop build — get a free quote today. No pressure, no obligation.
+        Whether it's a quick repair or a full shop build. Get a free quote today. No pressure, no obligation.
       </p>
       <div class="flex flex-col sm:flex-row gap-4 justify-center mb-8">
         <a href="/contact/" class="group inline-flex items-center justify-center gap-3 px-10 py-5 rounded-2xl font-bold text-lg text-white transition-all duration-300 hover:-translate-y-1" style="background: linear-gradient(135deg, #1e6fbf 0%, #3b8de0 100%); box-shadow: 0 8px 32px rgba(30,111,191,0.4);">

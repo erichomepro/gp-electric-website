@@ -43,7 +43,7 @@ Most rural properties in the County of Grande Prairie are serviced by ATCO singl
 **When you need 3-phase:**
 
 - Grain dryers 5 HP and up
-- Large shop tools — CNC machines, lathes, mills, industrial air compressors
+- Large shop tools. CNC machines, lathes, mills, industrial air compressors
 - Centre-pivot irrigation
 - Commercial refrigeration and freezer rooms
 - Feed mill motors
@@ -53,7 +53,7 @@ Most rural properties in the County of Grande Prairie are serviced by ATCO singl
 
 1. **Utility-provided 3-phase service.** ATCO can run 3-phase to your property, but only if it's economically viable for them based on the distance from the existing 3-phase infrastructure. Expect a cost contribution. We can help you figure out whether the request is likely to be approved and what the likely contribution will be.
 
-2. **Phase converter.** A rotary phase converter takes single-phase 240V and produces 3-phase output. Good for running a few 3-phase motors in a shop or on a dryer. Sizing matters — you want the converter rated to handle the largest motor's inrush current, plus a margin.
+2. **Phase converter.** A rotary phase converter takes single-phase 240V and produces 3-phase output. Good for running a few 3-phase motors in a shop or on a dryer. Sizing matters. You want the converter rated to handle the largest motor's inrush current, plus a margin.
 
 3. **Variable Frequency Drive (VFD).** A VFD takes single-phase power and synthesizes 3-phase output directly to a specific motor. More efficient than a phase converter for a dedicated motor application, and gives you variable-speed control as a bonus.
 
@@ -74,12 +74,12 @@ If your dryer is getting older and your shop is growing, it's worth having us lo
 
 Most rural shops we wire are 40x60 or 40x80 wood-frame buildings with a 100-amp or 200-amp sub-panel. What goes in them varies dramatically:
 
-- **Welder circuits** — typically 50A or 60A 240V outlets for MIG and stick welders. If you run a plasma cutter or continuous-duty TIG, plan for 80A+.
-- **Air compressor circuits** — hard-wire the compressor on its own circuit sized for the motor.
-- **Overhead doors** — each opener gets its own 15A circuit, plus a dedicated lighting circuit that doesn't go dark when the opener is drawing.
-- **LED shop lighting** — don't run the lights on the general receptacle circuits. Separate lighting circuits so a tripped plug doesn't plunge the shop into darkness.
-- **Receptacle placement** — we default to 6-foot spacing along the walls, with a mix of 20A 120V for tools and 50A 240V for welders, plus ceiling drops for bay lifts and overhead tool use.
-- **Block heater plugs** — at least one 15A exterior receptacle on a timer for each vehicle bay. Alberta winters demand it.
+- **Welder circuits**. Typically 50A or 60A 240V outlets for MIG and stick welders. If you run a plasma cutter or continuous-duty TIG, plan for 80A+.
+- **Air compressor circuits**. Hard-wire the compressor on its own circuit sized for the motor.
+- **Overhead doors**. Each opener gets its own 15A circuit, plus a dedicated lighting circuit that doesn't go dark when the opener is drawing.
+- **LED shop lighting**. Don't run the lights on the general receptacle circuits. Separate lighting circuits so a tripped plug doesn't plunge the shop into darkness.
+- **Receptacle placement**. We default to 6-foot spacing along the walls, with a mix of 20A 120V for tools and 50A 240V for welders, plus ceiling drops for bay lifts and overhead tool use.
+- **Block heater plugs**. At least one 15A exterior receptacle on a timer for each vehicle bay. Alberta winters demand it.
 
 A properly wired shop pays itself back in saved time and avoided headaches for decades. A cheaply wired shop becomes a source of frustration, blown breakers, and fire risk.
 
@@ -87,23 +87,23 @@ A properly wired shop pays itself back in saved time and avoided headaches for d
 
 Nothing ruins a rural winter faster than a frozen water line. The electrical side of keeping rural water flowing through a Peace Country winter has three pieces:
 
-**Well pumps.** Submersible well pumps live in the well casing and are fed by a waterproof cable down from the well head. Pressure tank controls, low-water cutoff switches, and pump protection relays all live in the pump house or basement. A failing well pump that's been running at reduced output for months shows up as a pump that won't restart on a cold morning. We troubleshoot, repair, and replace them — including the underground feeder from the house when that's what's failing.
+**Well pumps.** Submersible well pumps live in the well casing and are fed by a waterproof cable down from the well head. Pressure tank controls, low-water cutoff switches, and pump protection relays all live in the pump house or basement. A failing well pump that's been running at reduced output for months shows up as a pump that won't restart on a cold morning. We troubleshoot, repair, and replace them. Including the underground feeder from the house when that's what's failing.
 
-**Heat trace on water lines.** Exposed water lines to outbuildings, livestock waterers, and yard hydrants need self-regulating heat trace cable on a GFCI-protected circuit. Self-regulating cable puts out more heat where the line is coldest and less where it's warm — it uses less electricity than constant-wattage cable and won't overheat against itself if wrapped accidentally.
+**Heat trace on water lines.** Exposed water lines to outbuildings, livestock waterers, and yard hydrants need self-regulating heat trace cable on a GFCI-protected circuit. Self-regulating cable puts out more heat where the line is coldest and less where it's warm. It uses less electricity than constant-wattage cable and won't overheat against itself if wrapped accidentally.
 
 **Livestock waterers.** Ritchie, Miraco, and Cobett waterers all need a power supply and, in most cases, their own dedicated heat trace. Losing a waterer on a -30°C night with 200 head of cattle is a disaster. We run the feeder correctly, protect the GFCI, and size the heat trace to match the waterer and the climate.
 
 ## Standby Generators for Rural Properties
 
-Rural Alberta outages happen. A transformer blown by lightning, a wind event, an equipment failure at the substation — grid reliability out here is good but not perfect. For a working farm, an outage during calving, farrowing, harvest, or a cold snap is an emergency, not an inconvenience.
+Rural Alberta outages happen. A transformer blown by lightning, a wind event, an equipment failure at the substation. Grid reliability out here is good but not perfect. For a working farm, an outage during calving, farrowing, harvest, or a cold snap is an emergency, not an inconvenience.
 
 We spec and install standby generator systems. The decision points:
 
-**Portable vs. permanent standby.** A portable generator with an interlock kit and a properly rated generator inlet lets you back up essentials manually when an outage hits. A permanent standby generator with an automatic transfer switch runs itself — the outage hits, the generator starts within seconds, and the transfer switch flips your selected circuits over with no intervention.
+**Portable vs. Permanent standby.** A portable generator with an interlock kit and a properly rated generator inlet lets you back up essentials manually when an outage hits. A permanent standby generator with an automatic transfer switch runs itself. The outage hits, the generator starts within seconds, and the transfer switch flips your selected circuits over with no intervention.
 
 **Sizing.** The mistake we see most often on DIY generator installs is undersizing. Adding up the nameplate ratings on everything in the house gets you a number much larger than what's actually needed, because not everything runs at once. We do a proper load calculation based on actual use, which usually lands between 12 kW and 22 kW for a typical farmhouse, larger for operations with grain dryers or significant shop loads on the system.
 
-**Fuel source.** Propane is the most common choice in rural Alberta — the tank is already on site for the house or shop, and propane keeps indefinitely. Natural gas is available in some areas. Diesel is standard for larger operations where fuel storage is already in place.
+**Fuel source.** Propane is the most common choice in rural Alberta. The tank is already on site for the house or shop, and propane keeps indefinitely. Natural gas is available in some areas. Diesel is standard for larger operations where fuel storage is already in place.
 
 ## What the 2024 Canadian Electrical Code Means for Farms
 
@@ -118,13 +118,13 @@ We pull permits, work with the Alberta Safety Codes Council and STANDATA inspect
 
 ## Common Questions from Farm and Acreage Customers
 
-**How much does it cost to run power to a new outbuilding?** The big variable is distance. A shop 30 feet from the house is cheap — a shop 300 feet out at the back of the yard needs a correctly sized underground feeder, a trench, sometimes a separate sub-panel with its own grounding electrode system. Ballpark for a 200-amp sub to a building 150 feet away, including trenching and panel, sits in the $8,000 to $15,000 range depending on conditions. We give firm quotes after a site visit, not phone estimates.
+**How much does it cost to run power to a new outbuilding?** The big variable is distance. A shop 30 feet from the house is cheap. A shop 300 feet out at the back of the yard needs a correctly sized underground feeder, a trench, sometimes a separate sub-panel with its own grounding electrode system. Ballpark for a 200-amp sub to a building 150 feet away, including trenching and panel, sits in the $8,000 to $15,000 range depending on conditions. We give firm quotes after a site visit, not phone estimates.
 
 **Can I run my shop on the farmhouse panel?** Sometimes. Depends on how much is already on the house panel, what loads you want to add, and how far the shop is. Often it is cleaner (and safer) to add a dedicated service to the shop rather than loading up the house panel. We'll tell you which way makes sense for your situation.
 
-**I think my well pump is failing — what's it cost to diagnose?** We charge a service call for the diagnostic visit. If the fix is minor (a pressure switch, a relay, a breaker), it often gets solved in the same visit. If the pump itself is failing, you're looking at a pump replacement — the submersible pump, the drop pipe, the torque arrestor, and the feeder cable are all replaced together. Pricing depends on well depth and pump size.
+**I think my well pump is failing. What's it cost to diagnose?** We charge a service call for the diagnostic visit. If the fix is minor (a pressure switch, a relay, a breaker), it often gets solved in the same visit. If the pump itself is failing, you're looking at a pump replacement. The submersible pump, the drop pipe, the torque arrestor, and the feeder cable are all replaced together. Pricing depends on well depth and pump size.
 
-**Can you help me plan electrical for a new shop I'm building?** Yes — this is one of our favourite jobs. Getting involved at the framing stage means we can rough in conduit, drops, and panel locations exactly where you need them. Late-stage additions after drywall are always more expensive than planning upfront. Call us before the framers start, not after.
+**Can you help me plan electrical for a new shop I'm building?** Yes. This is one of our favourite jobs. Getting involved at the framing stage means we can rough in conduit, drops, and panel locations exactly where you need them. Late-stage additions after drywall are always more expensive than planning upfront. Call us before the framers start, not after.
 
 **Do you do emergency calls?** Yes, within a reasonable radius. Outside business hours there's a call-out fee. If your grain dryer quit mid-harvest or your livestock waterers froze, we understand the urgency.
 
