@@ -18,15 +18,34 @@ const {
   title,
   description,
   canonicalUrl,
-  ogImage = '/images/og-default.jpg',
+  ogImage = '/images/electrician-work.jpg',
   ogType = 'website',
   schema
 } = Astro.props;
 
 const siteUrl = 'https://www.gpelectricinc.com';
+
+// Trim to a whole-word boundary at or under `max` characters, stripping any
+// trailing punctuation left behind by the cut.
+function truncateAtWord(text: string, max: number): string {
+  if (!text || text.length <= max) return text;
+  const slice = text.slice(0, max);
+  const lastSpace = slice.lastIndexOf(' ');
+  const base = lastSpace > 0 ? slice.slice(0, lastSpace) : slice;
+  return base.replace(/[\s.,;:!?]+$/, '');
+}
+
+// Meta description: keep intact when already within Google's ~155 char window,
+// otherwise trim on a word boundary and add an ellipsis.
+const metaDescription = description && description.length > 160
+  ? `${truncateAtWord(description, 155)}…`
+  : description;
+
+// Title: cap the page-specific portion so title + brand suffix stays readable.
+const cappedTitle = truncateAtWord(title, 60);
 const fullTitle = title === 'Home'
   ? 'GP Electric Inc | Licensed Electrician in Grande Prairie, Alberta'
-  : `${title} | GP Electric Inc. Grande Prairie Electrician`;
+  : `${cappedTitle} | GP Electric Inc. Grande Prairie Electrician`;
 const canonical = canonicalUrl || new URL(Astro.url.pathname, siteUrl).href;
 ---
 
@@ -36,12 +55,12 @@ const canonical = canonicalUrl || new URL(Astro.url.pathname, siteUrl).href;
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>{fullTitle}</title>
-  <meta name="description" content={description} />
+  <meta name="description" content={metaDescription} />
   <link rel="canonical" href={canonical} />
 
   <!-- Open Graph -->
   <meta property="og:title" content={fullTitle} />
-  <meta property="og:description" content={description} />
+  <meta property="og:description" content={metaDescription} />
   <meta property="og:image" content={`${siteUrl}${ogImage}`} />
   <meta property="og:url" content={canonical} />
   <meta property="og:type" content={ogType} />
@@ -50,7 +69,7 @@ const canonical = canonicalUrl || new URL(Astro.url.pathname, siteUrl).href;
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content={fullTitle} />
-  <meta name="twitter:description" content={description} />
+  <meta name="twitter:description" content={metaDescription} />
   <meta name="twitter:image" content={`${siteUrl}${ogImage}`} />
 
   <!-- Geo -->

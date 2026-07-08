@@ -14,6 +14,10 @@ export async function getStaticPaths() {
 const { post } = Astro.props;
 const { Content } = await render(post);
 
+// Use a post's own cover image for social sharing when provided, otherwise fall
+// back to a real on-site image (not the missing site-wide og-default).
+const ogImage = post.data.image ?? '/images/electrician-work.jpg';
+
 const formattedDate = post.data.pubDate.toLocaleDateString('en-CA', {
   year: 'numeric',
   month: 'long',
@@ -42,7 +46,7 @@ const articleSchema = {
     "url": siteUrl,
     "logo": {
       "@type": "ImageObject",
-      "url": `${siteUrl}/images/og-default.jpg`
+      "url": `${siteUrl}/images/electrician-work.jpg`
     }
   },
   "datePublished": post.data.pubDate.toISOString(),
@@ -210,7 +214,7 @@ const faqSchema = faqEntries ? {
 const schemas = [articleSchema, faqSchema].filter(Boolean);
 ---
 
-<BaseLayout title={post.data.title} description={post.data.description} schema={articleSchema} ogType="article">
+<BaseLayout title={post.data.title} description={post.data.description} schema={articleSchema} ogType="article" ogImage={ogImage}>
   {faqSchema && (
     <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
   )}
