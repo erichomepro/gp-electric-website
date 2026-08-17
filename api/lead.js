@@ -2,10 +2,54 @@
 // and emails them via Resend. Astro builds a static site, so this lives as a
 // standalone Vercel function at the project root.
 
+import { classify, canonicalEmail } from './spam-filter.mjs';
+
 const OWNER_EMAIL = 'gpelectric@outlook.com';
 const BCC_EMAIL = 'eric@aiprecisionmarketing.ca';
 const FROM = 'GP Electric Leads <leads@aiprecisionmarketing.ca>';
 const ORG_ID = 'b5f41841-b166-406c-af3d-f8308226186b';
+
+/**
+ * Origins allowed to POST here. Previously this was '*', which let any origin on
+ * the internet submit the form without ever loading the site -- the likely
+ * vector for the 5 bot submissions on 2026-08-17, three of which landed within
+ * 5 seconds of each other.
+ */
+const ALLOWED_ORIGINS = [
+  'https://gpelectricinc.com',
+  'https://www.gpelectricinc.com',
+];
+
+/**
+ * Burst limiter keyed by canonical email, so Gmail dot-variants collapse to one
+ * identity. In-memory: a cold start empties it, which only means a burst may
+ * restart. The content filter is the real defence; this is a cheap second layer.
+ */
+const recentByEmail = new Map();
+const RATE_WINDOW_MS = 60_000;
+const RATE_MAX_IN_WINDOW = 3;
+
+function isRateLimited(email) {
+  const key = canonicalEmail(email);
+  const now = Date.now();
+  const hits = (recentByEmail.get(key) ?? []).filter((t) => now - t < RATE_WINDOW_MS);
+  hits.push(now);
+  recentByEmail.set(key, hits);
+
+  if (recentByEmail.size > 500) {
+    for (const [k, v] of recentByEmail) {
+      if (v.every((t) => now - t >= RATE_WINDOW_MS)) recentByEmail.delete(k);
+    }
+  }
+
+  return hits.length > RATE_MAX_IN_WINDOW;
+}
+
+/** Anti-spam plumbing is not lead data; never store or email it. */
+function stripInternalFields(body) {
+  const { website: _website, elapsedMs: _elapsedMs, ...rest } = body;
+  return rest;
+}
 
 function escapeHtml(s) {
   return String(s).replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
@@ -54,7 +98,13 @@ async function backupToSupabase(body) {
 }
 
 export default async function handler(req, res) {
-  res.setHeader('Access-Control-Allow-Origin', '*');
+  // Reflect only known origins. Same-origin form posts from the site itself send
+  // no Origin header, so they are unaffected by this.
+  const origin = req.headers?.origin;
+  if (origin && ALLOWED_ORIGINS.includes(origin)) {
+    res.setHeader('Access-Control-Allow-Origin', origin);
+  }
+  res.setHeader('Vary', 'Origin');
   res.setHeader('Access-Control-Allow-Methods', 'POST, OPTIONS');
   res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
 
@@ -64,11 +114,40 @@ export default async function handler(req, res) {
   const apiKey = process.env.RESEND_API_KEY;
   if (!apiKey) return res.status(500).json({ error: 'Email backend not configured' });
 
-  const body = typeof req.body === 'string' ? JSON.parse(req.body || '{}') : (req.body || {});
+  let body = typeof req.body === 'string' ? JSON.parse(req.body || '{}') : (req.body || {});
 
   if (!body.name || !body.phone) {
     return res.status(400).json({ error: 'Name and phone are required' });
   }
+
+  // Spam gate. A rejected submission returns 200 rather than 4xx on purpose: a
+  // bot that sees an error retunes its payload, one that sees success keeps
+  // sending the signature we already detect. The classifier fails open, because
+  // losing one real quote request costs more than forwarding one more spam.
+  const verdict = classify({
+    name: body.name,
+    email: body.email,
+    phone: body.phone,
+    message: body.message,
+    website: body.website,
+    elapsedMs: body.elapsedMs,
+  });
+  if (verdict.isSpam) {
+    console.warn(JSON.stringify({
+      scope: 'lead.spam', score: verdict.score, reasons: verdict.reasons,
+      email: body.email, page: body.page,
+    }), 'Submission rejected as spam; not emailed, not stored');
+    return res.status(200).json({ ok: true });
+  }
+
+  if (body.email && isRateLimited(body.email)) {
+    console.warn(JSON.stringify({
+      scope: 'lead.ratelimit', email: canonicalEmail(body.email), page: body.page,
+    }), 'Submission rejected as rate limited; not emailed, not stored');
+    return res.status(200).json({ ok: true });
+  }
+
+  body = stripInternalFields(body);
 
   const rows = [
     row('Name', body.name),
