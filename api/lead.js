@@ -16,8 +16,11 @@ const ORG_ID = 'b5f41841-b166-406c-af3d-f8308226186b';
  * 5 seconds of each other.
  */
 const ALLOWED_ORIGINS = [
-  'https://gpelectricinc.com',
-  'https://www.gpelectricinc.com',
+  // The live customer-facing domain. An earlier list named gpelectricinc.com,
+  // which this site does not serve, so every cross-origin POST was refused a
+  // CORS header while same-origin posts (which send no Origin) were unaffected.
+  'https://gpelectric.ca',
+  'https://www.gpelectric.ca',
 ];
 
 /**

@@ -138,6 +138,51 @@ export function isNumericOnly(text) {
 }
 
 /**
+ * A message that is one long unbroken alphabetic token, as in
+ * "HFRBafKAHHIVQIUCQF". Real inquiries contain a space, a digit, or
+ * punctuation somewhere. Someone typing "Iwantaquoteplease" would also match,
+ * which is why it is supporting evidence, not a conviction on its own.
+ *
+ * Judges the MESSAGE only, never the sender's name. An earlier draft scored
+ * names by pronounceability and flagged "Nguyen Thanh" and "Dwayne Schmidt";
+ * no heuristic may ever treat a real surname as a bot.
+ */
+export function isSingleJunkToken(message) {
+  const trimmed = String(message).trim();
+  if (trimmed.length === 0 || trimmed.includes(" ")) return false;
+  const letters = trimmed.replace(/[^a-zA-Z]/g, "");
+  return letters.length >= 14 && letters === trimmed;
+}
+
+/**
+ * Random mixed case inside a word, as in "aUTuUPcZaudb".
+ *
+ * Bots that mint random identifiers flip case mid-word. Human writing does
+ * not: real names capitalise at the word start, and intercaps brands
+ * ("MacLeod", "DeVries", "iPhone") flip once or twice, far below this
+ * threshold. Requires a high flip ratio AND three flips in one word.
+ *
+ * Added 2026-08-17 after spam reached client owners with names like
+ * "Rrefn Sqfxyuogu" that the vowel-ratio test could not see.
+ */
+export function looksLikeRandomCase(text) {
+  for (const word of String(text).split(/\s+/)) {
+    const letters = word.replace(/[^a-zA-Z]/g, "");
+    if (letters.length < 6) continue;
+    let flips = 0;
+    for (let i = 2; i < letters.length; i++) {
+      const prev = letters[i - 1];
+      const cur = letters[i];
+      const lowerToUpper = prev === prev.toLowerCase() && cur === cur.toUpperCase();
+      const upperToLower = prev === prev.toUpperCase() && cur === cur.toLowerCase();
+      if (lowerToUpper || upperToLower) flips++;
+    }
+    if (flips >= 3 && flips / (letters.length - 2) > 0.35) return true;
+  }
+  return false;
+}
+
+/**
  * Classify one submission.
  *
  * Scores are additive so several weak signals can convict where one cannot.
@@ -198,6 +243,16 @@ export function classify(input) {
 
   // Heavy dot-obfuscation in a Gmail local part. Real users type their address
   // the short way; the bot uses dots to mint unique-looking senders.
+  if (isSingleJunkToken(message)) {
+    score += 60;
+    reasons.push("message is one unbroken token");
+  }
+
+  if (looksLikeRandomCase(`${name} ${message}`)) {
+    score += 60;
+    reasons.push("random mixed case within a word");
+  }
+
   const at = email.lastIndexOf('@');
   if (at > 0) {
     const domain = email.slice(at + 1).toLowerCase();
